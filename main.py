@@ -1,10 +1,12 @@
 import mimetypes
 
 from flask import Flask, render_template, request, url_for, flash
+from flask_sqlalchemy import SQLAlchemy
 import requests
 import json
 import smtplib
 import os
+
 
 # from quickstart import GoogleDriveApi
 
@@ -13,15 +15,28 @@ map_api = os.getenv("map_api")
 app = Flask(__name__)
 
 app.config['GOOGLEMAPS_KEY'] = os.getenv("google_key")
-
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:///posts.db")
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy()
+db.init_app(app)
 # drive = GoogleDriveApi()
 # f = drive.download_file(real_file_id="1-e_w9p52otiIp5S8onSNB3tnPruDPQFC", path="static")
 # print(f)
 
 
+class Posts(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(250), nullable=False)
+    video_url = db.Column(db.String(250), unique=True, nullable=False)
+    date = db.Column(db.String(250), nullable=False)
+    body = db.Column(db.Text, nullable=True)
+    img_url = db.Column(db.String(250), nullable=False, unique=True)
+
+
 @app.route("/")
 def home():
-    return render_template("index.html")
+    videos = db.session.query(Posts).all()
+    return render_template("index.html", videos=videos)
 
 
 @app.route("/contact_us", methods=["GET", "POST"])
