@@ -67,6 +67,16 @@ def about():
     return render_template("about.html")
 
 
+@app.route("/life_insurance")
+def life_insurance():
+    return render_template("life-insurance.html")
+
+
+@app.route("/retirement-benefits")
+def retirement_benefits():
+    return render_template("retirement-benefits.html")
+
+
 @app.route("/mblog")
 def blog():
     return render_template("blog.html")
