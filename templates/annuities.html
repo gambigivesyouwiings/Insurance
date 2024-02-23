@@ -54,12 +54,12 @@
           <li class="dropdown"><a href="#" class="active"><span>Families & Individuals</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
-              <li><a href="{{url_for('retirement_benefits')}}" class="active">Retirement Benefits</a></li>
+              <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
               <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
               <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
               <li><a href="{{url_for('long_term')}}">Tax Qualified Long Term Care Insurance</a></li>
               <li><a href="{{url_for('ira')}}">IRA</a></li>
-              <li><a href="{{url_for('annuity')}}">Annuities</a></li>
+              <li><a href="{{url_for('annuity')}}" class="active">Annuities</a></li>
 
               <li class="dropdown"><a href="#"><span>Dental Insurance</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
@@ -103,10 +103,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Retirement benefits</h2>
+          <h2>Annuities</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Retirement Benefits</li>
+            <li>Annuities</li>
           </ol>
         </div>
 
@@ -119,15 +119,30 @@
 
         <div class="row">
           <div class="col-md-6">
-              <img src="static/assets/img/insurance/retirement.jpg" class="img-fluid" alt="">
+              <img src="static/assets/img/insurance/Annuities.png" class="img-fluid" alt="">
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
-              <p>Looking forward to a comfortable retirement in your sunset years? If you are a little worried on how to
-                  plan it out, you aren't alone. We have your back.
+              <p>An annuity allows a customer to deposit money (premiums) with an insurance company that can earn interest
+                  and grow on a tax-deferred basis with the agreement that the insurance company will then provide a series
+                  of payments back to the customer at regular intervals.
                     <br>
                     <br>
-                  Participating in your employer’s 403(b) or 457(b) plan can take you one step closer to a retirement that can support your lifestyle.
+                  People typically purchase annuities to provide or supplement retirement income they will receive from
+                  Social Security, pension benefits, investments and other sources. You can convert your annuity into a
+                  stream of income that can then be paid over a fixed period or for your lifetime. You can take
+                  withdrawals of varying amounts when you need the income.
               </p>
+              <p>There are generally two different types of annuities:</p>
+              <h3>IMMEDIATE</h3>
+                <p>Provides income payments that normally begin within a year after the premium is paid.</p>
+              <h3>DEFERRED</h3>
+                <p>Provide income payments that begin later, often after many years. Deferred annuities are designed for
+                    long-term savings purposes.</p>
+              <ol>
+                  <li>Available to purchase using a single lump sum, or with flexible premiums over time.</li>
+                  <li>When it comes time to take income from your deferred annuity, you will have many options available
+                      to meet your needs</li>
+              </ol>
               <a href="#"> Visit our Frequently asked questions</a>
               <br>
               <br>
@@ -147,7 +162,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Retirement Benefit plans</h2>
+          <h2>Annuity plans</h2>
           <p>Here is a sample of what we offer</p>
         </div>
 
@@ -155,19 +170,10 @@
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">What is a 403(b) plan?</a>
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Fixed Interest Rate Annuities</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">What is a 457(b) plan?</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">How your decisions today impact your life tomorrow.</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Time is your friend.</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">The longer you defer taxes, the faster your money grows!</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Indexed Annuities</a>
               </li>
             </ul>
           </div>
@@ -176,123 +182,45 @@
               <div class="tab-pane active show" id="tab-1">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>403(b) plan</h3>
-                    <p class="fst-italic">TA 403(b) plan is a retirement savings plan for employees of public schools,
-                        non-profits and certain churches. This is a retirement plan in addition to any type of pension
-                        your employer may offer. With a traditional 403(b) plan your contributions are tax-deferred,
-                        meaning you pay taxes on the money when you take it out of the plan.
-                        With a Roth 403(b) plan you pay taxes on the contributions up front, but the money grows tax-free.</p>
+                    <h3>Fixed interest rate annuities</h3>
+                      <p class="fst-italic">Fixed annuities are contracts that offer a guaranteed rate of return for a
+                          specified period of time, regardless of market fluctuations. The interest rates of fixed
+                          annuities vary depending on the length and the provider of the contract
+                      </p>
+                      <p> OFFERS:</p>
+                      <ol>
+                          <li>Deposits accumulate at fixed rate of interest set by the company.</li>
+                          <li>Have a guaranteed minimum interest rate that will be earned<sup>1</sup></li>
+                      </ol>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="static/assets/img/features-1.png" alt="" class="img-fluid">
+<!--                    <img src="static/assets/img/features-1.png" alt="" class="img-fluid">-->
                   </div>
                 </div>
               </div>
               <div class="tab-pane" id="tab-2">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>457(b) plan</h3>
-                    <p class="fst-italic">A 457(b) Plan is a supplemental retirement plan for governmental and certain
-                        non-governmental employers. This type of plan is tax-deferred, which means you pay taxes on the
-                        money when you take it out of the account. A 457(b) plan has many flexible features that allow
-                        you to save on a tax-deferred basis while still having access to your money through loans,
-                        and unforeseen emergency distributions if the need arises.
-
-If your employer offers both a 403(b) plan and a 457(b) plan you can maximize your retirement savings by contributing the maximum allowed to both plans.</p>
+                    <h3>Indexed Annuities</h3>
+                    <p class="fst-italic">Indexed annuities do not directly participate in any stock or equity
+                        investments. Most indexed annuities permit owners to participate in only a stated percentage of
+                        an increase in an index, and also impose a “cap rate” that represents the maximum annual account
+                        value percentage increase allowed to contract owners. An investment cannot be made directly into
+                        an index.
+                    </p>
+                       <p> OFFERS:</p>
+                      <ol>
+                          <li>Interest is based on changes in a major index such as the S&P 500<sup>2</sup></li>
+                          <li>Over the long-term, an indexed annuity may offer the potential for greater earnings than a
+                              fixed annuity but may have years, when the index is down, when no interest will be credited.
+                          </li>
+                          <li>Downside protection through minimum guarantees<sup>1</sup> to ensure that your cash value
+                              will not decline due to decreases in the Index.
+                          </li>
+                      </ol>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
 <!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-3">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Time to plan ahead</h3>
-                    <p class="fst-italic">Assumptions for Gap Analysis—(Source is TRAK Software by Trustbuilders)
-                        Teacher’s Pre-retirement salary is $37,000, teacher retires at age 60 and receives
-                        $20,895 in TRS Pension benefit, based upon Texas TRS guidelines.
-                    </p>
-
-                    <p>When you take the time to plan for your financial future, retirement can provide an opportunity
-                        to do what you have always wanted to do. Without proper planning, retirement could mean working
-                        during your golden years, cutting back on your lifestyle and even relying on family members
-                        to help take care of you. Beware of the retirement income gap.
-                        <br>
-                    </p>
-
-                      <p>Will your retirement income cover increasing retirement expenses? Many school district employees
-                          will experience a significant drop in income when they retire, even though they may be covered
-                          under a pension plan. Chances are a state pension is not enough
-                      </p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="static/assets/img/insurance/income-gap.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>The Power of compounding savings.</h3>
-                    <p class="fst-italic">When time is on your side, every increase you make to your retirement savings
-                        can make a significant impact on the total amount of money you have to live the life you want in retirement.
-                    </p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="static/assets/img/insurance/retirement-contributions.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-5">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Why a tax-deferred plan works</h3>
-                    <p class="fst-italic">Save more without seeing a difference in your take-home Pay:</p>
-                    <p>One of the greatest advantages of participating in a tax-deferred plan is that all dividends,
-                        interest, capital gains and growth potential accumulate on a tax-deferred basis while the money
-                        remains in the account. Only when you begin receiving the money will you have to pay income tax on it
-                    </p>
-                      <table cellpadding="10px">
-                          <tbody>
-        <tr>
-            <th></th>
-            <th scope="col"><strong>Post-Tax</strong></th>
-            <th scope="col"><strong>Pre-Tax</strong></th>
-        </tr>
-        <tr>
-            <th scope="row">Monthly Gross Income</th>
-            <td>$4,500</td>
-            <td>$4,500</td>
-        </tr>
-        <tr>
-            <th scope="row">Pre-Tax Contributions</th>
-            <td>$0</td>
-            <td>$133</td>
-        </tr>
-        <tr>
-            <th scope="row">Standard Tax Deductions</th>
-            <td>$672</td>
-            <td>$639</td>
-        </tr>
-        <tr>
-            <th scope="row">Post-tax retirement contributions</th>
-            <td>$100</td>
-            <td>$0</td>
-        </tr>
-        <tr>
-            <th scope="row">Take-home Pay</th>
-            <td>$3,113</td>
-            <td>$3,113</td>
-        </tr>
-    </tbody>
-                      </table>
-
-                      <p>(This hypothetical example is based on a teacher in the state of Texas claiming single and zero
-                          allowances and in the 25% tax bracket.)</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="static/assets/img/features-5.png" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -301,6 +229,15 @@ If your employer offers both a 403(b) plan and a 457(b) plan you can maximize yo
         </div>
 
       </div>
+        <br>
+        <br>
+        <p><sup>1</sup>Guarantees are based on the claims-paying ability of the issuing company.
+            <br>
+            <sup>2</sup>Standard & Poor’s®, “S&P®, S&P 500®, Standard & Poor’s 500, and 500 are trademarks of The
+            McGraw-Hill Companies, Inc. and have been licensed for use by Life Insurance Company of the Southwest.
+            The product is not sponsored, endorsed, sold or promoted by Standard & Poor’s and Standard & Poor’s makes no
+            representation regarding the advisability of purchasing the product.
+        </p>
     </section><!-- End Features Section -->
 
   </main><!-- End #main -->

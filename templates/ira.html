@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Retirement_benefits</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Sailor
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Faithful Finance</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home')}}">Home</a></li>
+
+          <li class="dropdown"><a href="#" class="active"><span>Families & Individuals</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
+              <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
+              <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
+              <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
+              <li><a href="{{url_for('long_term')}}">Tax Qualified Long Term Care Insurance</a></li>
+              <li><a href="{{url_for('ira')}}" class="active">IRA</a></li>
+              <li><a href="{{url_for('annuity')}}">Annuities</a></li>
+
+              <li class="dropdown"><a href="#"><span>Dental Insurance</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Mutual Dental Protection</a></li>
+                  <li><a href="#">Mutual Dental Preffered</a></li>
+                </ul>
+              </li>
+              <li><a href="{{url_for('testimonials')}}">College Funding</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="#">Business Transition Plans</a></li>
+                  <li><a href="#">Business Continuation Plans</a></li>
+                </ul>
+              </li>
+          <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="#">Key employee Insurance plans</a></li>
+                  <li><a href="#">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="#">Executive Bonus Plans</a></li>
+                </ul>
+              </li>
+          <li><a href="{{url_for('portfolio')}}">Youtube Videos</a></li>
+          <li><a href="{{url_for('pricing')}}">Pricing</a></li>
+          <li><a href="{{url_for('blog')}}">Blog</a></li>
+
+          <li><a href="{{url_for('contact')}}">Contact</a></li>
+          <li><a href="{{url_for('home')}}" class="getstarted">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>IRA</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>IRA</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6">
+              <img src="static/assets/img/insurance/middle-aged-man-on-laptop.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+              <p>An IRA is an individual retirement account that allows you to save money for retirement in a
+                  tax-advantaged way. There are different types of IRAs, such as <b>traditional</b>, <b>Roth</b>, and
+                  <b>rollover</b>, that have different eligibility rules, contribution limits, and tax benefits.
+                  Depending on your income and whether you or your spouse have an employer-sponsored retirement plan,
+                  you may be able to deduct some or all of your IRA contributions from your taxable income. Even if your
+                  contributions are not deductible, your earnings in the IRA can grow tax-deferred until you withdraw them
+                  in retirement. This can help you accumulate more savings over time than in a taxable account.
+                    <br>
+                    <br>
+                  Some of the reasons to contribute to an IRA are:
+              </p>
+                  <ol>
+                    <li> To supplement your current savings in your employer-sponsored retirement plan</li>
+                    <li> To gain access to a potentially wider range of investment choices than your employer-sponsored plan</li>
+                    <li> To take advantage of potential tax-deferred or tax-free growth</li>
+                    <li> To diversify your retirement income sources and tax situation</li>
+                  </ol>
+
+              <a href="#"> Visit our Frequently asked questions</a>
+              <br>
+              <br>
+            <div class="icon-box">
+                <a href="{{url_for('contact')}}"><i class="bi bi-phone-vibrate"></i></a>
+              <h4><a href="{{url_for('contact')}}">Would you like to learn more?</a></h4>
+              <p>Request a call! We'll get back to you as soon as possible.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>IRA plans</h2>
+          <p>Here is a sample of what we offer</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Traditional IRA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Roth IRA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">IRA comparisons</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Traditional IRA</h3>
+                      <p class="fst-italic">With contribution limits increased for people 50 and over, availability to
+                          non-working spouses and the possibility of penalty-free withdrawals for certain non-retirement
+                          purposes, Traditional IRAs have been an overwhelmingly popular vehicle to help achieve
+                          retirement goals.
+                      </p>
+                      <p> Contributions made to this account may be tax-deductible, and any individual who has earned
+                          income, or whose spouse has earned income, may contribute as long as the IRA account holder
+                          has not reached age 70½ by the end of the contribution year.
+                      </p>
+                      <p><b>ADVANTAGES TO A TRADITIONAL IRA INCLUDE:</b></p>
+                      <ol>
+                          <li>Contributions may be tax-deductible at the time they’re made depending on income.</li>
+                          <li>IRA earnings grow tax-deferred.</li>
+                          <li>Liberal income limits for contribution deductibility if you or your spouse is not a
+                              participant in a qualified plan.
+                          </li>
+                          <li>Availability to non-working spouses of wage earners.</li>
+                      </ol>
+                      <p>The primary disadvantage to a Traditional IRA is if you are underage 59½ and decide you want
+                          to take distribution, you will have to pay an additional 10% tax along with regular income taxes.
+                      </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-1.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Roth IRA</h3>
+                    <p class="fst-italic">While a Roth IRA is similar to a traditional IRA in many ways,
+                        there are also some significant differences.
+                    </p>
+                    <p>Contributions to Roth IRAs are not deductible from current income, but earnings may generally be
+                        withdrawn tax-free as long as the account has been in place for at least five years and the
+                        distribution takes place after age 59½. Depending upon state law, Roth IRA distributions may be
+                        subject to state taxes. There is no minimum distribution requirement and contributions are still
+                        allowed after you reach age 70½.
+                        <br>
+                        Under certain circumstances you can convert some or all of your holdings in other IRAs to a Roth
+                        IRA, but bear in mind the converted amounts may be taxable as current income.
+                        </p>
+                      <p><b>ADVANTAGES TO A ROTH IRA INCLUDE:</b></p>
+                      <ol>
+                          <li>There is no age limit to how long you can contribute.</li>
+                          <li>There are no required minimum distributions.</li>
+                          <li>Distributions may be received income tax-free.</li>
+                      </ol>
+                      <p>Which IRA do you choose? It all depends upon your preferences.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-3 order-lg-2">
+<!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>What's the difference?</h3>
+                      <p class="fst-italic">A side by side comparison of the two policies.</p>
+                      <table class="table table-bordered Accordion">
+    <tbody>
+        <tr class="tableHeadAccordion">
+            <th colspan="1"></th>
+            <th colspan="1" scope="col"><strong>Traditional IRA</strong></th>
+            <th colspan="1" scope="col"><strong>Roth IRA</strong></th>
+        </tr>
+        <tr>
+            <th colspan="1" scope="row"><strong>Who May Contribute</strong></th>
+            <td colspan="1">An individual who has earned income or whose spouse has earned income</td>
+            <td colspan="1">An individual who has earned income or whose spouse has earned income</td>
+        </tr>
+        <tr>
+            <th colspan="1" scope="row"><strong>Age Limit</strong></th>
+            <td colspan="1">No age limit</td>
+            <td colspan="1">No age limit</td>
+        </tr>
+        <tr>
+            <th colspan="1" scope="row"><strong>Income Limits to Make Contributions</strong></th>
+            <td colspan="1">No Income Limits</td>
+            <td colspan="1"></td>
+        </tr>
+        <tr>
+            <th colspan="1" scope="row"><strong>2022 Annual Contribution</strong></th>
+            <td colspan="1">$6,000 or 100% of employment compensation, whichever is less</td>
+            <td colspan="1">$6,000 or 100% of employment compensation, whichever is less</td>
+        </tr>
+        <tr>
+            <th colspan="1" scope="row"><strong>2022 Catch-up Contribution</strong></th>
+            <td colspan="1">Age 50 or older – $1,000</td>
+            <td colspan="1">Age 50 or older – $1,000</td>
+        </tr>
+        <tr>
+            <th colspan="1" scope="row"><strong>2022 Deduction Limit if Not Covered by Retirement Plan</strong></th>
+            <td colspan="1">
+            <p><em>Single/Head of Household/Widower</em> – No limit</p>
+            <p><em>Married Filing Jointly or Separately with a spouse who is not
+            covered by a plan at work </em>– No limit.</p>
+            <p><em>Married Filing Jointly with a spouse who is covered by a plan at
+            work</em> - $198,000 More than $204,000 but less than $214,000 - a partial deduction.&nbsp; No deduction if over $214,000.</p>
+            <p><em>Married filing separately with a spouse who is covered by a plan at
+            work</em> – less than $10,000 income - a partial deduction.&nbsp; More than $10,000 income – no deduction.</p>
+            </td>
+            <td colspan="1">
+            <p>Not Deductible</p>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="1" scope="row"><strong>2022 Deduction Limit if Covered by Retirement Plan</strong></th>
+            <td colspan="1">
+            <p><em>Single / Head of Household</em> - $68,000 or less -&nbsp; <span style="background-color: #ffffff; color: #1b1b1b;">full deduction up to the amount of your&nbsp;</span><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="0e62738f-1b76-473f-bb3a-66857cfc169a" href="https://www.irs.gov/retirement-plans/ira-deduction-limits" title="IRA Deduction Limits" style="color: #00599c; background-color: #ffffff;">contribution limit</a><span style="background-color: #ffffff; color: #1b1b1b;">.</span>&nbsp;$68,000 but less than $78,000 a partial
+            deduction.&nbsp; $78,000 or more - no
+            deduction.</p>
+            <p><em>Married Filing Jointly or qualifying widow</em> - $109,000 or less full
+            deduction.&nbsp; More than $109,000 but less
+            than $129,000 - partial deduction. More than $129,000 - no deduction.</p>
+            <p><em>Married filing separately</em> – less than $10,000 a partial
+            deduction.&nbsp; $10,000 or more no
+            deduction.</p>
+            </td>
+            <td colspan="1">Not Deductible</td>
+        </tr>
+        <tr>
+            <th colspan="1" scope="row"><strong>Required Minimum Distributions</strong></th>
+            <td colspan="1">
+            <p><span>Begin the year in which the individual turns age 72.</span></p>
+            </td>
+            <td colspan="1">
+            <p>None</p>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="1" scope="row"><strong>Taxation of withdrawals</strong></th>
+            <td colspan="1">
+            <p><span>Any deductible contributions and earnings you withdraw or that
+            are distributed from your traditional IRA are taxable. Also, if you are under
+            age 59 ½ you may have to pay an additional 10% tax for early withdrawals
+            unless you qualify for an </span><a href="http://www.irs.gov/Retirement-Plans/Plan-Participant,-Employee/Retirement-Topics---Tax-on-Early-Distributions" target="_blank"><span>exception</span><span class="sr-only">Opens in new Tab</span></a><span>.</span></p>
+            </td>
+            <td colspan="1">
+            <p><span>None if it’s a </span><a href="http://www.irs.gov/Retirement-Plans/Retirement-Plans-FAQs-on-Designated-Roth-Accounts#distns" target="_blank"><span>qualified
+            distribution</span><span class="sr-only">Opens in new Tab</span></a><span> Otherwise, part of the distribution or withdrawal may be </span><a href="http://www.irs.gov/Retirement-Plans/Designated-Roth-Accounts-Distributions" target="_blank"><span>taxable</span><span class="sr-only">Opens in new Tab</span></a><span>. If
+            you are under age 59 ½, you may also have to pay an additional 10% tax for
+            early withdrawals unless you qualify for an </span><a href="http://www.irs.gov/Retirement-Plans/Plan-Participant,-Employee/Retirement-Topics---Tax-on-Early-Distributions" target="_blank"><span>exception</span><span class="sr-only">Opens in new Tab</span></a><span>.</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-1.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+        <br>
+        <br>
+        <p>If you’re like most people, one of your most valuable assets you have is your earning power.
+            An IRA can let you put that asset to work efficiently and effectively to give you added peace of mind during
+            your retirement years. Even if you have other retirement plans in place, an IRA may still be a great benefit
+            because of the added tax advantages it offers. The most important thing is to start now to make the most of
+            the life you want later.
+        </p>
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+{% include "footer.html" %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

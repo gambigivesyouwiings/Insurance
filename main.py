@@ -77,6 +77,31 @@ def retirement_benefits():
     return render_template("retirement-benefits.html")
 
 
+@app.route("/living-benefits")
+def living_benefits():
+    return render_template("living-benefits.html")
+
+
+@app.route("/medical-cover")
+def medical_cover():
+    return render_template("living-benefits.html")
+
+
+@app.route("/long-term")
+def long_term():
+    return render_template("longterm-care.html")
+
+
+@app.route("/IRA")
+def ira():
+    return render_template("ira.html")
+
+
+@app.route("/annuity")
+def annuity():
+    return render_template("annuities.html")
+
+
 @app.route("/mblog")
 def blog():
     return render_template("blog.html")
