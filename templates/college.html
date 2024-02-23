@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>College Funding</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Sailor
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Faithful Finance</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home')}}">Home</a></li>
+
+          <li class="dropdown"><a href="#" class="active"><span>Families & Individuals</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
+              <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
+              <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
+              <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
+              <li><a href="{{url_for('long_term')}}">Tax Qualified Long Term Care Insurance</a></li>
+              <li><a href="{{url_for('ira')}}">IRA</a></li>
+              <li><a href="{{url_for('annuity')}}">Annuities</a></li>
+
+              <li class="dropdown"><a href="#"><span>Dental Insurance</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Mutual Dental Protection</a></li>
+                  <li><a href="#">Mutual Dental Preffered</a></li>
+                </ul>
+              </li>
+              <li><a href="{{url_for('testimonials')}}" class="active">College Funding</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="#">Business Transition Plans</a></li>
+                  <li><a href="#">Business Continuation Plans</a></li>
+                </ul>
+              </li>
+          <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="#">Key employee Insurance plans</a></li>
+                  <li><a href="#">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="#">Executive Bonus Plans</a></li>
+                </ul>
+              </li>
+          <li><a href="{{url_for('portfolio')}}">Youtube Videos</a></li>
+          <li><a href="{{url_for('pricing')}}">Pricing</a></li>
+          <li><a href="{{url_for('blog')}}">Blog</a></li>
+
+          <li><a href="{{url_for('contact')}}">Contact</a></li>
+          <li><a href="{{url_for('home')}}" class="getstarted">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>College Funding</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>College Funding</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6">
+              <iframe title="Average Cost of College in the US" aria-label="Grouped Columns" id="datawrapper-chart-tbLW4" src="https://datawrapper.dwcdn.net/tbLW4/10/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
+              <br>
+              <br>
+              <div class="icon-box">
+                <a href="{{url_for('contact')}}"><i class="bi bi-phone-vibrate"></i></a>
+              <h4><a href="{{url_for('contact')}}">Would you like to learn more?</a></h4>
+              <p>Request a call! We'll get back to you as soon as possible.</p>
+            </div>
+              <a href="#"> Visit our Frequently asked questions</a>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+              <h3> What is a 529 plan?</h3>
+              <p>A 529 plan is a tax-advantaged savings plan designed to help pay for education. Originally limited to
+                  post-secondary education costs, it was expanded to cover K–12 education in 2017 and apprenticeship
+                  programs in 2019. After the
+                  <a href="https://www.investopedia.com/what-is-secure-act-how-affect-retirement-4692743" target="_blank">
+                      Setting Every Community Up for Retirement Enhancement Act of 2019 (SECURE Act)</a>
+                  and <a href="https://www.investopedia.com/secure-2-0-definition-5225115" target="_blank">SECURE 2.0 of 2022</a>,
+                  529s can also be used to pay off student loans and fund a <a href="{{url_for('ira')}}">Roth IRA</a>.
+                    <br>
+                    <br>
+                 The two major types of 529 plans are education savings plans and prepaid tuition plans.
+                  <br>
+                  <br>
+                  Education savings plans grow tax-deferred, and withdrawals are tax-free if they're used for qualified
+                  education expenses. Prepaid tuition plans allow the account owner to pay current tuition rates for
+                  future attendance at designated colleges and universities. That means that, most likely, you can lock
+                  in a lower cost of college attendance.
+              </p>
+              <h3> Can I use my Permanent Life Insurance to finance kids' college?</h3>
+              <p>
+                  Yes! <a href="{{url_for('life_insurance')}}">Permanent life insurance</a> is a type of policy that has
+                  a cash value component that grows tax-deferred over time. You can use this cash value to help pay for
+                  college expenses by borrowing against it or withdrawing from it. However, there are some pros and cons
+                  of using permanent life insurance for college funding.
+                  <br>
+                  <br>
+                  Some pros are:
+                  </p>
+              <ol>
+                  <li><b>Flexibility:</b> You can use the cash value for any purpose, not just education-related expenses.
+                      You can also choose how much and when to withdraw or borrow from it</li>
+                  <li><b>Tax benefits:</b> The cash value grows tax-deferred and the withdrawals or loans are usually
+                      tax-free, as long as they don’t exceed the premiums paid. You may also qualify for a tax deduction
+                      on the interest paid on the policy loans.</li>
+                  <li><b>Financial aid</b>: The cash value of a permanent life insurance policy is not considered an
+                      asset when applying for federal financial aid, unlike a 529 plan. This may increase your
+                      eligibility for grants and scholarships.</li>
+              </ol>
+              <p>
+                  The cons include:
+              </p>
+                  <ol>
+                      <li> <b>Cost</b>: Permanent life insurance policies are typically more expensive than term life
+                          policies or 529 plans. You have to pay for the insurance coverage, the fees, and the
+                          commissions. This may reduce the amount of money available for college savings.</li>
+                      <li> <b>Risk:</b> If you withdraw or borrow too much from the cash value, you may reduce the death
+                          benefit or lapse the policy. This may leave your beneficiaries without adequate protection or
+                          trigger a tax liability.</li>
+                    <li> <b>Returns:</b> The returns on the cash value may vary depending on the type of policy.
+                        You may earn less than what you would with a 529 plan or other investments</li>
+                  </ol>
+                    <a href="https://www.nationallife.com/Resource-center/Financial-Calculators/Financial-Calculators-College-Funding" target="_blank"><span><i class="bi bi-calculator"></i>College funding calculator</span></a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+        <div class="container">
+
+        <div class="section-title">
+          <h2>College funding plans</h2>
+          <p>Things to look out for</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Understanding 529 plans</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Types of 529 plans</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Tax advantages of 529 plans</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">529 plan transferability rules.</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Pros and cons</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Understanding 529 plans</h3>
+                    <p class="fst-italic">There are no limits on how much you can contribute to a 529 account each year.
+                        However, many states put a cap on how much you can contribute in total. Those limits recently
+                        ranged from $235,000 to $575,000
+                        <a href="https://www.collegesavings.org/find-my-states-529-plan" target="_blank"><sup>1</sup></a>
+                    </p>
+                      <p>Although 529 plans take their name from Section 529 of the federal tax code,
+                          the plans themselves are administered by the 50 states and the District of Columbia.
+                          <br>
+                          Anyone can open a 529 account, but they are typically established by parents or grandparents
+                          on behalf of a child or grandchild, who is the account's beneficiary. In some states, the person
+                          who funds the account may be eligible for a state tax deduction for their contributions.
+                          <br>
+                        The money in a 529 plan grows on a tax-deferred basis until it is withdrawn. What's more, so
+                          long as the money is used for qualified education expenses as defined by the Internal Revenue
+                          Service (IRS), those withdrawals aren't subject to either state or federal taxes. In addition,
+                          some states may offer tax deductions on contributions.
+                          <br>
+                        In the case of K–12 students, tax-free withdrawals are limited to $10,000 per year.
+                          <br>
+                        Since tax benefits vary depending on the state, it's important that you check the details of any
+                          529 plan to understand the specific tax benefits that you may or may not be entitled to.
+                      </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="static/assets/img/features-1.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Types of 529 plans</h3>
+                    <p class="fst-italic">The two main types of 529 plans have some significant differences.</p>
+                      <h4>Educational Saving Plan</h4>
+                      <p>529 savings plans are the more common type. The account holder contributes money to the plan.
+                          That money is invested in a preset selection of investment options.
+                        <br>
+                        Account holders can choose the investment (usually mutual funds) that they want to invest in.
+                          How those investments perform will determine how much the account value grows over time.
+                        <br>
+                        Many 529 plans offer target-date funds, which adjust their assets as the years go by, becoming
+                          more conservative as the beneficiary gets closer to college age.
+                        <br>
+                        Withdrawals from a 529 savings plan can be used for both college and K–12 qualified expenses.
+                          Qualified expenses include tuition, fees, room and board, and related costs.
+                          <a href="https://www.sec.gov/about/reports-publications/investor-publications/introduction-529-plans" target="_blank"><sup>2</sup></a>
+                        <br>
+                        The SECURE Act of 2019 expanded tax-free 529 plan withdrawals to include registered apprenticeship
+                          program expenses and up to $10,000 in student loan debt repayment for both account
+                          beneficiaries and their siblings.
+                          <a href="https://www.congress.gov/bill/116th-congress/house-bill/1994/text" target="_blank"><sup>3</sup></a>
+                        <br>
+                        The SECURE Act of 2022, passed as part of the 2023 Omnibus funding bill, permits rolling over up
+                          to $35,000 of unspent funds in a 529 account into a Roth IRA account. To qualify, the account
+                          must be at least 15 years old.
+                          <a href="https://www.congress.gov/bill/117th-congress/house-bill/2617/text" target="_blank"><sup>4</sup></a>
+
+                      </p>
+                      <h4>Prepaid Tuition Plan</h4>
+                      <p>
+                          Prepaid tuition plans are offered by a limited number of states and some higher education
+                          institutions. They vary in their specifics, but the general principle is that they allow you to
+                          lock in tuition at current rates for a student who may not be attending college for years to
+                          come. Prepaid plans are not available for K–12 education.
+                          <br>
+                          As with 529 savings plans, prepaid tuition plans grow in value over time. Eventual withdrawals
+                          from the account used to pay tuition are not taxable. However, unlike savings plans, prepaid
+                          tuition plans do not cover the costs of room and board.
+                          <br>
+                          Prepaid tuition plans may place a restriction on which colleges they may be used for. The money
+                          in a savings plan, by contrast, can be used at almost any eligible institution.
+                          <br>
+                          In addition, the money paid into a prepaid tuition plan isn't guaranteed by the federal government and may not be guaranteed by some states.
+                          <a target="_blank" href="https://www.sec.gov/about/reports-publications/investor-publications/introduction-529-plans"><sup>2</sup></a>
+                          Be sure you understand all aspects of the prepaid tuition plan before you utilize one.
+                      </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Tax advantages of 529 plans</h3>
+                    <p class="fst-italic">Withdrawals from a 529 plan are exempt from federal and state income taxes,
+                        provided the money is used for qualified educational expenses.
+                        <br>
+                        Any other withdrawals are subject to taxes plus a 10% penalty, with exceptions for certain
+                        circumstances, such as death or disability.
+                        <a href="https://www.sec.gov/about/reports-publications/investor-publications/introduction-529-plans" target="_blank"><sup>2</sup></a>
+                        <br>
+                        The money you contribute to a 529 plan isn't tax-deductible for federal income tax purposes.
+                        However, more than 30 states provide tax deductions or credits of varying amounts for
+                        contributions to a 529 plan.
+                        <a href="https://www.collegesavings.org/find-my-states-529-plan" target="_blank"><sup>1</sup></a>
+                        <br>
+                        In general, you'll need to invest in your home state's plan if you want a state tax deduction or
+                        credit. If you're willing to forgo a tax break, some states will allow you to invest in their
+                        plans as a non-resident.
+                    </p>
+                </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>529 plan transferability rules</h3>
+                    <p class="fst-italic">529 plans have specific transferability rules governed by the federal tax code
+                        (Section 529).
+                    </p>
+                      <p>The owner (typically you) may transfer to another 529 plan just once per year unless a
+                          beneficiary change is involved. You are not required to change plans to change beneficiaries.
+                          You may transfer the plan to another family member, who is defined as:
+                      </p>
+                      <ol>
+                          <li>Son, daughter, stepchild, foster child, adopted child, or any of their descendants</li>
+                          <li>Brother, sister, stepbrother, or stepsister</li>
+                          <li>Father or mother or ancestor of either</li>
+                          <li>Stepfather or stepmother</li>
+                          <li>Son or daughter of a brother or sister</li>
+                          <li>Brother or sister of father or mother</li>
+                          <li>Son-in-law, daughter-in-law, father-in-law, mother-in-law, brother-in-law, or sister-in-law</li>
+                          <li>The spouse of any individual listed above</li>
+                          <li>First cousin</li>
+                      </ol>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/insurance/retirement-contributions.jpg" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Pros and cons</h3>
+                    <p class="fst-italic">Benefits and issues of a 529 plan</p>
+                     <table class="mntl-sc-block-table__table" style="padding:5%">
+                        <colgroup style="padding:5%"></colgroup>
+                        <colgroup style="padding:5%"></colgroup>
+                        <thead>
+                        <tr>
+                        <th>Benefits&nbsp;</th>
+                        <th>Issues</th>
+                        </tr>
+                        </thead>
+                        <tbody data-check="0">
+                        <tr>
+                        <td style="padding:1%">High contribution limit</td>
+                        <td style="padding:1%">Limited investment options</td>
+                        </tr>
+                        <tr>
+                        <td style="padding:1%">Flexible plan location</td>
+                        <td style="padding:1%">Different fee levels per state</td>
+                        </tr>
+                        <tr>
+                        <td style="padding:1%">Easy to open and maintain</td>
+                        <td style="padding:1%">Fees can vary; restriction on changing plans</td>
+                        </tr>
+                        <tr>
+                        <td style="padding:1%">Tax-deferred growth</td>
+                        <td style="padding:1%">Restriction on switching investments</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:1%">Tax-free withdrawals</td>
+                            <td style="padding:1%">Must be used for education</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:1%">Tax-deductible contributions</td>
+                            <td style="padding:1%">Depends on state; restrictions apply</td>
+                        </tr>
+                        </tbody>
+                        </table>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-5.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+{% include "footer.html" %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

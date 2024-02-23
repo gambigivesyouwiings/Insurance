@@ -97,6 +97,11 @@ def ira():
     return render_template("ira.html")
 
 
+@app.route("/college_funding")
+def college():
+    return render_template("college.html")
+
+
 @app.route("/annuity")
 def annuity():
     return render_template("annuities.html")
@@ -119,7 +124,7 @@ def pricing():
 
 @app.route("/testimonial")
 def testimonials():
-    return render_template("testimonials.html")
+    return render_template("college.html")
 
 
 @app.route("/blog_single")
