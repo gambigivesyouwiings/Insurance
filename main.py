@@ -107,6 +107,31 @@ def annuity():
     return render_template("annuities.html")
 
 
+@app.route("/business_continuation")
+def business_continuation():
+    return render_template("business-continuation.html")
+
+
+@app.route("/business_transition")
+def business_transition():
+    return render_template("business-transition.html")
+
+
+@app.route("/key_employee_insurance_plans")
+def key_plans():
+    return render_template("annuities.html")
+
+
+@app.route("/guaranteed_lifetime_income_rider")
+def income_rider():
+    return render_template("annuities.html")
+
+
+@app.route("/executive_bonus_plans")
+def executive():
+    return render_template("annuities.html")
+
+
 @app.route("/mblog")
 def blog():
     return render_template("blog.html")

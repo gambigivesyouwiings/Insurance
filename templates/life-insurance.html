@@ -72,15 +72,15 @@
           </li>
           <li class="dropdown"><a href="#"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="#">Business Transition Plans</a></li>
-                  <li><a href="#">Business Continuation Plans</a></li>
+                  <li><a href="{{url_for('business_transition')}}">Business Transition Plans</a></li>
+                  <li><a href="{{url_for('business_continuation')}}">Business Continuation Plans</a></li>
                 </ul>
               </li>
           <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="#">Key employee Insurance plans</a></li>
-                  <li><a href="#">Guaranteed Lifetime Income Rider</a></li>
-                  <li><a href="#">Executive Bonus Plans</a></li>
+                  <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
                 </ul>
               </li>
           <li><a href="{{url_for('portfolio')}}">Youtube Videos</a></li>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Business Transition</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Sailor
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Faithful Finance</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home')}}">Home</a></li>
+
+          <li class="dropdown"><a href="#"><span>Families & Individuals</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
+              <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
+              <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
+              <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
+              <li><a href="{{url_for('long_term')}}">Tax Qualified Long Term Care Insurance</a></li>
+              <li><a href="{{url_for('ira')}}">IRA</a></li>
+              <li><a href="{{url_for('annuity')}}" class="active">Annuities</a></li>
+
+              <li class="dropdown"><a href="#"><span>Dental Insurance</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Mutual Dental Protection</a></li>
+                  <li><a href="#">Mutual Dental Preffered</a></li>
+                </ul>
+              </li>
+              <li><a href="{{url_for('testimonials')}}">College Funding</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="active"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('business_transition')}}" class="active">Business Transition Plans</a></li>
+                  <li><a href="{{url_for('business_continuation')}}">Business Continuation Plans</a></li>
+                </ul>
+              </li>
+          <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
+                </ul>
+              </li>
+          <li><a href="{{url_for('portfolio')}}">Youtube Videos</a></li>
+          <li><a href="{{url_for('pricing')}}">Pricing</a></li>
+          <li><a href="{{url_for('blog')}}">Blog</a></li>
+
+          <li><a href="{{url_for('contact')}}">Contact</a></li>
+          <li><a href="{{url_for('home')}}" class="getstarted">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2></h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Business Transition Plans</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6">
+              <img src="static/assets/img/blog/blog-4.jpg" class="img-fluid" alt="">
+              <br><br><br>
+              <br><br>
+              <div class="icon-box">
+                <a href="{{url_for('contact')}}"><i class="bi bi-phone-vibrate"></i></a>
+              <h4><a href="{{url_for('contact')}}">Would you like to learn more?</a></h4>
+              <p>Request a call! We'll get back to you as soon as possible.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+              <p>A big portion of your retirement plan is probably dependent on selling your business. With a carefully
+                crafted business transition plan, you can help meet your retirement goals and successfully transfer your
+                business. Even if you are not depending on your business for retirement, you may be planning for the
+                ultimate transition it to family members.
+                    <br>
+                    <br>
+                  A business transition plan may include a buy-sell agreement with your co-owners that outlines the
+                terms of the sale, including triggering events and how and when the sale price will be paid. If you plan
+                to have family members take over the business, the buy-sell agreement should be a “bona fide” agreement.
+                In all family transfer situations, a professional valuation or appraisal is highly recommended to
+                establish an independent fair market value of the business.
+                  <br>
+                  <br>
+                  If you are going to sell your business interest at retirement you may be concerned about:
+                  </p>
+                  <ol>
+                      <li>Determining how and when the purchase price will be paid.</li>
+                      <li>Minimizing tax consequences.</li>
+                      <li>Improving the creditworthiness of the business.</li>
+                      <li>Leaving the business in good financial shape for the future owners.</li>
+                      <li>Being sure the purchaser will have the funds to complete the buy-out.</li>
+                  </ol>
+                  <p>If your plan is for family members to take over the business, you may also be wondering:</p>
+                  <ol>
+                      <li>How long do I stay on for a successful transition?</li>
+                      <li>Are they familiar enough with the business and ready to take over management?</li>
+                      <li>What about my children who are not involved in the business?</li>
+                  </ol>
+                  <p>
+                  Sales between family members are often subject to more scrutiny by the IRS. More specifically, the IRS
+                  may question the sale price or valuation method used. If the price is determined to be higher or lower
+                  than “fair market value,” the sale may be re-characterized as a part sale, part gift transaction,
+                  resulting in potential gift tax liability or inclusion of a portion of the sale price in the seller’s
+                  gross estate.
+              </p>
+              <a href="#"> Visit our Frequently asked questions</a>
+              <br>
+              <br>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Business Transition Plans</h2>
+          <p>Things to look out for</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Funding the buyout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Sinking Fund</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Installment sale</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Gifting the business to the family</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Estate Equalization</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Funding the buyout</h3>
+                      <p class="fst-italic">If you have established an agreement between yourself and your co-owners,
+                          one major concern is to be sure the purchaser will have the funds to complete the buy-out.
+                      </p>
+                      <p> There are a number of ways to fund a buy-out at retirement (there are different concerns for a
+                          buy-out triggered at death or disability).
+                      </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/insurance/BizEquity-Logo.jpg" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Sinking Fund</h3>
+                    <p class="fst-italic">When there is time to plan, the use of a Sinking Fund (some of us call this a
+                        savings account) can be a way to accumulate money for the ultimate buy-out.
+                    </p>
+                       <p>A Sinking Fund is when the buyer sets dollars aside to accumulate to the purchase price in
+                           advance of the sale. These funds are often held in an interest-bearing account and, depending
+                           on the time frame, the sinking fund may or may not have accumulated the funds needed by the
+                           time the purchase takes place.
+                            <br>
+                           If the party interested in purchasing your business doesn’t have the cash available to fund a
+                           lump sum purchase, they may be able to borrow funds from a lender to complete the purchase.
+                           There are challenges to borrowing funds from a third party lender – you don’t know what the
+                           interest rate will be at the time retirement occurs, it’s impossible to know whether the
+                           lenders will make the loan to you, and finally, will the business be able to absorb the new
+                           debt and continue to be a viable business entity?
+                           <br>
+                            A classic method is to pay the purchase price over time in the form of an installment buy out
+                           An added benefit of allowing the purchase to be spread over time allows you to spread any gain
+                           on the sale over the payment period.
+                       </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Installment Sale</h3>
+                    <p class="fst-italic">An installment sale is a “seller-financed,” deferred-payment financing
+                        arrangement.
+                    </p>
+                       <p> The buyer gives the seller a promissory note and then makes payments towards the purchase
+                           price over two or more years. The parties to the agreement have a significant amount of
+                           flexibility in determining the terms of the note, including the interest rate, the amount of
+                           each payment or the duration of the note.
+                            <br>
+                           Payment can even be deferred until after retirement when the seller may be in a lower income
+                           tax bracket. The buyer must continue to make payments of principal and interest to the seller
+                           or the seller’s estate until the full price is paid.
+                            <br>
+                           Ownership of the business passes to the buyer immediately when the installment note is
+                           executed. This can serve to “freeze the value of the business” – any subsequent appreciation
+                           for the business is removed from the seller’s estate. Should the seller’s death occur before
+                           all payments are received, only the balance due on the note is included in the value of their
+                           estate.
+                       </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Installment Sale</h3>
+                    <p class="fst-italic">Estate Equalization using life insurance can help ensure all of your heirs are
+                        treated fairly and equitably.
+                    </p>
+                       <p> If your plan is to transfer your business to family members, leaving equal shares of the
+                           business to family members actively involved in the business as well as those who are not can
+                           often cause conflict. Leaving the business to only the participating family members can also
+                           cause conflict within the family.
+                            <br>
+                           So, what to do? One option to keep peace within the family is to leave non-business assets to
+                           non-participating family members to equalize the distribution of your estate.
+                            <br>
+                           Another option is to purchase a life insurance policy to help achieve an equitable transfer
+                           of your estate. You can leave your business to family members involved in the business and use
+                           the life insurance proceeds to provide an inheritance for other family members.
+                       </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+                <div class="tab-pane" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Gifting the business to the family</h3>
+                    <p class="fst-italic">The benefits of gifting a business to family members are two-fold.
+                    </p>
+                       <p> First, gifting lets you shift the business interests to those of your choice. You control both
+                           the timing and the size of the gifts.
+                            <br>
+                           Second, gifting can reduce the value of your interest in the business, both for purposes of
+                           future estate tax liability or a future sale. Valuation discounts may be used to further reduce
+                           the value of the transfers.
+                           <br><br>
+                           There are several ways to make gifts:
+                       </p>
+                      <h4>Annual Exclusion Gifts</h4>
+                      <p>
+                           An annual gifting program of business interests provides a way to systematically reduce your
+                          business interest over a period of years.
+                            <br>
+                           Gifts up to the annual limit can be made to an unlimited number of beneficiaries each calendar
+                          year. A married donor can take advantage of “gift splitting.” This allows one spouse to
+                          transfer twice as much, even if all the assets being transferred are owned by one spouse.
+                          However, depending on the size of the business, the number of intended recipients and the
+                          age of the business owner, the time frame during which to transfer the business using only
+                          the annual exclusion amount may not be sufficient.
+                       </p>
+                      <h4>Lifetime Transfer Tax Exemption</h4>
+                      <p>
+                           Each individual has a lifetime transfer tax exemption amount. You may want to consider making
+                          a gift up to this amount during your lifetime, rather than upon death, to remove potential
+                          appreciation of the business interest from your estate now.
+                            <br>
+                           This could result in a significant estate tax savings, especially if the value of the business
+                          is expected to increase substantially over time.
+                       </p>
+                      <h4>Gift Savings Devices</h4>
+                      <p>
+                           When you use the annual exclusion or lifetime exemption amounts, the asset being transferred
+                          must be valued. It may be possible to use certain techniques that allow you to take certain
+                          discounts, effectively letting you transfer more of the business while staying within the
+                          limits of the annual exclusion and lifetime exemption amounts.
+                            <br>
+                           One of these techniques is the use of a family limited partnership. A business interest can be
+                          transferred using another entity, such as a Family Limited Partnership (FLP).
+                          <br>
+                          With an FLP, you transfer part or all of your business interest to an FLP in return for general
+                          and limited partnership interest. You may retain the general partnership interest (at least for
+                          a period of time), retaining control of the business and receiving an income, and then gift
+                          some or all of the limited partnership interest to your family (either outright or in trust).
+                       </p>
+                      <h4>Bequest or Transfers at Death</h4>
+                      <p>
+                           Instead of gifting the business during life, you may want to transfer the business at death.
+                            <br>
+                           To ensure that the business is actually distributed to the people you want it transferred to,
+                          a valid will or trust should be in place. The absence of a will or a trust could result in the
+                          business being split among your heirs, including people who may have no interest in owning the
+                          business.
+                          <br>
+                          While this strategy will allow you to retain control of the business for as long as possible,
+                          and provides a stepped up basis for the recipient(s), there are drawbacks. The value of the
+                          business will be included in your gross estate, which,depending on the value of your other
+                          assets could result in an estate tax liability.
+                       </p>
+
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+{% include "footer.html" %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
