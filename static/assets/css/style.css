@@ -1229,6 +1229,41 @@ section {
 /*--------------------------------------------------------------
 # Frequently Asked Questions
 --------------------------------------------------------------*/
+.faq .tab-pane.active {
+  animation: fadeIn 0.5s ease-out;
+}
+.faq .nav-link {
+  border: 0;
+  padding: 12px 15px 12px 0;
+  transition: 0.3s;
+  color: #556270;
+  border-radius: 0;
+  border-right: 2px solid white;
+  font-weight: 600;
+  font-size: 15px;
+}
+.faq .nav-link:hover {
+  color: #d9232d;
+}
+.faq .nav-link.active {
+  color: #d9232d;
+  border-color: #d9232d;
+}
+
+.faq .card {
+width:95%;
+border-width:0 0 thin 0;
+}
+
+.faq i {
+position: absolute;
+right:0;
+}
+
+.faq span {
+color: #d9232d;
+}
+
 .faq .faq-item {
   margin: 20px 0;
   padding: 20px 0;

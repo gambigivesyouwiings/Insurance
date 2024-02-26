@@ -84,7 +84,17 @@ def living_benefits():
 
 @app.route("/medical-cover")
 def medical_cover():
-    return render_template("living-benefits.html")
+    return render_template("medical.html")
+
+
+@app.route("/dental-cover")
+def dental_cover():
+    return render_template("dental.html")
+
+
+@app.route("/disability-cover")
+def disability_cover():
+    return render_template("disability-insurance.html")
 
 
 @app.route("/long-term")
@@ -119,17 +129,17 @@ def business_transition():
 
 @app.route("/key_employee_insurance_plans")
 def key_plans():
-    return render_template("annuities.html")
+    return render_template("key-employee.html")
 
 
 @app.route("/guaranteed_lifetime_income_rider")
 def income_rider():
-    return render_template("annuities.html")
+    return render_template("GLIR.html")
 
 
 @app.route("/executive_bonus_plans")
 def executive():
-    return render_template("annuities.html")
+    return render_template("executive.html")
 
 
 @app.route("/mblog")
@@ -144,12 +154,12 @@ def team():
 
 @app.route("/price")
 def pricing():
-    return render_template("pricing.html")
+    return render_template("FAQS.html")
 
 
 @app.route("/testimonial")
 def testimonials():
-    return render_template("college.html")
+    return render_template("testimonials.html")
 
 
 @app.route("/blog_single")
