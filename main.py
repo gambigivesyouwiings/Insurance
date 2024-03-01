@@ -1,17 +1,29 @@
-import mimetypes
-
 from flask import Flask, render_template, request, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
-import requests
-import json
 import smtplib
 import os
+from dotenv import load_dotenv
+from twilio.rest import Client
+
+dotenv_path = "C:/Users/munen/OneDrive/Documents/ffinance/new.txt"
+load_dotenv(dotenv_path)
 
 
-# from quickstart import GoogleDriveApi
+account_sid = os.environ.get('account_sid')
+auth_token = os.environ.get('auth_token')
+client = Client(account_sid, auth_token)
 
 
-map_api = os.getenv("map_api")
+def send_text(name, email, number, quote):
+    body = f"You got a new message from {name}\nPhone number:{number}\nEmail:{email}\nMessage:{quote}"
+    message = client.messages.create(
+        from_=os.environ.get('twilio'),
+        to=os.environ.get('me'),
+        body=body
+    )
+    print(message.sid)
+
+
 app = Flask(__name__)
 
 app.config['GOOGLEMAPS_KEY'] = os.getenv("google_key")
@@ -19,9 +31,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:/
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy()
 db.init_app(app)
-# drive = GoogleDriveApi()
-# f = drive.download_file(real_file_id="1-e_w9p52otiIp5S8onSNB3tnPruDPQFC", path="static")
-# print(f)
 
 
 class Posts(db.Model):
@@ -44,8 +53,9 @@ def contact():
     if request.method == "POST":
         name = request.form["name"]
         email = request.form["email"]
-        subject = request.form["subject"]
+        number = request.form["number"]
         message = request.form["message"]
+        # send_text(name=name, email=email, number=number, quote=message)
         # if email != "":
         #     flash("Your message has been sent. Thank you!")
         print(email)
@@ -152,9 +162,14 @@ def team():
     return render_template("team.html")
 
 
-@app.route("/price")
-def pricing():
+@app.route("/FAQs")
+def faqs():
     return render_template("FAQS.html")
+
+
+@app.route("/pricing")
+def pricing():
+    return render_template("pricing.html")
 
 
 @app.route("/testimonial")

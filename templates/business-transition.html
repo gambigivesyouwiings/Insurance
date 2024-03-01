@@ -56,23 +56,23 @@
               <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
               <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
               <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
-              <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
               <li><a href="{{url_for('long_term')}}">Tax Qualified Long Term Care Insurance</a></li>
               <li><a href="{{url_for('ira')}}">IRA</a></li>
               <li><a href="{{url_for('annuity')}}">Annuities</a></li>
 
-              <li class="dropdown"><a href="#"><span>Dental Insurance</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="#"><span> Health </span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Mutual Dental Protection</a></li>
-                  <li><a href="#">Mutual Dental Preffered</a></li>
+                  <li><a href="{{url_for('dental_cover')}}">Dental Insurance</a></li>
+                  <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
+                  <li><a href="{{url_for('disability_cover')}}">Disability Insurance</a></li>
                 </ul>
               </li>
-              <li><a href="{{url_for('testimonials')}}">College Funding</a></li>
+              <li><a href="{{url_for('college')}}">College Funding</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#" class="active"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="{{url_for('business_transition')}}" class="active">Business Transition Plans</a></li>
+                  <li><a href="{{url_for('business_transition')}}">Business Transition Plans</a></li>
                   <li><a href="{{url_for('business_continuation')}}">Business Continuation Plans</a></li>
                 </ul>
               </li>
@@ -83,12 +83,8 @@
                   <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
                 </ul>
               </li>
-          <li><a href="{{url_for('portfolio')}}">Youtube Videos</a></li>
-          <li><a href="{{url_for('pricing')}}">Pricing</a></li>
-          <li><a href="{{url_for('blog')}}">Blog</a></li>
-
-          <li><a href="{{url_for('contact')}}">Contact</a></li>
-          <li><a href="{{url_for('home')}}" class="getstarted">Get Started</a></li>
+          <li><a href="{{url_for('faqs')}}">FAQs</a></li>
+          <li><a href="{{url_for('contact')}}" class="getstarted">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -105,7 +101,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2> Business Transition Plans </h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{url_for('home')}}">Home</a></li>
             <li>Business Transition Plans</li>
           </ol>
         </div>
@@ -131,7 +127,7 @@
           <div class="col-md-6 mt-4 mt-md-0">
               <p>A big portion of your retirement plan is probably dependent on selling your business. With a carefully
                 crafted business transition plan, you can help meet your retirement goals and successfully transfer your
-                business. Even if you are not depending on your business for retirement, you may be planning for the
+                business. Even if you do not depend on your business for retirement, you may be planning for the
                 ultimate transition it to family members.
                     <br>
                     <br>
@@ -164,7 +160,7 @@
                   resulting in potential gift tax liability or inclusion of a portion of the sale price in the seller’s
                   gross estate.
               </p>
-              <a href="#"> Visit our Frequently asked questions</a>
+              <a href="{{url_for('faqs')}}"> Visit our Frequently asked questions</a>
               <br>
               <br>
           </div>

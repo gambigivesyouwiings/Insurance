@@ -2,8 +2,11 @@ import requests
 from main import app, db, Posts
 import sqlalchemy
 import os
+from dotenv import load_dotenv
 
-key = os.environ.get("API")
+dotenv_path = "C:/Users/munen/OneDrive/Documents/ffinance/new.txt"
+load_dotenv(dotenv_path)
+key = os.environ.get("key")
 
 try:
     request = requests.get(f"https://www.googleapis.com/youtube/v3/search?key={key}&channelId=UCqliVFoKxKlqiAII23CPW1A&part=snippet,id&order=date&maxResults=20")
