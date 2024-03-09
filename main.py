@@ -5,20 +5,21 @@ import os
 from dotenv import load_dotenv
 from twilio.rest import Client
 
-dotenv_path = "C:/Users/munen/OneDrive/Documents/ffinance/new.txt"
-load_dotenv(dotenv_path)
+# dotenv_path = "C:/Users/munen/OneDrive/Documents/ffinance/new.txt"
+# load_dotenv(dotenv_path)
 
 
-account_sid = os.environ.get('account_sid')
-auth_token = os.environ.get('auth_token')
-client = Client(account_sid, auth_token)
+account_sid = os.getenv('account_sid')
+auth_token = os.getenv('auth_token')
+print(account_sid)
+#client = Client()
 
 
 def send_text(name, email, number, quote):
     body = f"You got a new message from {name}\nPhone number:{number}\nEmail:{email}\nMessage:{quote}"
     message = client.messages.create(
-        from_=os.environ.get('twilio'),
-        to=os.environ.get('me'),
+        from_=os.getenv('twilio'),
+        to=os.getenv('me'),
         body=body
     )
     print(message.sid)
