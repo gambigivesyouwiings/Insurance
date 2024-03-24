@@ -834,6 +834,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-links {
   text-align: center;
+  position: relative;
   z-index: 4;
 }
 
@@ -1246,8 +1247,28 @@ section {
   color: #d9232d;
 }
 .faq .nav-link.active {
+  cfont-family: "Raleway", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 4px;
+  transition: 0.5s;
+  line-height: 1;
   color: #d9232d;
+  animation-delay: 0.8s;
   border-color: #d9232d;
+}
+@media (max-width: 992px) {
+  .faq .nav-link {
+    border: 0;
+    padding: 15px;
+  }
+
+  .faq .nav-link.active {
+    color: #fff;
+    background: #d9232d;
+  }
 }
 
 .faq .card {
@@ -1262,6 +1283,8 @@ right:0;
 
 .faq span {
 color: #d9232d;
+float: left;
+text-align: left;
 }
 
 .faq .faq-item {
@@ -1279,11 +1302,10 @@ color: #d9232d;
   margin: 0;
 }
 
-.faq .faq-item h4 {
-  font-size: 16px;
+.faq h4 {
   line-height: 26px;
   font-weight: 500;
-  margin: 0 0 10px 28px;
+  margin: 4% 0 2%;
   font-family: "Poppins", sans-serif;
 }
 

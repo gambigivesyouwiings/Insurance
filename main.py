@@ -1,18 +1,58 @@
-from flask import Flask, render_template, request, url_for, flash
+import requests
+from flask import Flask, render_template, request, url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 import smtplib
 import os
 from dotenv import load_dotenv
 from twilio.rest import Client
+import json
+import aiohttp
+import asyncio
 
-# dotenv_path = "C:/Users/munen/OneDrive/Documents/ffinance/new.txt"
-# load_dotenv(dotenv_path)
 
+dotenv_path = "C:/Users/User/OneDrive/Documents/ffinance/f.txt"
+load_dotenv(dotenv_path)
 
 account_sid = os.getenv('account_sid')
 auth_token = os.getenv('auth_token')
 print(account_sid)
-#client = Client()
+client = Client(account_sid, auth_token)
+
+
+async def send_message(data):
+    headers = {
+        "Content-type": "application/json",
+        "Authorization": f"Bearer {app.config['ACCESS_TOKEN']}",
+    }
+
+    async with aiohttp.ClientSession() as session:
+        url = 'https://graph.facebook.com' + f"/{app.config['VERSION']}/{app.config['PHONE_NUMBER_ID']}/messages"
+        try:
+            async with session.post(url, data=data, headers=headers) as response:
+                if response.status == 200:
+                    print("Status:", response.status)
+                    print("Content-type:", response.headers['content-type'])
+
+                    html = await response.text()
+                    print("Body:", html)
+                else:
+                    print(response.status)
+                    print(response)
+        except aiohttp.ClientConnectorError as e:
+            print('Connection Error', str(e))
+
+
+def get_text_message_input(recipient, text):
+    return json.dumps({
+        "messaging_product": "whatsapp",
+        "preview_url": False,
+        "recipient_type": "individual",
+        "to": recipient,
+        "type": "text",
+        "text": {
+            "body": text
+        }
+    })
 
 
 def send_text(name, email, number, quote):
@@ -33,6 +73,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy()
 db.init_app(app)
 
+with open('config.json') as f:
+    config = json.load(f)
+
+app.config.update(config)
+
 
 class Posts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -47,6 +92,25 @@ class Posts(db.Model):
 def home():
     videos = db.session.query(Posts).all()
     return render_template("index.html", videos=videos)
+
+
+@app.route('/welcome', methods=['GET', 'POST'])
+async def welcome():
+    data = get_text_message_input(app.config['RECIPIENT_WAID']
+                                  , 'Welcome to the Flight Confirmation Demo App for Python!');
+    await send_message(data)
+    return redirect(url_for('home'))
+
+
+@app.route("/devin")
+def add():
+    videos = db.session.query(Posts).all()
+    video = []
+    for row in videos:
+        dict = {'img_url': row.img_url, 'video_url': row.video_url, 'body': row.body, 'title': row.title}
+        video.append(dict)
+    print(len(video))
+    return video
 
 
 @app.route("/contact_us", methods=["GET", "POST"])
