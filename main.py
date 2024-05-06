@@ -10,14 +10,13 @@ import aiohttp
 import asyncio
 
 
-dotenv_path = "C:/Users/User/OneDrive/Documents/ffinance/f.txt"
-load_dotenv(dotenv_path)
+# dotenv_path = "C:/Users/User/OneDrive/Documents/ffinance/f.txt"
+# load_dotenv(dotenv_path)
 
 account_sid = os.getenv('account_sid')
 auth_token = os.getenv('auth_token')
 print(account_sid)
 client = Client(account_sid, auth_token)
-
 
 async def send_message(data):
     headers = {
@@ -73,10 +72,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy()
 db.init_app(app)
 
-with open('config.json') as f:
-    config = json.load(f)
+# with open('config.json') as f:
+#     config = json.load(f)
 
-app.config.update(config)
+# app.config.update(config)
 
 
 class Posts(db.Model):
