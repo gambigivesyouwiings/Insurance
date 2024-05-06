@@ -207,9 +207,9 @@ def key_plans():
     return render_template("key-employee.html")
 
 
-@app.route("/guaranteed_lifetime_income_rider")
+@app.route("/qualified_plans")
 def income_rider():
-    return render_template("GLIR.html")
+    return render_template("qualified.html")
 
 
 @app.route("/executive_bonus_plans")

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Qualified plans</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Sailor
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Faithful Insurance</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home')}}">Home</a></li>
+
+          <li class="dropdown"><a href="#"><span>Families & Individuals</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
+              <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
+              <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
+              <li><a href="{{url_for('long_term')}}">Tax Qualified Long Term Care Insurance</a></li>
+              <li><a href="{{url_for('ira')}}">IRA</a></li>
+              <li><a href="{{url_for('annuity')}}">Annuities</a></li>
+
+              <li class="dropdown"><a href="#"><span> Health </span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="{{url_for('dental_cover')}}">Dental Insurance</a></li>
+                  <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
+                  <li><a href="{{url_for('disability_cover')}}">Disability Insurance</a></li>
+                </ul>
+              </li>
+              <li><a href="{{url_for('college')}}">College Funding</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('business_transition')}}">Business Transition Plans</a></li>
+                  <li><a href="{{url_for('business_continuation')}}">Business Continuation Plans</a></li>
+                </ul>
+              </li>
+          <li class="dropdown"><a href="#" class="active"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('key_plans')}}" class="active">Key employee Insurance plans</a></li>
+                  <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Qualified plans</a></li>
+                </ul>
+              </li>
+          <li><a href="{{url_for('faqs')}}">FAQs</a></li>
+          <li><a href="{{url_for('contact')}}" class="getstarted">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Qualified plans</h2>
+          <ol>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li>Qualified plans</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6">
+              <img src="static/assets/img/insurance/business.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+              <p>One of the benefits of owning a business is that you have tax-favored options to save for retirement
+                  that non-business owners don’t have. Your business can sponsor a qualified plan which may be designed
+                  to drive the majority of the benefits to you. This is a classic way to shift business dollars to you
+                  for retirement.
+                    <br>
+                    <br>
+                  With <b>defined contribution plans</b>, you define how much money you want to contribute to the plan. What is
+                  available for retirement will depend on the contributions actually made and the earnings on those contributions.
+                  With <b>defined benefit plans</b>, your retirement benefit is defined under the plan. (For example 75% of the highest five
+                  consecutive years' salary over the last 10 years.) The contribution amount will be based on a number
+                  of factors, including the benefit being promised, the number of years until retirement and an interest
+                  rate assumption.
+              </p>
+              <p>Benefits of a qualified plan include:</p>
+              <ol>
+                  <li>Contributions to the plan are tax-deductible to the business.</li>
+                  <li>Contributions are not currently taxable to the participants.</li>
+                  <li>Earnings on contributions grow tax deferred.</li>
+                  <li>Contributions made on behalf of employees can be paid with dollars that would have otherwise been spent on taxes.</li>
+                  <li>Qualified plans are protected from creditors</li>
+                  <li>Provides a valuable benefit to employees and helps to attract and retain employees.</li>
+                  <li>Taxation of benefits are deferred until taken in the future.</li>
+              </ol>
+              <a href="{{url_for('faqs')}}"> Visit our Frequently asked questions</a>
+              <br>
+              <br>
+            <div class="icon-box">
+                <a href="{{url_for('contact')}}"><i class="bi bi-phone-vibrate"></i></a>
+              <h4><a href="{{url_for('contact')}}">Would you like to learn more?</a></h4>
+              <p>Request a call! We'll get back to you as soon as possible.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Qualified Plans</h2>
+          <p>Here is a sample of what we offer</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Simplified Employee Pension</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Simplified IRA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Solo 401(k)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Defined Benefit Plan/Profit Sharing</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Simplified Employee Pension</h3>
+                      <p class="fst-italic">Sep is A Simplified Employee Pension (SEP) plan provides business owners with
+                          a simplified method to contribute toward their employees' retirement as well as their own
+                          retirement savings. Contributions are made to an Individual Retirement Account or Annuity (IRA)
+                          set up for each plan participant (a SEP-IRA)
+                      </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-1.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Simple IRA</h3>
+                    <p class="fst-italic">A SIMPLE IRA plan (Savings Incentive Match PLan for Employees) allows employees
+                        and employers to contribute to traditional IRAs set up for employees. It is ideally suited as a
+                        start-up retirement savings plan for small employers not currently sponsoring a retirement plan.
+                    </p>
+                       <p> SIMPLE IRA plans can provide a significant source of income at retirement by allowing employers
+                           and employees to set aside money in retirement accounts. SIMPLE IRA plans do not have the
+                           start-up and operating costs of a conventional retirement plan.</p>
+                      <ol>
+                          <li>Available to any small business – generally with 100 or fewer employees
+                          </li>
+                          <li>Easily established by adopting
+                              <a href="https://www.irs.gov/pub/irs-pdf/f5304sim.pdf" target="_blank"> Form 5304-SIMPLE</a>,
+                              <a href="https://www.irs.gov/pub/irs-pdf/f5305sim.pdf" target="_blank"> Form 5305-SIMPLE</a>,
+                              a SIMPLE IRA prototype or an individually designed plan document
+                          </li>
+                          <li>Employer cannot have any other retirement plan</li>
+                          <li>No filing requirement for the employer
+                          </li>
+                          <li>Employees may elect to contribute
+                          </li>
+                          <li>Employee is always 100% vested in (or, has ownership of) all SIMPLE IRA money</li>
+                      </ol>
+                      <p>Employer is required to contribute each year either a:</p>
+                      <ol>
+                          <li>Matching contribution up to 3% of compensation (not limited by the annual compensation limit), or</li>
+                          <li>2% non-elective contribution for each eligible employee</li>
+                          <li>Under the "non-elective" contribution formula, even if an eligible employee doesn't contribute
+                              to his or her SIMPLE IRA, that employee must still receive an employer contribution to his
+                              or her SIMPLE IRA equal to 2% of his or her compensation up to the annual limit of
+                              $330,000 for 2023; $305,000 for 2022; $290,000 for 2021; $285,000 for 2020 (subject to
+                              <a href="https://www.irs.gov/retirement-plans/cola-increases-for-dollar-limitations-on-benefits-and-contributions" target="_blank">cost-of-living adjustments</a> in later years)
+                          </li>
+                      </ol>
+                      <h3>Example of how a simple IRA works:</h3>
+                      <p><b>Example 1</b>:<br>
+Elizabeth works for the Rockland Quarry Company, a small business with 50 employees. Rockland has decided to establish a SIMPLE IRA plan for its employees and will match its employees' contributions dollar-for-dollar up to 3% of each employee's compensation. Under this option, if a Rockland employee does not contribute to his or her SIMPLE IRA, then that employee does not receive any matching employer contribution.
+
+Elizabeth has a yearly compensation of $50,000 and contributes 5% of her compensation ($2,500) to her SIMPLE IRA. The Rockland matching contribution is $1,500 (3% of $50,000). Therefore, the total contribution to Elizabeth's SIMPLE IRA that year is $4,000 (her $2,500 contribution plus Rockland's $1,500 contribution). The financial institution holding Elizabeth's SIMPLE IRA has several investment choices, and she is free to choose which ones suit her best.
+
+<br><b>Example 2</b>:<br>
+Austin works for the Skidmore Tire Company, a small business with 75 employees. Skidmore has a SIMPLE IRA plan for its employees and will make a 2% nonelective contribution for each of them. Under this option, even if a Skidmore employee does not contribute to his or her SIMPLE IRA, that employee would still receive an employer contribution to his or her SIMPLE IRA equal to 2% of compensation.
+
+Austin's annual compensation is $40,000. Even if Austin does not contribute this year, Skidmore must still make a contribution of $800 (2% of $40,000).</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+                <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Solo 410k</h3>
+                    <p class="fst-italic">A solo 401(k) is an individual 401(k) designed for a business owner with no
+                        employees. In fact, IRS rules say you can’t contribute to a solo 401(k) if you have full-time
+                        employees, though you can use the plan to cover both you and your spouse.
+                    </p>
+                       <p>This arrangement is appropriate where the business entity will continue to operate for a
+                           long period, at least long enough to pay the benefits promised under the arrangement.
+                           Essentially, the business promises to pay a benefit to the executive at some time in the
+                           future (often at retirement age).
+                           <br>
+                           Just want the need-to-know basics about this retirement account? Here’s the breakdown:
+                       </p>
+                      <table class="_2IadDu mKU3h6" aria-label="Table 3192" cellpadding="10px" tabindex="0"><tbody><tr class="_3JPvLN"><td class="_1ieTZs"><div class="_3wlVa6 _2247K8 _3eCw6n"><div class="_3wlVa6 _2247K8"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">Eligibility rules</span></p></div></div></td><td class="_1ieTZs"><div class="_3wlVa6 _2247K8 _3eCw6n"><div class="_3wlVa6 _2247K8"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">No age or income restrictions, but must be a business owner with no employees. </span></p></div></div></td></tr><tr class="_3JPvLN _12EOjr"><td class="_1ieTZs _12EOjr"><div class="_3wlVa6 _2247K8 _3eCw6n"><div class="_3wlVa6 _2247K8"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">Contribution limit</span></p></div></div></td><td class="_1ieTZs _12EOjr"><div class="_3wlVa6 _2247K8 _3eCw6n"><div class="_3wlVa6 _2247K8"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">Total of up to $69,000 in 2024, with an additional catch-up contribution of $7,500 for those 50 or older.</span></p></div></div></td></tr><tr class="_3JPvLN"><td class="_1ieTZs"><div class="_3wlVa6 _2247K8 _3eCw6n"><div class="_3wlVa6 _2247K8"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">Taxes on contributions</span></p></div></div></td><td class="_1ieTZs"><div class="_3wlVa6 _2247K8 _3eCw6n"><div class="_3VJt4n"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">Traditional 401(k): Contributions are made pre-tax, reducing taxable income for the year.</span></p></div><div class="_3wlVa6 _2247K8"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">Roth 401(k): Contributions are made with after-tax dollars. </span></p></div></div></td></tr><tr class="_3JPvLN _12EOjr"><td class="_1ieTZs _12EOjr"><div class="_3wlVa6 _2247K8 _3eCw6n"><div class="_3wlVa6 _2247K8"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">Taxes on qualified distributions in retirement</span></p></div></div></td><td class="_1ieTZs _12EOjr"><div class="_3wlVa6 _2247K8 _3eCw6n"><div class="_3VJt4n"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">Traditional 401(k): Qualified distributions are taxed at ordinary income rates. </span></p></div><div class="_3wlVa6 _2247K8"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">Roth 401(k): Qualified distributions are tax-free.</span></p></div></div></td></tr><tr class="_3JPvLN"><td class="_1ieTZs"><div class="_3wlVa6 _2247K8 _3eCw6n"><div class="_3wlVa6 _2247K8"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">How to open</span></p></div></div></td><td class="_1ieTZs"><div class="_3wlVa6 _2247K8 _3eCw6n"><div class="_3wlVa6 _2247K8"><p class="_28z5Fp _3-to_p"><span class="_28z5Fp _3-to_p">As long as you have an employer identification number, you can open a solo 401(k) at many online brokers — any of the ones on our list of best brokers for IRAs would also be a good fit for a 401(k). </span></p></div></div></td></tr></tbody></table>
+                      <h4>Solo 401(k) contribution limits</h4><p>The total solo 401(k) contribution limit is up to $69,000 in 2024. There is a catch-up contribution of an extra $7,500 for those 50 or older.
+                          <br><br>To understand solo 401(k) contribution rules, you want to think of yourself as two people: an employer (of yourself) and an employee (yes, also of yourself). Within that overall $69,000 in 2024, your contributions are subject to additional limits in each role::</p>
+                      <ol>
+                          <li>As the employee, you can contribute up to $23,000 in 2024, or 100% of compensation, whichever is less. Those 50 or older get to contribute an additional $7,500.
+                          </li>
+                          <li>As the employer, you can make an additional profit-sharing contribution of up to 25% of your compensation or net self-employment income, which is your net profit less half your self-employment tax and the plan contributions you made for yourself.
+                          </li>
+                          <li>The limit on compensation that can be used to factor your contribution is $345,000 in 2024. These contributions need to be made by the tax filing deadline or extension, if applicable.
+                          </li>
+                          <li>Keep in mind that if you’re side-gigging, employee 401(k) limits apply by person, rather than by plan. That means if you’re also participating in a 401(k) at your day job, the limit applies to contributions across all plans, not each individual plan.
+                          </li>
+                      </ol>
+                      <p>The nice thing about a solo 401(k) is you get to pick your tax advantage: You can opt for the traditional 401(k), under which contributions reduce your income in the year they are made. In that case, distributions in retirement will be taxed as ordinary income. The alternative is the Roth solo 401(k), which offers no initial tax break but allows you to take distributions in retirement tax-free.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane active show" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Qualified Benefit Plan</h3>
+                      <p class="fst-italic">A defined benefit plan, more commonly known as a pension, offers guaranteed retirement benefits for employees. Defined benefit plans are largely funded by employers, with retirement payouts based on a set formula that considers an employee’s salary, age and tenure with the company.
+                      </p>
+                      <p>Defined benefit plans offer guaranteed salary-like payments and were historically offered in order to entice workers to stay with one company for years or even decades.
+                      <br>
+                      The IRS considers a defined benefit plan to be a qualified employer-sponsored retirement plan. That makes them eligible for benefits like tax-deferred investment growth and tax deductions for certain contributions.
+                      <br>
+                      You’re probably more familiar with qualified employer-sponsored options like a 401(k) plan. Unlike 401(k)s, defined benefit plans are usually funded entirely by employer contributions, although in rare cases employees may be required to make some contributions.
+                      <br>
+                      </p>
+                      <h4>How are pension benefits calculated?</h4>
+                      <p>The retirement benefits provided by a defined benefit plan are typically based on some kind of formula that considers factors like your time with the company, your salary and your age.
+                        <br>
+                      For instance, a company might offer an annual payout equal to 1.5% of your average salary over the final five years of your employment for each year you were with the company. If the latter amounted to 20 years, then you might see an annual benefit equal to 30% of your salary.
+                      <br>
+                    It’s important to note that there is no single method defined benefit plans use to calculate employee benefits.
+                    <br>
+                    The formula might be based on an employee’s average salary for their last three years with a company—or their last five years. It might also be based on the employee’s average salary for their whole career with a company—or there might be a flat dollar benefit, such as $800 for each year an employee has been with the firm.
+                      </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-1.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+        <br>
+        <br>
+        <p class="fst-italic">Policy loans and withdrawals reduce the policy’s cash value and death benefit and may
+            result in a taxable event.  Surrender charges may reduce the policy's cash value in early years. Withdrawals
+            up to the basis paid into the contract and loans thereafter will not create an immediate taxable event, but
+            substantial tax ramifications could result upon contract lapse or surrender. Policy loans will be taxed as
+            ordinary income if the policy is allowed to lapse. It is possible that coverage will expire when either no
+            premiums are paid following the initial premium, or subsequent premiums are insufficient to continue coverage.
+        </p>
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+{% include "footer.html" %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
