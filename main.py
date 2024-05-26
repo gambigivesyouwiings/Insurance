@@ -10,13 +10,14 @@ import aiohttp
 import asyncio
 
 
-# dotenv_path = "C:/Users/User/OneDrive/Documents/ffinance/f.txt"
-# load_dotenv(dotenv_path)
+dotenv_path = "C:/Users/User/OneDrive/Documents/ffinance/f.txt"
+load_dotenv(dotenv_path)
 
 account_sid = os.getenv('account_sid')
 auth_token = os.getenv('auth_token')
 print(account_sid)
 client = Client(account_sid, auth_token)
+
 
 async def send_message(data):
     headers = {
@@ -96,7 +97,7 @@ def home():
 @app.route('/welcome', methods=['GET', 'POST'])
 async def welcome():
     data = get_text_message_input(app.config['RECIPIENT_WAID']
-                                  , 'Welcome to the Flight Confirmation Demo App for Python!');
+                                  , 'Welcome to the Flight Confirmation Demo App for Python!')
     await send_message(data)
     return redirect(url_for('home'))
 
