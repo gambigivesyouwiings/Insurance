@@ -210,7 +210,7 @@
 <!--          </div> -->
 
           <div class="col-lg-6 col-md-6 col-6 d-flex align-items-center justify-content-center">
-            <img src="/static/assets/img/clients/image001.png" class="img-fluid" alt="">
+            <img src="/static/assets/img/clients/image002.jpeg" class="img-fluid" alt="">
           </div>
 
         </div>
@@ -219,72 +219,72 @@
     </section><!-- End Clients Section -->
 
 <!--     ======= Services Section =======-->
-<!--    <section id="services" class="services">-->
-<!--      <div class="container">-->
-
-<!--        <div class="row">-->
-<!--          <div class="col-md-6">-->
-<!--            <div class="icon-box">-->
-<!--              <i class="bi bi-briefcase"></i>-->
-<!--              <h4><a href="#">Life Insurance</a></h4>-->
-<!--              <p>There are many types of life insurance.-->
-<!--                Term insurance only provides a death benefit for a limited period of time.-->
-<!--                By contrast permanent insurance can provide a death benefit and the potential-->
-<!--                to build policy cash value that you can access during your lifetime using policy loans and withdrawals*-->
-<!--              </p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="col-md-6 mt-4 mt-md-0">-->
-<!--            <div class="icon-box">-->
-<!--              <i class="bi bi-card-checklist"></i>-->
-<!--              <h4><a href="#">Annuities</a></h4>-->
-<!--            <p>-->
-<!--              An annuity allows a customer to deposit money (premiums) with an insurance-->
-<!--              company that can earn interest and grow on a tax-deferred basis with the agreement that the-->
-<!--              insurance company will then provide a series of payments back to the customer at regular intervals.</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--      </div>-->
-<!--    </section>&lt;!&ndash; End Services Section &ndash;&gt;-->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section id="services" class="services">
       <div class="container">
 
         <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">Youtube</li>
-              <li data-filter=".filter-app">Videos</li>
-<!--              <li data-filter=".filter-card">Card</li>-->
-<!--              <li data-filter=".filter-web">Web</li>-->
-            </ul>
+          <div class="col-md-6">
+            <div class="icon-box">
+              <i class="bi bi-briefcase"></i>
+              <h4><a href="{{url_for('life_insurance')}}">Life Insurance</a></h4>
+              <p>There are many types of life insurance.
+                Term insurance only provides a death benefit for a limited period of time.
+                By contrast permanent insurance can provide a death benefit and the potential
+                to build policy cash value that you can access during your lifetime using policy loans and withdrawals*
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="bi bi-card-checklist"></i>
+              <h4><a href="{{url_for('annuity')}}">Annuities</a></h4>
+            <p>
+              An annuity allows a customer to deposit money (premiums) with an insurance
+              company that can earn interest and grow on a tax-deferred basis with the agreement that the
+              insurance company will then provide a series of payments back to the customer at regular intervals.</p>
+            </div>
           </div>
         </div>
 
-        <div id="p-container" class="row portfolio-container">
-          {% for video in videos[5:8] %}
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{ video.img_url }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>{{ video.title }}</h4>
-                <p>{{ video.body }}</p>
-                <div class="portfolio-links">
-                  <a href="https://www.youtube.com/embed/{{video.video_url}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Play"><i class="bx bx-play"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-        <div>
-          <p>These are paid client testimonials</p>
-        </div>
       </div>
-    </section><!-- End Portfolio Section -->
+    </section><!-- End Services Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+<!--    <section id="portfolio" class="portfolio">-->
+<!--      <div class="container">-->
+
+<!--        <div class="row">-->
+<!--          <div class="col-lg-12 d-flex justify-content-center">-->
+<!--            <ul id="portfolio-flters">-->
+<!--              <li data-filter="*" class="filter-active">Youtube</li>-->
+<!--              <li data-filter=".filter-app">Videos</li>-->
+<!--&lt;!&ndash;              <li data-filter=".filter-card">Card</li>&ndash;&gt;-->
+<!--&lt;!&ndash;              <li data-filter=".filter-web">Web</li>&ndash;&gt;-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div id="p-container" class="row portfolio-container">-->
+<!--          {% for video in videos[5:8] %}-->
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-app">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="{{ video.img_url }}" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+<!--                <h4>{{ video.title }}</h4>-->
+<!--                <p>{{ video.body }}</p>-->
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="https://www.youtube.com/embed/{{video.video_url}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Play"><i class="bx bx-play"></i></a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          {% endfor %}-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <p>These are paid client testimonials</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End Portfolio Section &ndash;&gt;-->
 
   </main><!-- End #main -->
 

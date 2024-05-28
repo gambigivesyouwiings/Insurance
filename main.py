@@ -10,8 +10,8 @@ import aiohttp
 import asyncio
 
 
-dotenv_path = "C:/Users/User/OneDrive/Documents/ffinance/f.txt"
-load_dotenv(dotenv_path)
+# dotenv_path = "C:/Users/User/OneDrive/Documents/ffinance/f.txt"
+# load_dotenv(dotenv_path)
 
 account_sid = os.getenv('account_sid')
 auth_token = os.getenv('auth_token')
