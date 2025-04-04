@@ -1,5 +1,5 @@
 import requests
-from flask import Flask, render_template, request, url_for, flash, redirect
+from flask import Flask, render_template, request, url_for, flash, redirect, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import smtplib
 import os
@@ -8,15 +8,27 @@ from twilio.rest import Client
 import json
 import aiohttp
 import asyncio
+from flask_mail import Mail, Message
+from google import genai
+from flask_cors import CORS
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
-
+key = os.getenv("GEMINI")
+client = genai.Client(api_key=key)
+# response = client.models.generate_content(
+#     model="gemini-2.0-flash", contents="Explain how AI works"
+# )
+# print(response.text)
 # dotenv_path = "C:/Users/User/OneDrive/Documents/ffinance/f.txt"
 # load_dotenv(dotenv_path)
 
 account_sid = os.getenv('account_sid')
 auth_token = os.getenv('auth_token')
 print(account_sid)
-client = Client(account_sid, auth_token)
+
+
+# client = Client(account_sid, auth_token)
 
 
 async def send_message(data):
@@ -55,28 +67,57 @@ def get_text_message_input(recipient, text):
     })
 
 
-def send_text(name, email, number, quote):
-    body = f"You got a new message from {name}\nPhone number:{number}\nEmail:{email}\nMessage:{quote}"
-    message = client.messages.create(
-        from_=os.getenv('twilio'),
-        to=os.getenv('me'),
-        body=body
-    )
-    print(message.sid)
+# def send_text(name, email, number, quote):
+#     body = f"You got a new message from {name}\nPhone number:{number}\nEmail:{email}\nMessage:{quote}"
+#     message = client.messages.create(
+#         from_=os.getenv('twilio'),
+#         to=os.getenv('me'),
+#         body=body
+#     )
+#     print(message.sid)
 
 
 app = Flask(__name__)
+CORS(app)
 
 app.config['GOOGLEMAPS_KEY'] = os.getenv("google_key")
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:///posts.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config["SECURITY_PASSWORD_SALT"] = os.getenv("SALT")
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_USERNAME'] = os.getenv("USERN")
+app.config['MAIL_PASSWORD'] = os.getenv("GMAIL")
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'pool_recycle': 280}
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+
 db = SQLAlchemy()
 db.init_app(app)
+mail = Mail(app)
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["10 per minute", "100 per day", "50 per hour"],
+    storage_uri="memory://",
+)
+
+MAX_MESSAGE_LENGTH = 1000
 
 # with open('config.json') as f:
 #     config = json.load(f)
 
 # app.config.update(config)
+
+
+def send_email(subject, template):
+    msg = Message(
+        subject,
+        recipients=["gambikimathi@gmail.com"],
+        body=template,
+        sender=app.config['MAIL_USERNAME']
+    )
+    mail.send(msg)
 
 
 class Posts(db.Model):
@@ -96,8 +137,8 @@ def home():
 
 @app.route('/welcome', methods=['GET', 'POST'])
 async def welcome():
-    data = get_text_message_input(app.config['RECIPIENT_WAID']
-                                  , 'Welcome to the Flight Confirmation Demo App for Python!')
+    data = get_text_message_input(app.config['RECIPIENT_WAID'],
+                                  'Welcome to the Flight Confirmation Demo App for Python!')
     await send_message(data)
     return redirect(url_for('home'))
 
@@ -107,8 +148,8 @@ def add():
     videos = db.session.query(Posts).all()
     video = []
     for row in videos:
-        dict = {'img_url': row.img_url, 'video_url': row.video_url, 'body': row.body, 'title': row.title}
-        video.append(dict)
+        dicty = {'img_url': row.img_url, 'video_url': row.video_url, 'body': row.body, 'title': row.title}
+        video.append(dicty)
     print(len(video))
     return video
 
@@ -120,11 +161,39 @@ def contact():
         email = request.form["email"]
         number = request.form["number"]
         message = request.form["message"]
+        subject = f"Call request by {name}"
+        template = f"{message}\n\nPhone:{number}\n email:{email}"
         # send_text(name=name, email=email, number=number, quote=message)
         # if email != "":
         #     flash("Your message has been sent. Thank you!")
+        send_email(subject=subject, template=template)
         print(email)
     return render_template("contact.html")
+
+
+@app.route('/chat', methods=['POST'])
+@limiter.limit("10/minute", override_defaults=False)
+def handle_chat():
+    try:
+        data = request.json
+        user_message: object = data.get('message')
+
+        if len(user_message) > MAX_MESSAGE_LENGTH:
+            return jsonify({'error': 'Message too long'})
+
+        if not user_message:
+            return jsonify({'error': 'No message provided'}), 400
+
+        # Send to Gemini
+        response = client.models.generate_content(model="gemini-2.0-flash", contents=user_message)
+
+        return jsonify({
+            'response': response.text
+        })
+
+    except Exception as e:
+        print(e)
+        return jsonify({'error': str(e)}), 500
 
 
 @app.route("/mservices")

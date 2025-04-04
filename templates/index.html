@@ -43,7 +43,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Faithful insurance</a></h1>
+      <h1 class="logo me-auto"><a href="{{url_for('home')}}">Faithful insurance</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -92,7 +92,45 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
+  <main id="main">
+
+      <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row content">
+          <div class="col-lg-6 medium " style="text-align: center">
+            <h2>Faithful insurance</h2>
+            <h3>Your Life Insurance Partner</h3>
+            <img id="maina" src="/static/assets/img/insurance/Faith_profile.jpeg" class="img-fluid" alt="Faith Maina">
+            <p><em>Dr.Faith Maina, Head FaithFul Insurance</em></p>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              Welcome to <b><em>Faithful insurance</em></b>, we're an agency that is here to make a difference in the insurance industry. We are a team of passionate, dedicated and experienced professionals who specialize in life, health and long term care insurance. </p>
+            <p>
+              We know that life, health and long term care insurance can be complex, costly and sometimes stressful,
+              so we are here to simplify it for you. At Faithful insurance, we are not just selling insurance,
+              we are building relationships.
+              <br>
+              We are here to protect what matters most to you, and to help you achieve your goals and dreams. Some of our policies include:
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Life insurance that pays off when you're around and takes care of your family</li>
+              <li><i class="ri-check-double-line"></i> Health Insurance, Long-term care and children policies</li>
+              <li><i class="ri-check-double-line"></i> College funding</li>
+            </ul>
+            <p class="fst-italic">
+               Whether you are looking for personal or business insurance, we have the right solution for you. Contact us today and let us show you how we can make a difference in your life. We look forward to hearing from you soon!
+            .
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+<!--   ======= Hero Section =======-->
   <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
@@ -157,43 +195,6 @@
     </div>
   </section><!-- End Hero -->
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="row content">
-          <div class="col-lg-6">
-            <h2>Faithful insurance</h2>
-            <h3>Your Life Insurance Partner</h3>
-            <img id="maina" src="/static/assets/img/insurance/Faith_profile.jpeg" class="img-fluid" alt="Faith Maina">
-            <p><em>Dr.Faith Maina, Head FaithFul Insurance</em></p>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Welcome to <b><em>Faithful insurance</em></b>, we're an agency that is here to make a difference in the insurance industry. We are a team of passionate, dedicated and experienced professionals who specialize in life, health and long term care insurance. </p>
-            <p>
-              We know that life, health and long term care insurance can be complex, costly and sometimes stressful,
-              so we are here to simplify it for you. At Faithful insurance, we are not just selling insurance,
-              we are building relationships.
-              <br>
-              We are here to protect what matters most to you, and to help you achieve your goals and dreams. Some of our policies include:
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Life insurance that pays off when you're around and takes care of your family</li>
-              <li><i class="ri-check-double-line"></i> Health Insurance, Long-term care and children policies</li>
-              <li><i class="ri-check-double-line"></i> College funding</li>
-            </ul>
-            <p class="fst-italic">
-               Whether you are looking for personal or business insurance, we have the right solution for you. Contact us today and let us show you how we can make a difference in your life. We look forward to hearing from you soon!
-            .
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients section-bg">
@@ -292,6 +293,77 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+
+
+
+<!--  <script>-->
+<!--    let isChatOpen = false;-->
+<!--    let chatHistory = [];-->
+
+<!--    async function sendMessage() {-->
+<!--            const input = document.getElementById('userInput');-->
+<!--            const message = input.value.trim();-->
+<!--            if (!message) return;-->
+
+<!--            addMessageToHistory(message, 'user');-->
+<!--            input.value = '';-->
+
+<!--            try {-->
+<!--                const typingIndicator = addTypingIndicator();-->
+
+<!--                // Send to Flask backend-->
+<!--                const response = await fetch('http://localhost:5000/chat', {-->
+<!--                    method: 'POST',-->
+<!--                    headers: {-->
+<!--                        'Content-Type': 'application/json'-->
+<!--                    },-->
+<!--                    body: JSON.stringify({ message: message })-->
+<!--                });-->
+
+<!--                if (!response.ok) {-->
+<!--                    throw new Error(`HTTP error! status: ${response.status}`);-->
+<!--                }-->
+
+<!--                const data = await response.json();-->
+
+<!--                typingIndicator.remove();-->
+<!--                addMessageToHistory(data.response, 'bot');-->
+
+<!--            } catch (error) {-->
+<!--                console.error('Error:', error);-->
+<!--                addMessageToHistory('Sorry, there was an error processing your request.', 'bot');-->
+<!--            }-->
+<!--        }-->
+<!--    function toggleChat() {-->
+<!--            const container = document.getElementById('chatContainer');-->
+<!--            isChatOpen = !isChatOpen;-->
+<!--            container.style.display = isChatOpen ? 'flex' : 'none';-->
+<!--        }-->
+<!--    function addMessageToHistory(text, sender) {-->
+<!--            const history = document.getElementById('chatHistory');-->
+<!--            const messageDiv = document.createElement('div');-->
+<!--            messageDiv.className = `message ${sender}-message`;-->
+<!--            messageDiv.textContent = text;-->
+<!--            history.appendChild(messageDiv);-->
+<!--            history.scrollTop = history.scrollHeight;-->
+<!--        }-->
+
+<!--        function addTypingIndicator() {-->
+<!--            const history = document.getElementById('chatHistory');-->
+<!--            const typingDiv = document.createElement('div');-->
+<!--            typingDiv.className = 'message bot-message';-->
+<!--            typingDiv.textContent = '...';-->
+<!--            typingDiv.id = 'typingIndicator';-->
+<!--            history.appendChild(typingDiv);-->
+<!--            return typingDiv;-->
+<!--        }-->
+
+<!--        function handleKeyPress(event) {-->
+<!--            if (event.key === 'Enter') {-->
+<!--                sendMessage();-->
+<!--            }-->
+<!--        }-->
+<!--  </script>-->
   <!-- Vendor JS Files -->
   <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>

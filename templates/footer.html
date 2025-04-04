@@ -75,3 +75,17 @@
       </div>
     </div>
   </footer><!-- End Footer -->
+
+  <div class="chat-icon" onclick="toggleChat()"><i class="bi bi-whatsapp"></i></div>
+    <div class="chat-container" style="top: var(--top); left: var(--left)" id="chatContainer">
+        <div class="chat-header" id="chat-header-two">
+            <h3>Whatsapp Chat Assistant</h3>
+            <i class="bi bi-x" onclick="toggleChat()"></i>
+        </div>
+        <div class="chat-history" id="chatHistory"></div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message..."
+                   onkeypress="handleWhatsAppKeyPress(event)">
+        </div>
+    </div>
+    <script src="/static/assets/js/chat.js"></script>
