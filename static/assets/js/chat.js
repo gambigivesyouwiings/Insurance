@@ -88,7 +88,7 @@ async function sendMessage() {
             const userInput = document.getElementById('userInput').value;
 
             // Encode the message and phone number
-            const phoneNumber = '+254732252382';
+            const phoneNumber = '12019207621';
             const message = encodeURIComponent(userInput);
 
             // Construct the WhatsApp link
