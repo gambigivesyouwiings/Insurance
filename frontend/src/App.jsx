@@ -118,6 +118,9 @@ function useInjectHtml(file) {
           .replace(/\{\%.*?\%\}/gs, '')
         target.innerHTML = sanitized
         window.dispatchEvent(new Event('load'))
+      }).catch(err => {
+        console.error('Failed to load template', file, err)
+        target.innerHTML = '<div class="alert alert-warning">Content failed to load.</div>'
       })
     })
   }, [file])
