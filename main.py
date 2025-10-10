@@ -10,13 +10,17 @@ import aiohttp
 import asyncio
 
 
-dotenv_path = "C:/Users/User/OneDrive/Documents/ffinance/f.txt"
-load_dotenv(dotenv_path)
+# Load environment variables from a .env file if present (no hardcoded paths)
+load_dotenv()
 
 account_sid = os.getenv('account_sid')
 auth_token = os.getenv('auth_token')
-print(account_sid)
-client = Client(account_sid, auth_token)
+client = None
+if account_sid and auth_token:
+    try:
+        client = Client(account_sid, auth_token)
+    except Exception:
+        client = None
 
 
 async def send_message(data):
@@ -56,13 +60,18 @@ def get_text_message_input(recipient, text):
 
 
 def send_text(name, email, number, quote):
+    if not client or not os.getenv('twilio') or not os.getenv('me'):
+        return
     body = f"You got a new message from {name}\nPhone number:{number}\nEmail:{email}\nMessage:{quote}"
-    message = client.messages.create(
-        from_=os.getenv('twilio'),
-        to=os.getenv('me'),
-        body=body
-    )
-    print(message.sid)
+    try:
+        message = client.messages.create(
+            from_=os.getenv('twilio'),
+            to=os.getenv('me'),
+            body=body
+        )
+        print(message.sid)
+    except Exception:
+        pass
 
 
 app = Flask(__name__)
