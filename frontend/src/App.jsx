@@ -75,11 +75,13 @@ function useInjectHtml(file) {
       window.dispatchEvent(new Event('load'))
     }).catch(() => {
       fetch(`/templates/${file}`).then(r => r.text()).then(src => {
-        const match = src.match(/<body[^>]*>([\s\S]*?)<\/body>/i)
-        const bodyOnly = match ? match[1] : src
+        const bodyMatch = src.match(/<body[^>]*>([\s\S]*?)<\/body>/i)
+        const bodyOnly = bodyMatch ? bodyMatch[1] : src
         const withoutHeader = bodyOnly.replace(/<header[^>]*id=\"header\"[\s\S]*?<\/header>/i, '')
         const withoutFooter = withoutHeader.replace(/<footer[^>]*id=\"footer\"[\s\S]*?<\/footer>/i, '')
-        const normalizedAssets = withoutFooter
+        const mainMatch = withoutFooter.match(/<main[^>]*id=\"main\"[^>]*>([\s\S]*?)<\/main>/i)
+        const mainInner = mainMatch ? mainMatch[1] : withoutFooter
+        const normalizedAssets = mainInner
           .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=$2/static/')
         const withoutScripts = normalizedAssets.replace(/<script[\s\S]*?<\/script>/gi, '')
         const sanitized = withoutScripts
