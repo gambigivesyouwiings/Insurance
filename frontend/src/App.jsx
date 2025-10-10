@@ -80,8 +80,9 @@ function useInjectHtml(file) {
         const withoutHeader = bodyOnly.replace(/<header[^>]*id=\"header\"[\s\S]*?<\/header>/i, '')
         const withoutFooter = withoutHeader.replace(/<footer[^>]*id=\"footer\"[\s\S]*?<\/footer>/i, '')
         const normalizedAssets = withoutFooter
-          .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=\"/static/')
-        const sanitized = normalizedAssets
+          .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=$2/static/')
+        const withoutScripts = normalizedAssets.replace(/<script[\s\S]*?<\/script>/gi, '')
+        const sanitized = withoutScripts
           .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
           .replace(/\{\%.*?\%\}/gs, '')
         target.innerHTML = sanitized
