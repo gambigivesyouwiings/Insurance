@@ -75,7 +75,9 @@ function useInjectHtml(file) {
     }).catch(() => {
       fetch(`/templates/${file}`).then(r => r.text()).then(src => {
         const bodyOnly = src.split('<body>')[1]?.split('</body>')[0] || src
-        const sanitized = bodyOnly
+        const withoutHeader = bodyOnly.replace(/<header[^>]*id="header"[\s\S]*?<\/header>/i, '')
+        const withoutFooter = withoutHeader.replace(/<footer[^>]*id="footer"[\s\S]*?<\/footer>/i, '')
+        const sanitized = withoutFooter
           .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
           .replace(/\{\%.*?\%\}/gs, '')
         target.innerHTML = sanitized
