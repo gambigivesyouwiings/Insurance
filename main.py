@@ -73,8 +73,21 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy()
 db.init_app(app)
 
-with open('config.json') as f:
-    config = json.load(f)
+# Ensure database tables exist
+with app.app_context():
+    db.create_all()
+
+# Load optional runtime config safely
+try:
+    with open('config.json') as f:
+        config = json.load(f)
+except FileNotFoundError:
+    config = {
+        "ACCESS_TOKEN": "",
+        "VERSION": "v17.0",
+        "PHONE_NUMBER_ID": "",
+        "RECIPIENT_WAID": ""
+    }
 
 app.config.update(config)
 
