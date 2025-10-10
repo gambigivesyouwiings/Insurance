@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Executive Bonus Plans</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Sailor
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Faithful Insurance</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home')}}">Home</a></li>
+
+          <li class="dropdown"><a href="#"><span>Families & Individuals</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
+              <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
+              <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
+              <li><a href="{{url_for('long_term')}}">Tax Qualified Long Term Care Insurance</a></li>
+              <li><a href="{{url_for('ira')}}">IRA</a></li>
+              <li><a href="{{url_for('annuity')}}">Annuities</a></li>
+
+              <li class="dropdown"><a href="#"><span> Health </span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="{{url_for('dental_cover')}}">Dental Insurance</a></li>
+                  <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
+                  <li><a href="{{url_for('disability_cover')}}">Disability Insurance</a></li>
+                </ul>
+              </li>
+              <li><a href="{{url_for('college')}}">College Funding</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('business_transition')}}">Business Transition Plans</a></li>
+                  <li><a href="{{url_for('business_continuation')}}">Business Continuation Plans</a></li>
+                </ul>
+              </li>
+          <li class="dropdown"><a href="#" class="active"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('executive')}}" class="active">Executive Bonus Plans</a></li>
+                </ul>
+              </li>
+          <li><a href="{{url_for('faqs')}}">FAQs</a></li>
+          <li><a href="{{url_for('contact')}}" class="getstarted">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Executive Bonus Plans</h2>
+          <ol>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li>Executive</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6">
+              <img src="static/assets/img/blog/blog-inside-post.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+              <h3> What is an Executive Bonus plan?</h3>
+              <p>An Executive Bonus Plan, also referred to as a Section 162 plan, allows a business to provide
+                  personally owned life insurance as a tax-deductible fringe benefit to select key employees.
+                    <br>
+                    <br>
+                  If the benefit is for a non-owner employee, an executive bonus plan is appropriate for all business
+                  forms, including professional corporations, partnerships and LLC’s. However, this type of plan does
+                  not offer any tax benefit for business owners if the business is an S-Corp, partnership or LLC taxed
+                  as a partnership.
+                  <br>
+                  <br>
+              </p>
+              <p>THE ADVANTAGES OF AN EXECUTIVE BONUS PLAN:</p>
+                  <ol>
+                    <li> Employer decides who participates and how much of a bonus each employee will receive.</li>
+                    <li>Bonus dollars are tax-deductible to the company as compensation to the key employee.</li>
+                    <li>Simple to adopt with No IRS approval required</li>
+                    <li>Premiums are reported as “other compensation” on W-2 and are subject to FICA and FUTA taxes.</li>
+                    <li>The key employee will own and control the policy and will have access to the riders, potential
+                        cash value growth and death benefit that make up the permanent life insurance policy.
+                    </li>
+                    <li>The employee’s out-of-pocket cost is the tax due on the premiums paid by the employer that have
+                        been treated as compensation. You may choose to add a cash bonus to the arrangement
+                        (a double bonus) to offset the tax amount due.
+                    </li>
+                    <li>Policy cash value grows tax-deferred and may be accessed through withdrawals or policy loans*.</li>
+                    <li>Death benefit is paid to the insured’s beneficiaries income tax-free.</li>
+                  </ol>
+              <a href="{{url_for('faqs')}}"> Visit our Frequently asked questions</a>
+              <div class="icon-box" style="margin-top: 15%">
+                <a href="{{url_for('contact')}}"><i class="bi bi-phone-vibrate"></i></a>
+                <h4><a href="{{url_for('contact')}}">Would you like to learn more?</a></h4>
+                <p>Request a call! We'll get back to you as soon as possible.</p>
+              </div>
+              <br>
+              <br>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+{% include "footer.html" %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Disability Insurance</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Sailor
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Faithful Insurance</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home')}}">Home</a></li>
+
+          <li class="dropdown"><a href="#" class="active"><span>Families & Individuals</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
+              <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
+              <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
+              <li><a href="{{url_for('long_term')}}">Tax Qualified Long Term Care Insurance</a></li>
+              <li><a href="{{url_for('ira')}}">IRA</a></li>
+              <li><a href="{{url_for('annuity')}}">Annuities</a></li>
+
+              <li class="dropdown"><a href="#" class="active"><span> Health </span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="{{url_for('dental_cover')}}">Dental Insurance</a></li>
+                  <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
+                  <li><a href="{{url_for('disability_cover')}}" class="active">Disability Insurance</a></li>
+                </ul>
+              </li>
+              <li><a href="{{url_for('college')}}">College Funding</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('business_transition')}}">Business Transition Plans</a></li>
+                  <li><a href="{{url_for('business_continuation')}}">Business Continuation Plans</a></li>
+                </ul>
+              </li>
+          <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
+                </ul>
+              </li>
+          <li><a href="{{url_for('faqs')}}">FAQs</a></li>
+          <li><a href="{{url_for('contact')}}" class="getstarted">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Disability Insurance</h2>
+          <ol>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li>Disability Insurance</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6">
+              <img src="static/assets/img/insurance/disability-insurance.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+              <h3> What is Disability Insurance?</h3>
+              <p>Disability insurance is a type of health insurance that replaces a portion of your income if you  become
+                  unable to work due to an illness or injury. Disability insurance can help you cover your essential
+                  living expenses and protect your financial security.
+                    <br>
+                    <br>
+                 There are two main types of disability insurance: short-term and long-term. Short-term disability
+                  insurance provides benefits for a few weeks or months, usually up to one year. Long-term disability
+                  insurance provides benefits for several years or until you reach retirement age, depending on the policy.
+                  <br>
+                  <br>
+                  The amount of benefits you receive from disability insurance depends on your income, the percentage of
+                  income replacement, and the benefit cap. For example, if you earn $5,000 a month, your policy replaces
+                  60% of your income, and the cap is $3,000, you will receive $3,000 a month in benefits.
+                  <br>
+                  <br>
+                  The cost of disability insurance depends on several factors, such as your age, health, occupation,
+                  income, benefit amount, benefit period, elimination period, and policy features. The elimination
+                  period is the waiting time between the start of your disability and the start of your benefits.
+                  The longer the elimination period, the lower the premium.
+                  <br>
+                  <br>
+                  You can get disability insurance through your employer, a professional association, or an individual
+                  policy. Employer-sponsored disability insurance is usually cheaper and easier to qualify for,
+                  but it may not cover all your needs, and it may not be portable if you change jobs. Individual
+                  disability insurance is more expensive and requires medical underwriting, but it offers more
+                  customization and portability.
+                  <br>
+                  To learn more, feel free to contact us. We are here to help you find the best disability insurance for you and your family. 🙌
+              </p>
+              <a href="{{url_for('faqs')}}"> Visit our Frequently asked questions</a>
+              <br>
+              <br>
+              <div class="icon-box" style="margin-top: 15%">
+                <a href="{{url_for('contact')}}"><i class="bi bi-phone-vibrate"></i></a>
+              <h4><a href="{{url_for('contact')}}">Would you like to learn more?</a></h4>
+              <p>Request a call! We'll get back to you as soon as possible.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section>
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+{% include "footer.html" %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

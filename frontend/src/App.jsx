@@ -4,6 +4,15 @@ import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import Home from './pages/Home'
 
+const rawTemplates = import.meta.glob('./templates/*.html', { as: 'raw', eager: true })
+function getRawTemplate(file) {
+  const byExact = rawTemplates[`./templates/${file}`]
+  if (byExact) return byExact
+  // Try case-insensitive lookup
+  const key = Object.keys(rawTemplates).find(k => k.toLowerCase().endsWith(`/${file.toLowerCase()}`))
+  return key ? rawTemplates[key] : null
+}
+
 function useScrollTop() {
   const { pathname } = useLocation()
   useEffect(() => { window.scrollTo(0, 0) }, [pathname])
@@ -68,6 +77,26 @@ function useInjectHtml(file) {
     const target = document.querySelector('[data-static-html]')
     if (!target) return
     target.innerHTML = ''
+    const localRaw = getRawTemplate(file)
+    if (localRaw) {
+      const src = localRaw
+      const bodyMatch = src.match(/<body[^>]*>([\s\S]*?)<\/body>/i)
+      const bodyOnly = bodyMatch ? bodyMatch[1] : src
+      const withoutHeader = bodyOnly.replace(/<header[^>]*id=\"header\"[\s\S]*?<\/header>/i, '')
+      const withoutFooter = withoutHeader.replace(/<footer[^>]*id=\"footer\"[\s\S]*?<\/footer>/i, '')
+      const mainMatch = withoutFooter.match(/<main[^>]*id=\"main\"[^>]*>([\s\S]*?)<\/main>/i)
+      const mainInner = mainMatch ? mainMatch[1] : withoutFooter
+      const normalizedAssets = mainInner
+        .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=$2/static/')
+      const withoutScripts = normalizedAssets.replace(/<script[\s\S]*?<\/script>/gi, '')
+      const sanitized = withoutScripts
+        .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
+        .replace(/\{\%.*?\%\}/gs, '')
+      target.innerHTML = sanitized
+      window.dispatchEvent(new Event('load'))
+      return
+    }
+
     fetch(`/staticized/${file}`).then(async res => {
       if (!res.ok) throw new Error('Missing staticized page: ' + file)
       const html = await res.text()
