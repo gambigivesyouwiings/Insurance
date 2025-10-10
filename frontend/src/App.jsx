@@ -57,9 +57,6 @@ function StaticHtmlPage({ file }) {
   useEffect(() => { window.dispatchEvent(new Event('load')) }, [file])
   return (
     <main id="main" className="container py-4">
-      <div className="alert alert-info mb-4" role="alert" style={{ display: 'none' }}>
-        {/* reserved for messages */}
-      </div>
       <div data-static-html data-file={file}></div>
       <ReloadMainScript />
     </main>
