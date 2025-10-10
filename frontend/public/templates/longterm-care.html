@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Tax-qualified Long term care</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Sailor
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Faithful Insurance</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home')}}">Home</a></li>
+
+          <li class="dropdown"><a href="#" class="active"><span>Families & Individuals</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
+              <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
+              <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
+              <li><a href="{{url_for('long_term')}}" class="active">Tax Qualified Long Term Care Insurance</a></li>
+              <li><a href="{{url_for('ira')}}">IRA</a></li>
+              <li><a href="{{url_for('annuity')}}">Annuities</a></li>
+
+              <li class="dropdown"><a href="#"><span> Health </span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="{{url_for('dental_cover')}}">Dental Insurance</a></li>
+                  <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
+                  <li><a href="{{url_for('disability_cover')}}">Disability Insurance</a></li>
+                </ul>
+              </li>
+              <li><a href="{{url_for('college')}}">College Funding</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('business_transition')}}">Business Transition Plans</a></li>
+                  <li><a href="{{url_for('business_continuation')}}">Business Continuation Plans</a></li>
+                </ul>
+              </li>
+          <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
+                </ul>
+              </li>
+          <li><a href="{{url_for('faqs')}}">FAQs</a></li>
+          <li><a href="{{url_for('contact')}}" class="getstarted">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Tax qualified Long Term Care</h2>
+          <ol>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li>Long-term Care</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6">
+              <img src="static/assets/img/insurance/long-term-care-insurance-age-chart.png" class="img-fluid" alt="">
+              <p style="padding-left:25%">Maximum Deductible amount vs Age</p>
+              <div class="icon-box" style="margin-top: 15%">
+                <a href="{{url_for('contact')}}"><i class="bi bi-phone-vibrate"></i></a>
+              <h4><a href="{{url_for('contact')}}">Would you like to learn more?</a></h4>
+              <p>Request a call! We'll get back to you as soon as possible.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+              <h3> What is a Tax Qualified Long term Care Policy?</h3>
+              <p>A tax-qualified long-term care insurance policy is on a federal level. Tax-qualified is also often
+                  referred to as a qualified policy. These policies offer certain federal income tax advantages to the buyer.
+                    <br>
+                    <br>
+                 For instance, if you have a tax-qualified long-term care policy, and you are in the habit of itemizing your
+                  medical deductions, then you may be able to deduct the annual premium from your federal income tax return.
+                  <br>
+                  <br>
+                  Let’s do a breakdown scenario on how this would come into play. Go ahead and add your deductible
+                  medical expenses to your annual long-term care policy premium.  Got it thus far?  Good, now stay with us.
+                  <br>
+                  <br>
+                  You just calculated your total, now the fun part.  Take that total for the year and if that's greater
+                  than 10% of your adjusted gross income,  you may be able to deduct the excess amount on your federal income tax return.
+                  <br>
+                  <br>
+                  Last note on this mathematical equation — <b>the maximum amount that you can claim as a deduction is
+                  dependent upon your age.</b>  Clear as mud?  We thought so.  Don’t worry too much about the math. As long
+                  as you have the right independent insurance agent, you will be golden.
+                  <br>
+                  In addition to premium deductibility, you will need to know if the benefits you are receiving under the
+                  policy coverages are taxable.  A good rule of thumb is the  benefits that are paid by a tax-qualified
+                  long-term care policy are usually not taxable as income to the recipient.  On the contrary, the benefits
+                  paid from a long-term care policy that is non-tax-qualified may be taxable as income.
+                  <br>
+                  <br>
+                  Some key areas covered by a tax qualified long term care plan are:
+              </p>
+                  <ol>
+                    <li> In-home/Hospital/Respite care</li>
+                    <li> Adult day service or daycare</li>
+                    <li> Assisted living facilities (residential care or alternative care facilities)</li>
+                    <li> Alzheimer’s special care facilities</li>
+                      <li> Nursing homes</li>
+                  </ol>
+
+              <a href="{{url_for('faqs')}}"> Visit our Frequently asked questions</a>
+              <br>
+              <br>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+{% include "footer.html" %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
