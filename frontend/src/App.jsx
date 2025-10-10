@@ -56,10 +56,10 @@ function StaticHtmlPage({ file }) {
   useScrollTop()
   useEffect(() => { window.dispatchEvent(new Event('load')) }, [file])
   return (
-    <main id="main" className="container py-4">
+    <div className="container py-4" role="main">
       <div data-static-html data-file={file}></div>
       <ReloadMainScript />
-    </main>
+    </div>
   )
 }
 
@@ -67,6 +67,7 @@ function useInjectHtml(file) {
   useEffect(() => {
     const target = document.querySelector('[data-static-html]')
     if (!target) return
+    target.innerHTML = ''
     fetch(`/staticized/${file}`).then(async res => {
       if (!res.ok) throw new Error('Missing staticized page: ' + file)
       const html = await res.text()
@@ -74,10 +75,13 @@ function useInjectHtml(file) {
       window.dispatchEvent(new Event('load'))
     }).catch(() => {
       fetch(`/templates/${file}`).then(r => r.text()).then(src => {
-        const bodyOnly = src.split('<body>')[1]?.split('</body>')[0] || src
-        const withoutHeader = bodyOnly.replace(/<header[^>]*id="header"[\s\S]*?<\/header>/i, '')
-        const withoutFooter = withoutHeader.replace(/<footer[^>]*id="footer"[\s\S]*?<\/footer>/i, '')
-        const sanitized = withoutFooter
+        const match = src.match(/<body[^>]*>([\s\S]*?)<\/body>/i)
+        const bodyOnly = match ? match[1] : src
+        const withoutHeader = bodyOnly.replace(/<header[^>]*id=\"header\"[\s\S]*?<\/header>/i, '')
+        const withoutFooter = withoutHeader.replace(/<footer[^>]*id=\"footer\"[\s\S]*?<\/footer>/i, '')
+        const normalizedAssets = withoutFooter
+          .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=\"/static/')
+        const sanitized = normalizedAssets
           .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
           .replace(/\{\%.*?\%\}/gs, '')
         target.innerHTML = sanitized
