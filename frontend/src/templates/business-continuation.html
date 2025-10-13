@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Business Continuation</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Sailor
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Faithful Insurance</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home')}}">Home</a></li>
+
+          <li class="dropdown"><a href="#"><span>Families & Individuals</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
+              <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
+              <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
+              <li><a href="{{url_for('long_term')}}">Tax Qualified Long Term Care Insurance</a></li>
+              <li><a href="{{url_for('ira')}}">IRA</a></li>
+              <li><a href="{{url_for('annuity')}}">Annuities</a></li>
+
+              <li class="dropdown"><a href="#"><span> Health </span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="{{url_for('dental_cover')}}">Dental Insurance</a></li>
+                  <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
+                  <li><a href="{{url_for('disability_cover')}}">Disability Insurance</a></li>
+                </ul>
+              </li>
+              <li><a href="{{url_for('college')}}">College Funding</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="active"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('business_transition')}}">Business Transition Plans</a></li>
+                  <li><a href="{{url_for('business_continuation')}}" class="active">Business Continuation Plans</a></li>
+                </ul>
+              </li>
+          <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
+                </ul>
+              </li>
+          <li><a href="{{url_for('faqs')}}">FAQs</a></li>
+          <li><a href="{{url_for('contact')}}" class="getstarted">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Business Continuation Plans</h2>
+          <ol>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li>Business Continuation Plans</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6">
+              <img src="static/assets/img/blog/blog-4.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+              <p>Have you taken the steps to ensure that your business will continue to run smoothly if you were to lose
+                  a business partner? Have you considered what will happen in the event of divorce, disability or even
+                  worse, death?
+                    <br>
+                    <br>
+                  A buy-sell agreement can establish the value of the business, assure that there is a buyer for the
+                  business and improve creditworthiness of the business. Think of a buy-sell agreement as a formal exit
+                  strategy that ensures everyone is treated fairly, the business is in a position to continue and the
+                  family is well cared for.
+                  <br>
+                  <br>
+                  With a buy sell agreement, the business owners enter into the agreement today that sets out the terms
+                  and conditions of the sale of their business interest at some point in the future.
+                  <br>
+                  <br>
+                  These terms and conditions may include (but are not limited to) who will purchase the interest, what
+                  triggers the buyout, when the sale will take place, the value of the interest, how the purchase price will be paid and more.
+              </p>
+              <a href="{{url_for('faqs')}}"> Visit our Frequently asked questions</a>
+              <br>
+              <br>
+            <div class="icon-box">
+                <a href="{{url_for('contact')}}"><i class="bi bi-phone-vibrate"></i></a>
+              <h4><a href="{{url_for('contact')}}">Would you like to learn more?</a></h4>
+              <p>Request a call! We'll get back to you as soon as possible.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Business Continuation Plans</h2>
+          <p>Things to look out for</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">What is your business worth?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Types of Buy-Sell agreements</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Funding a Buy-Sell agreement</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>What is your business worth?</h3>
+                      <p class="fst-italic">If someone walked into your office today and wanted to buy your business,
+                          how much would you ask for? If one of your co-owners wanted to leave the business, how much
+                          would you pay for their interest in the business?
+                      </p>
+                      <p> These questions are just the beginning of the exploration into the valuation of your business.
+                          Business valuation is sometimes part art and sometimes part science. The science may involve
+                          valuation methods that range from simple to fairly complex formulas.
+                          <br>
+                          <br>
+                          A business valuation is a vital part of your business continuation plan. There are a number of
+                          resources that may be available for you to use, and you should always consult with your own CPA
+                          and other advisors.
+                          <br>
+                          One tool that is available is an online program from BizEquity. This tool will allow you to
+                          follow a seven-step program that will help you arrive at a “scientific” valuation. Please note,
+                          BizEquity is a third party vendor and not associated with Faithful Insurance( or National Life Group.)
+                          <br>
+                          <br>
+                          To learn more visit <a href="https://www.bizequity.com/" target="_blank">www.bizequity.com</a>
+                      </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="static/assets/img/insurance/BizEquity-Logo.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Types of Buy-Sell agreements</h3>
+                    <p class="fst-italic">Your business structure, who owns the business, your family situation,
+                        will influence the choice of which arrangement is best for you.
+                    </p>
+                       <p> The standard buy-sell agreements include:</p>
+                      <ol>
+                          <li><b>Entity Purchase Agreement (Sometimes called a Stock Redemption Agreement):</b>
+                              <br>
+                              Under this agreement, the buyer is the business. The business owners agree to sell their
+                              ownership interest back to the business if they become disabled or wish to retire. If
+                              there is a death of an owner, the owner’s estate is required to sell the deceased owner’s
+                              interest back to the business.
+                          </li>
+                          <li><b>Cross Purchase Agreement:</b>
+                              <br>
+                            The co-owners will purchase the selling owner’s business interest. The business itself will
+                              not be involved in the purchase.
+                          </li>
+                          <li><b>Wait-and-See Buy-Sell Agreement:</b>
+                              <br>
+                              This agreement allows the business owners to delay the selection of an entity purchase or
+                              a cross-purchase buy-sell agreement until an actual death, disability, retirement or sale
+                              of a business interest. The agreement establishes a series of options usually starting with
+                              an option for the business to purchase the interest. If the business doesn’t make the
+                              purchase then the cross-purchase option is triggered. Many agreements have additional
+                              options triggered if the cross-purchase option is not exercised.
+                          </li>
+                      </ol>
+                      <p> Once you determine which agreement is best for your business, your attorney will draft the
+                          agreement. The agreement will spell out all the details with some of the key areas being:</p>
+                      <ol>
+                          <li>The trigger events (death, disability, retirement, termination, divorce, bankruptcy)</li>
+                          <li>Who will purchase the interest (the business, co-owners, key people, third parties)</li>
+                          <li>The value of the business (set price, formula).</li>
+                          <li>How the price will be paid.</li>
+                      </ol>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Funding a Buy-Sell agreement</h3>
+                    <p class="fst-italic">Having a formal buy-sell is important, but just as important is making sure
+                        the money is there to complete the buy-sell.
+                    </p>
+                       <p> There are a number of ways to fund a buy-sell agreement:</p>
+                      <ol>
+                          <li><b>Cash on hand</b>
+                              <br>
+                              Unfortunately, cash (surplus cash!) is not always available when it’s needed most and
+                              depending on your business, the amount may be substantial.
+                          </li>
+                          <li><b>Sinking fund:</b>
+                              <br>
+                            Think of this as a savings account. With this method, money is set aside for the eventual
+                              purchase of the business. It’s a little more certain than hoping to have cash on hand, but
+                              what if something happens before the money you need for the buyout has accumulated?
+                          </li>
+                          <li><b>Borrowed funds or installment note</b>
+                              <br>
+                              Another option is to borrow funds from a bank or from the selling owner to purchase the
+                              business. However, the death, disability or retirement of a co-owner may affect the
+                              ability to obtain credit from a third party. Borrowing the money from the seller through
+                              an installment note is often used as a back-up plan, when used as a primary method of
+                              funding a buyout it raises many concerns. Can the family afford to receive the buyout funds
+                              over the installment period? What happens if the business cannot sustain itself with this
+                              new debt? Will the family receive the whole buyout price?
+                          </li>
+                          <li><b>Life Insurance</b>
+                              <br>
+                              For many business owners, insurance can be the most cost-effective option. The life
+                              insurance death benefit can provide the needed cash to complete a purchase at death and
+                              the cost to purchase the insurance may only be pennies on a dollar.
+                              <br><br>
+                              For lifetime buyouts in the event of divorce, disability or retirement, the policy cash
+                              value can be accessed through loans and withdrawals to supplement funds needed to complete
+                              the purchase. Note that the cost and availability of insurance can vary based on age, health
+                              and benefit amount. Policy loans and withdrawals reduce the policy's cash value and death
+                              benefit and may result in a taxable event.
+                          </li>
+                      </ol>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+<!--                    <img src="static/assets/img/features-2.png" alt="" class="img-fluid">-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+{% include "footer.html" %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

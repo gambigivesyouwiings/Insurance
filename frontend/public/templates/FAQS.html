@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>FAQs</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Sailor
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">FaithFul Finance</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home')}}" class="active">Home</a></li>
+
+          <li class="dropdown"><a href="#"><span>Families & Individuals</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('life_insurance')}}">Life Insurance</a></li>
+              <li><a href="{{url_for('retirement_benefits')}}">Retirement Benefits</a></li>
+              <li><a href="{{url_for('living_benefits')}}">Living Benefits</a></li>
+              <li><a href="{{url_for('long_term')}}">Tax Qualified Long Term Care Insurance</a></li>
+              <li><a href="{{url_for('ira')}}">IRA</a></li>
+              <li><a href="{{url_for('annuity')}}">Annuities</a></li>
+
+              <li class="dropdown"><a href="#"><span> Health </span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="{{url_for('dental_cover')}}">Dental Insurance</a></li>
+                  <li><a href="{{url_for('medical_cover')}}">Medical Cover</a></li>
+                  <li><a href="{{url_for('disability_cover')}}">Disability Insurance</a></li>
+                </ul>
+              </li>
+              <li><a href="{{url_for('college')}}">College Funding</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Business Owners</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('business_transition')}}">Business Transition Plans</a></li>
+                  <li><a href="{{url_for('business_continuation')}}">Business Continuation Plans</a></li>
+                </ul>
+              </li>
+          <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
+                </ul>
+              </li>
+          <li><a href="{{url_for('faqs')}}" class="active">FAQs</a></li>
+          <li><a href="{{url_for('contact')}}" class="getstarted">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Frequently Asked Questions</h2>
+          <ol>
+            <li><a href="{{url_for('home')}}">home</a></li>
+            <li>FAQs</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq">
+      <div class="row">
+        <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Families & Individuals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Business Owners</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Employers & Plan Sponsors</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                    <h4>Families & Individuals</h4>
+                  <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Do I need life Insurance if I'm single?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExample">
+                   <div class="card card-body">
+                     It depends, first ask yourself - “is anyone financially dependent on me?” You may not have a spouse
+                     who is dependent on you but what about other family members? Even if no one is dependent on you,
+                     you may want to consider purchasing life insurance to cover the repayment of debts, taxes, funeral
+                     and other final expenses.
+                     <br>
+                     But before you make a final decision, think to the future. If you get married and have children someday, you may want to have life insurance coverage. If you buy coverage today while you're young and healthy, you'll get much better premium rates than if you wait. Rates increase as you age and if your health deteriorates.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Am I too young to buy an annuity?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea2">
+                   <div class="card card-body">
+                     You are never too young to plan for your future and an annuity may be a good choice for your
+                     long-term savings goals, such as for retirement. The question you need to ask yourself is - “will I
+                     need to access the money before I am 59 ½?” Although you can take a distribution from an annuity
+                     prior to age 59 ½, the distribution may be subject to a 10% premature distribution penalty. If you
+                     think you may need to access this money on a more short term basis, an annuity may not be the right
+                     savings vehicle for you.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Should I purchase life insurance for my child?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea3">
+                   <div class="card card-body">
+                     The idea of buying life insurance for your child is something no one wants to consider because it forces us to consider the unthinkable. But purchasing a policy for a child isn't just about having financial protection if the unthinkable happens; it's about ensuring the child's financial future.
+<br>
+Purchasing a policy also locks in the child's insurability. Usually, children don't have to go through a medical underwriting process - the parents simply answer a few medical questions. As long as the policy remains in force, the child will always have life insurance. Most insurance policies today also offer optional riders that will allow the child to increase their insurance coverage when they reach certain milestones in life.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea4" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Can I use my life Insurance policy cash value to help buy a home?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea4">
+                   <div class="card card-body">
+                     Yes you can. You may have access to policy cash value through either a withdrawal or as a loan from the insurance company using the policy as collateral. If you take a withdrawal, your policy values will immediately be reduced by the withdrawal amount. If you take a loan, depending upon the type of insurance you have, your policy values may continue to grow. You are not required to repay the loan, or the loan interest, during your lifetime. However, if you choose not to, any outstanding loan balance will reduce the amount of death benefit payable to your beneficiary.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea5" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>How do life insurance and annuity values affect college financial aid?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea5">
+                   <div class="card card-body">
+                     Annuity and life insurance policy values are not reported on the Free Application For Federal Student Aid (FAFSA). Non-Qualified annuities, however, are counted as an asset on the CSS Profile, the other aid form that about 200+ colleges, mostly private, require in addition to the FAFSA when assessing a student’s eligibility for their own institutional financial aid dollars.
+<br><br>
+More importantly, and as often is the case at most state universities, your income may be too high to qualify for need-based financial aid anyway.
+<br><br>
+The other benefit of life insurance and annuities for college planning, is the ability to accumulate cash values that can be used to help pay for college costs.
+<br><br>
+Often annuities are used to fund a Roth IRA and Roths offer the option for a penalty free distribution if used for higher education costs. However, you will need to consider the annuity contract free withdrawal feature and surrender charges when deciding to access your Roth annuity.
+<br><br>
+You can also take a loan or withdrawal from your life insurance policy - potentially tax-free - to help offset some of the cost of college.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea6" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Who can be the beneficiary of my life insurance/annuity policy?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea6">
+                   <div class="card card-body">
+                     You can name any legally competent person as a beneficiary, including your spouse, children, other relative or friend. You can also name an entity as a beneficiary, such as a trust or charity.
+<br><br>
+The proceeds of your policy will be paid directly to your beneficiary, privately and without the delays of probate. If your needs are more complex, perhaps to take care of an aging parent or a special needs child, you may want to consider utilizing a trust as your beneficiary. The trust will outline the provisions of how the proceeds will be distributed and a trustee of your choosing can be named to manage the proceeds on behalf of the beneficiary.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea7" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>How does taking money from my annuities or life insurance policy affect my Social Security?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea7">
+                   <div class="card card-body">
+                     Money taken from an annuity is considered earnings and is taxable as ordinary income and must be considered in determining taxation of your Social Security benefits. Money received from an annuity that are a return on premiums paid, are received income tax-free and should not affect the taxation of Social Security benefits.
+<br><br>
+Money taken from your life insurance policy through, a loan or withdrawal, generally are received income tax-free and should not affect the taxation of your Social Security benefits.
+<br><br>
+Please be sure to consult with your tax advisor on your specific situation.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea8" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>I'm making cash contributions to a charity, is there a benefit to using life Insurance or annuities for these contributions?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea8">
+                   <div class="card card-body">
+                     Money taken from an annuity is considered earnings and is taxable as ordinary income and must be considered in determining taxation of your Social Security benefits. Money received from an annuity that are a return on premiums paid, are received income tax-free and should not affect the taxation of Social Security benefits.
+<br><br>
+Money taken from your life insurance policy through, a loan or withdrawal, generally are received income tax-free and should not affect the taxation of your Social Security benefits.
+<br><br>
+Please be sure to consult with your tax advisor on your specific situation.
+                   </div>
+                  </div>
+                </div>
+                <h4>Life Insurance</h4>
+                  <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea9" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>What happens if I can't make my life Insurance premium payment?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea9">
+                   <div class="card card-body">
+                     If your insurance protection is Term life, you will have a grace period to make your payment. If by the end of the grace period you have not made a payment, your policy will lapse, and you will no longer have coverage.
+<br>
+If your insurance protection is permanent life insurance, you will have a grace period to pay your premium plus some additional options. It may be possible that your policy has sufficient cash value to pay the premium from those policy values. Just be aware that using policy values and benefits to pay the premium due will reduce the policy's cash value and death benefit, and may increase the risk of lapsing the policy. If you don't have sufficient cash value to pay the policy premiums, you may have the option to reduce your face amount to a level that doesn’t require a premium payment.
+<br>
+Most importantly, if you are having trouble making your payment, contact our agent for more options on your policy.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea10" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Is it okay to name my minor children as beneficiaries?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea10">
+                   <div class="card card-body">
+                     It is best if you do not name them as the direct beneficiary because most states require that a guardian be appointed to administer the proceeds payable to the minor child and will result in a time delay in creating the guardianship, and therefore, delay in payment of the benefits and potentially additional costs.
+<br><br>
+The best thing to do is name a guardian, perhaps your spouse, when you establish your beneficiary designation. Another option may be to establish a trust to receive the insurance proceeds for the benefit of the minor child. Your insurance agent and/or attorney can assist you with the proper beneficiary designation if you have minor children.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea11" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Can I exchange one life Insurance Policy for another?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea11">
+                   <div class="card card-body">
+                     In many cases, yes, if the ownership of the two policies is the same. You will need to go through new underwriting for the new coverage. To avoid taxation on the cash value in your policy in excess of premiums paid, you will want to consider an exchange under Code Section 1035. 1035 Exchanges allow for a tax-free exchange of one life insurance policy for another. There may be circumstances where replacing one policy for another is suitable for your circumstances, but in most cases we believe that replacing an existing policy for a new one is usually not in your best interests. Work with your agent to get all the facts before making such a decision.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea12" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Can someone else own my life Insurance Policy?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea12">
+                   <div class="card card-body">
+                     Yes, however, if someone other than the person who is insured owns the life insurance policy, that person should also be the beneficiary. Otherwise, at the death of the insured, the death benefit will be treated as a taxable gift from the owner of the policy to the beneficiary.
+                   </div>
+                  </div>
+                </div>
+                <h4>Living Benefits</h4>
+                  <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea13" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>If I accelerate my death benefit, will I receive the full death benefit?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea13">
+                   <div class="card card-body">
+                     No. The actual payment you receive will be less than the portion of the death benefit accelerated because the benefits are paid prior to death. Values are based on current interest rates, the age of the policy, and your age and health.
+                   </div>
+                  </div>
+                </div>
+                  <h4>Annuities</h4>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea14" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Are Income payments from my annuity taxable?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea14">
+                   <div class="card card-body">
+                     Yes, if your annuity was purchased through a qualified account, such as an IRA, 403(b) or 401(K), all payments will be subject to ordinary income taxes. If your annuity was purchased with after-tax dollars, you will receive the earnings first, which are taxable as ordinary income. Once you have received all of your earnings, payments will be made from the premiums you made to policy which are received tax-free. If you purchase an income rider on your annuity, once your account value has been exhausted, you will continue to receive guaranteed payments for life, however, those payments will be received income taxable.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea15" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Can I exchange one annuity for another without paying taxes?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea15">
+                   <div class="card card-body">
+                     Yes you can. IRC Section 1035 allows for a tax-free exchange of one annuity for another. Before you decide to exchange one annuity for another, you will also want to consider any surrender charges that may be applied upon surrender of the contract as well as the new surrender penalty schedule for the new annuity you plan to purchase.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea16" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>If I take a withdrawal from my nonqualified annuity, how is it taxed?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea16">
+                   <div class="card card-body">
+                     Withdrawals from annuities purchased after August 14, 1982, are taken from earnings first. You will be required to pay income taxes on all earnings taken from the contract. Once you have withdrawn earnings, withdrawals will be made from the premiums paid into the policy. Withdrawals of premium are not subject to income taxes.
+
+If you take withdrawals prior to age 59 ½, withdrawals that are made from the earnings in your contract may also be subject to a 10% premature distribution penalty. Withdrawals of premiums paid are not subject to the premature distribution penalty.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea17" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Will my beneficiaries have to pay taxes on my annuity?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea17">
+                   <div class="card card-body">
+                     Withdrawals from annuities purchased after August 14, 1982, are taken from earnings first. You will be required to pay income taxes on all earnings taken from the contract. Once you have withdrawn earnings, withdrawals will be made from the premiums paid into the policy. Withdrawals of premium are not subject to income taxes.
+
+If you take withdrawals prior to age 59 ½, withdrawals that are made from the earnings in your contract may also be subject to a 10% premature distribution penalty. Withdrawals of premiums paid are not subject to the premature distribution penalty.
+                   </div>
+                  </div>
+                </div>
+                <h4>IRA</h4>
+                  <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea18" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>I have two jobs, in one I'm covered by a pension plan, in the other I'm not. Can I deduct my traditional IRA contribution? </span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea18">
+                   <div class="card card-body">
+                    Participation in any company plan at any time during the year triggers the deduction phase-out rules tied to your adjusted gross income and filing status.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea19" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Can I contribute to a traditional IRA and Roth IRA?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea19">
+                   <div class="card card-body">
+                    Yes you can as long as the total combined amount of your contributions don’t exceed the IRS maximum annual allowed amount.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplea20" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Can my minor child contribute to an IRA?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplea20">
+                   <div class="card card-body">
+                     As long as the child has earned income, they can contribute to a Minor IRA. It can be opened as a Traditional IRA or a Roth IRA. To establish a Minor IRA, the account must be opened and held by an adult, as guardian, in the name of the minor. While the guardian is authorized to perform transactions on the account, the minor is considered the registered owner for tax purposes
+                   </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                 <h4>Business Owners</h4>
+                  <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExampleb1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>What else can I offer my employees to encourage them to stay with my company?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExampleb1">
+                   <div class="card card-body">
+                     You may already be offering health, disability and a retirement program. If you aren’t you may want to look into your options. If you are, what else can you do?
+<br><br>
+Show your employees that you care through low-cost, high-value employee benefits. Consider things like flexible work schedules, social activities, and discounts to local establishments (support your local business community). Look to promote healthy lifestyles, consider offering gym memberships and free healthy food options at the office such as fruit, nuts and soft drink alternatives.
+<br><br>
+You could also offer financial service counseling for your employees and make it available during work hours.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExampleb2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Should I incorporate my business?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExampleb2">
+                   <div class="card card-body">
+                    The biggest advantage of incorporation is that the business assets of the corporation are separate from your personal finances. As a result, your personal assets generally can be shielded from creditors of the business.
+<br><br>
+Selecting to be treated as a C Corporation may also allow you, the business owner, to be eligible to participate in certain fringe benefit programs available only to workers classified as employees of the corporation.
+<br><br>
+To maintain this legal separation you must keep corporate assets separate from personal assets, hold periodic shareholder meetings, and file reports required by various government agencies, including a separate tax return. There is a cost associated with establishing and maintaining corporate formalities, and should be considered before making any decision. You will want to consult with your legal and tax advisor regarding the impact for your business.
+<br><br>
+When doing business as a C Corporation there are certain tax implications to consider and should be reviewed with your legal and accounting team.It is possible that the Corporate tax bracket may be lower than your personal tax bracket – this may lead to some benefit opportunities. Also, remember that a distribution from the C corporation to you as a shareholder may be treated as a dividend. This is sometimes referred to as double taxation – the earnings were taxed at the corporate level then again as a dividend when received by the shareholder. Whether this results in a higher tax cost than might be available through other business entities will actually depend on the corporate tax rate and the dividend tax rate.
+<br><br>
+Before deciding to incorporate, you should seek legal and tax advice on what type of ownership best suits your business.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExampleb3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Does It make sense to do a qualified plan if I'm going to have to pay taxes later on?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExampleb3">
+                   <div class="card card-body">
+                    The answer is it depends. It depends on what you anticipate your future individual tax rate to be and whether you can put the funds in a tax deferred asset as an alternative to the qualified plan. If you anticipate that your personal tax rate will be lower at retirement, then it may make sense for you to contribute to a qualified plan (and receive a current tax deduction and tax deferred growth). If you think your tax rates will be the same or higher in the future you need to factor in other issues. Determine if you will be able to use the potential tax savings from the contribution to the qualified plan and contribute the tax savings to a tax deferred growth fund. The combination of current tax savings, contributions to the qualified plan and the growth of the tax savings if contributed to a fund, may overcome the ultimate tax cost on withdrawals from the qualified plan.
+<br><br>
+Work with your tax advisor to see if a qualified plan makes sense for you.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExampleb4" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>What tax benefits do I get by transferring my business to a trust instead of directly to my children?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExampleb4">
+                   <div class="card card-body">
+                    Through the use of a so called Intentionally Defective Grantor Trust (funny name but that’s what the tax code calls them), you may be able to minimize both income and estate taxes.
+<br><br>
+By selling the business to the trust, any future appreciation of your business will be removed from your estate.It may be possible for you to receive a stream of payments from the Trust (as payment for the business) which may provide cash flow to you for retirement. Under current tax rules, the sale of the business through an installment note to the grantor trust should not result in taxable gain and the installment payments may also avoid current personal income taxes.
+<br><br>
+This area of planning is complex, and you will want to work with your legal advisor on the best solution for you.
+                   </div>
+                  </div>
+                </div>
+                <h4>Business Continuation</h4>
+                  <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExampleb5" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>How do you determine the value of a key employee to determine how much key person life insurance coverage to purchase?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExampleb5">
+                   <div class="card card-body">
+                    Three common methods that are used. The simplest method is the multiple of income method and often a multiple of five or seven is applied. Another method is the cost of replacement method. This method considers such things as expenses to recruit, hire, and train as well as salary. Slightly more complicated is the contribution to earnings method. Your legal or tax advisor can assist you with which method is most appropriate for your business.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExampleb6" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Is there formal documentation needed to set up Executive bonus plans for my employees?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExampleb6">
+                   <div class="card card-body">
+                    No. There are no formal requirements to establish an Executive Bonus program. The employee will apply for, and own, the life insurance policy. Your business will pay the premium directly to the insurance company. The premium will be considered as a “non-cash” fringe benefit for withholding purposes and are reported as other compensation on the employee’s W-2, subject to FICA and FUTA.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExampleb7" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>I do not have any employees. Do I need to file 5500s with the IRS?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExampleb7">
+                   <div class="card card-body">
+                    No. As long as you do not have any employees, and your plan assets are less than $250,000, you do not have to do annual 5500 filings.
+                   </div>
+                  </div>
+                </div>
+                <h4>Business Transition</h4>
+                  <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExampleb8" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>If I fund my stock redemption buy sell with business owned life Insurance, can the business deduct the premiums</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExampleb8">
+                   <div class="card card-body">
+                    No. Although the premiums are not deductible, the death benefit will be received income-tax free (as long as the notice and consent requirements under IRC Section 101(j) are followed).                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExampleb9" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>My partner wants to sell to me his share of the business, can I use my life Insurance policy to fund the deal?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExampleb9">
+                   <div class="card card-body">
+                    Life insurance policy loans and withdrawals reduce the policy's cash value and death benefit and may result in a taxable event. Surrender charges may reduce the policy's cash value in early years.
+                   </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <h4>Employers & Plan Sponsors</h4>
+                  <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplec1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>How do you determine the value of a key employee to determine how much key person life insurance coverage to purchase?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplec1">
+                   <div class="card card-body">
+                    Three common methods that are used. The simplest method is the multiple of income method and often a multiple of five or seven is applied. Another method is the cost of replacement method. This method considers such things as expenses to recruit, hire, and train as well as salary. Slightly more complicated is the contribution to earnings method. Your legal or tax advisor can assist you with which method is most appropriate for your business.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplec2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>Is there formal documentation needed to set up Executive bonus plans for my employees?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplec3">
+                   <div class="card card-body">
+                    No. There are no formal requirements to establish an Executive Bonus program. The employee will apply for, and own, the life insurance policy. Your business will pay the premium directly to the insurance company. The premium will be considered as a “non-cash” fringe benefit for withholding purposes and are reported as other compensation on the employee’s W-2, subject to FICA and FUTA.
+                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplec4" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>I do not have any employees. Do I need to file 5500s with the IRS?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplec4">
+                   <div class="card card-body">
+                    No. As long as you do not have any employees, and your plan assets are less than $250,000, you do not have to do annual 5500 filings.
+                   </div>
+                  </div>
+                </div>
+                  <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplec5" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>If I fund my stock redemption buy sell with business owned life Insurance, can the business deduct the premiums</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplec5">
+                   <div class="card card-body">
+                    No. Although the premiums are not deductible, the death benefit will be received income-tax free (as long as the notice and consent requirements under IRC Section 101(j) are followed).                   </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 details mt-4 mt-lg-0 card">
+                  <a class="btn " data-bs-toggle="collapse" href="#collapseExamplec6" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <span>My partner wants to sell to me his share of the business, can I use my life Insurance policy to fund the deal?</span> <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="collapseExamplec6">
+                   <div class="card card-body">
+                    Life insurance policy loans and withdrawals reduce the policy's cash value and death benefit and may result in a taxable event. Surrender charges may reduce the policy's cash value in early years.
+                   </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {% include "footer.html" %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

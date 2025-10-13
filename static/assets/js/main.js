@@ -98,11 +98,23 @@
   let heroCarouselIndicators = select("#hero-carousel-indicators")
   let heroCarouselItems = select('#heroCarousel .carousel-item', true)
 
-  heroCarouselItems.forEach((item, index) => {
-    (index === 0) ?
-    heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>":
-      heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
-  });
+  if (heroCarouselIndicators && heroCarouselItems && heroCarouselItems.length) {
+    if (!heroCarouselIndicators.children || heroCarouselIndicators.children.length === 0) {
+      heroCarouselIndicators.innerHTML = ''
+      heroCarouselItems.forEach((item, index) => {
+        const btn = document.createElement('button')
+        btn.type = 'button'
+        btn.setAttribute('data-bs-target', '#heroCarousel')
+        btn.setAttribute('data-bs-slide-to', String(index))
+        btn.setAttribute('aria-label', `Slide ${index + 1}`)
+        if (index === 0) {
+          btn.classList.add('active')
+          btn.setAttribute('aria-current', 'true')
+        }
+        heroCarouselIndicators.appendChild(btn)
+      })
+    }
+  }
 
   /**
    * Porfolio isotope and filter
