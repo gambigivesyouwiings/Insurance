@@ -3,6 +3,7 @@ import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import Home from './pages/Home'
+import emailjs from '@emailjs/browser'
 
 const rawTemplates = import.meta.glob('./templates/*.html', { as: 'raw', eager: true })
 function getRawTemplate(file) {
