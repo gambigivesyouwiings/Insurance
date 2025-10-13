@@ -4,7 +4,6 @@ import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import Home from './pages/Home'
 import emailjs from '@emailjs/browser'
-import emailjs from '@emailjs/browser'
 
 const rawTemplates = import.meta.glob('./templates/*.html', { as: 'raw', eager: true })
 function getRawTemplate(file) {
