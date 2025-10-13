@@ -4,6 +4,7 @@ import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import Home from './pages/Home'
 import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
 
 const rawTemplates = import.meta.glob('./templates/*.html', { as: 'raw', eager: true })
 function getRawTemplate(file) {
@@ -94,6 +95,48 @@ function useInjectHtml(file) {
         .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
         .replace(/\{\%.*?\%\}/gs, '')
       target.innerHTML = sanitized
+      // Attach EmailJS handler if contact form exists
+      const formA = target.querySelector('form.php-email-form')
+      if (formA) {
+        const loadingEl = formA.querySelector('.loading')
+        const errorEl = formA.querySelector('.error-message')
+        const sentEl = formA.querySelector('.sent-message')
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_faithful'
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'QLU1WdJ4iCNt22T7k'
+        const templateIds = (import.meta.env.VITE_EMAILJS_TEMPLATE_IDS || 'template_fka6k4q,template_m4kn7a5')
+          .split(',').map(s => s.trim()).filter(Boolean)
+
+        const submitHandler = async (e) => {
+          e.preventDefault()
+          if (loadingEl) loadingEl.style.display = 'block'
+          if (errorEl) errorEl.style.display = 'none'
+          if (sentEl) sentEl.style.display = 'none'
+
+          const fd = new FormData(formA)
+          const name = (fd.get('name') || '').toString()
+          const email = (fd.get('email') || '').toString()
+          const phone = (fd.get('number') || '').toString()
+          const message = (fd.get('message') || '').toString()
+          const policy = (fd.get('policy') || '').toString()
+
+          const params = { name, from_name: name, email, from_email: email, reply_to: email, phone, policy, message }
+
+          try {
+            await Promise.all(templateIds.map(tid => emailjs.send(serviceId, tid, params, publicKey)))
+            if (sentEl) sentEl.style.display = 'block'
+            formA.reset()
+          } catch (err) {
+            if (errorEl) errorEl.textContent = 'Failed to send. Please try again.'
+            if (errorEl) errorEl.style.display = 'block'
+            console.error('EmailJS error', err)
+          } finally {
+            if (loadingEl) loadingEl.style.display = 'none'
+          }
+        }
+
+        formA.addEventListener('submit', submitHandler)
+      }
+
       window.dispatchEvent(new Event('load'))
       return
     }
@@ -118,6 +161,48 @@ function useInjectHtml(file) {
           .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
           .replace(/\{\%.*?\%\}/gs, '')
         target.innerHTML = sanitized
+        // Attach EmailJS handler if contact form exists
+        const formB = target.querySelector('form.php-email-form')
+        if (formB) {
+          const loadingEl = formB.querySelector('.loading')
+          const errorEl = formB.querySelector('.error-message')
+          const sentEl = formB.querySelector('.sent-message')
+          const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_faithful'
+          const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'QLU1WdJ4iCNt22T7k'
+          const templateIds = (import.meta.env.VITE_EMAILJS_TEMPLATE_IDS || 'template_fka6k4q,template_m4kn7a5')
+            .split(',').map(s => s.trim()).filter(Boolean)
+
+          const submitHandler = async (e) => {
+            e.preventDefault()
+            if (loadingEl) loadingEl.style.display = 'block'
+            if (errorEl) errorEl.style.display = 'none'
+            if (sentEl) sentEl.style.display = 'none'
+
+            const fd = new FormData(formB)
+            const name = (fd.get('name') || '').toString()
+            const email = (fd.get('email') || '').toString()
+            const phone = (fd.get('number') || '').toString()
+            const message = (fd.get('message') || '').toString()
+            const policy = (fd.get('policy') || '').toString()
+
+            const params = { name, from_name: name, email, from_email: email, reply_to: email, phone, policy, message }
+
+            try {
+              await Promise.all(templateIds.map(tid => emailjs.send(serviceId, tid, params, publicKey)))
+              if (sentEl) sentEl.style.display = 'block'
+              formB.reset()
+            } catch (err) {
+              if (errorEl) errorEl.textContent = 'Failed to send. Please try again.'
+              if (errorEl) errorEl.style.display = 'block'
+              console.error('EmailJS error', err)
+            } finally {
+              if (loadingEl) loadingEl.style.display = 'none'
+            }
+          }
+
+          formB.addEventListener('submit', submitHandler)
+        }
+
         window.dispatchEvent(new Event('load'))
       }).catch(err => {
         console.error('Failed to load template', file, err)
