@@ -43,7 +43,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Faithful Insurance</a></h1>
+      <h1 class="logo me-auto"><a href="{{url_for('home')}}">Faithful Insurance</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -79,7 +79,7 @@
           <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
-                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Qualified plans</a></li>
                   <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
                 </ul>
               </li>
@@ -163,7 +163,7 @@
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Time is your friend.</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">The longer you defer taxes, the faster your money grows!</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">The longer you defer taxes, the faster your money may grow!</a>
               </li>
             </ul>
           </div>
@@ -173,11 +173,11 @@
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>403(b) plan</h3>
-                    <p class="fst-italic">TA 403(b) plan is a retirement savings plan for employees of public schools,
+                    <p class="fst-italic">A 403(b) plan is a retirement savings plan for employees of public schools,
                         non-profits and certain churches. This is a retirement plan in addition to any type of pension
                         your employer may offer. With a traditional 403(b) plan your contributions are tax-deferred,
                         meaning you pay taxes on the money when you take it out of the plan.
-                        With a Roth 403(b) plan you pay taxes on the contributions up front, but the money grows tax-free.</p>
+                        With a Roth 403(b) plan you pay taxes on the contributions up front, but the money has the potential to grow tax-free.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="static/assets/img/features-1.png" alt="" class="img-fluid">
@@ -220,6 +220,8 @@ If your employer offers both a 403(b) plan and a 457(b) plan you can maximize yo
                       <p>Will your retirement income cover increasing retirement expenses? Many school district employees
                           will experience a significant drop in income when they retire, even though they may be covered
                           under a pension plan. Chances are a state pension is not enough
+                      <br><br>
+                      The above hypothetical example is used for illustrative purposes only
                       </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -235,9 +237,9 @@ If your employer offers both a 403(b) plan and a 457(b) plan you can maximize yo
                         can make a significant impact on the total amount of money you have to live the life you want in retirement.
                     </p>
                   </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="static/assets/img/insurance/retirement-contributions.jpg" alt="" class="img-fluid">
-                  </div>
+<!--                  <div class="col-lg-4 text-center order-1 order-lg-2">-->
+<!--                    <img src="static/assets/img/insurance/retirement-contributions.jpg" alt="" class="img-fluid">-->
+<!--                  </div>-->
                 </div>
               </div>
               <div class="tab-pane" id="tab-5">
@@ -285,11 +287,9 @@ If your employer offers both a 403(b) plan and a 457(b) plan you can maximize yo
                       </table>
 
                       <p>(This hypothetical example is based on a teacher in the state of Texas claiming single and zero
-                          allowances and in the 25% tax bracket.)</p>
+                          allowances and in the 25% tax bracket. It is used for illustrative purposes only.)</p>
                   </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="static/assets/img/features-5.png" alt="" class="img-fluid">
-                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2"></div>
                 </div>
               </div>
             </div>
