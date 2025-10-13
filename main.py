@@ -207,7 +207,7 @@ def contact():
 def handle_chat():
     try:
         data = request.json
-        user_message: object = data.get('message')
+        user_message: str = data.get('message')
 
         if len(user_message) > MAX_MESSAGE_LENGTH:
             return jsonify({'error': 'Message too long'})
