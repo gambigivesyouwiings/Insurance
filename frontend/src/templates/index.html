@@ -43,7 +43,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Faithful insurance</a></h1>
+      <h1 class="logo me-auto"><a href="{{url_for('home')}}">Faithful insurance</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -79,7 +79,7 @@
           <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
-                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Qualified plans</a></li>
                   <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
                 </ul>
               </li>
@@ -92,83 +92,18 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
-      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-      <div class="carousel-inner" role="listbox">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(/static/assets/img/insurance/oldlady.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Faithful insurance</span></h2>
-              <p class="animate__animated animate__fadeInUp"> Your trusted Insurance partner</p>
-              <a href="{{url_for('contact')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get in touch</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(/static/assets/img/insurance/dental.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Medical Cover</h2>
-              <p class="animate__animated animate__fadeInUp">Enjoy medical benefits with flexible packages for yourself, family, groups and the self-employed.</p>
-              <a href="{{url_for('medical_cover')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(/static/assets/img/insurance/business.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Business Policies</h2>
-              <p class="animate__animated animate__fadeInUp">Our ultimate goal is to help employers like you assist your employees in becoming financially independent for tomorrow.</p>
-              <a href="{{url_for('key_plans')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="carousel-item" style="background-image: url(/static/assets/img/insurance/universitylatina.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">College Funding</h2>
-              <p class="animate__animated animate__fadeInUp">529 plans and permanent life insurance are two ways to create college funds for kids.</p>
-              <a href="{{url_for('college')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
-
-    </div>
-  </section><!-- End Hero -->
-
   <main id="main">
 
-    <!-- ======= About Section ======= -->
+      <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container">
+      <div class="container-fluid">
 
         <div class="row content">
-          <div class="col-lg-6">
+          <div class="col-lg-6 medium " style="text-align: center">
             <h2>Faithful insurance</h2>
             <h3>Your Life Insurance Partner</h3>
             <img id="maina" src="/static/assets/img/insurance/Faith_profile.jpeg" class="img-fluid" alt="Faith Maina">
-            <p><em>Faith Maina, Head FaithFul-insurance</em></p>
+            <p><em>Dr.Faith Maina, Head FaithFul Insurance</em></p>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
@@ -195,22 +130,88 @@
       </div>
     </section><!-- End About Section -->
 
+<!--   ======= Hero Section =======-->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(/static/assets/img/insurance/oldlady.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Faithful insurance</span></h2>
+              <p class="animate__animated animate__fadeInUp"> Your trusted Insurance partner</p>
+              <a href="{{url_for('contact')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get in touch</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url(/static/assets/img/insurance/dental.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">Medical Coverage</h2>
+              <p class="animate__animated animate__fadeInUp">Enjoy medical benefits with flexible packages for yourself, family, groups and the self-employed.</p>
+              <a href="{{url_for('medical_cover')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url(/static/assets/img/insurance/business.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">Business Policies</h2>
+              <p class="animate__animated animate__fadeInUp">Our ultimate goal is to help employers like you assist your employees in becoming financially independent for tomorrow.</p>
+              <a href="{{url_for('key_plans')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-item" style="background-image: url(/static/assets/img/insurance/universitylatina.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">College Funding</h2>
+              <p class="animate__animated animate__fadeInUp">There are many ways to save for college.  Were you aware that permanent life insurance not only provides a valuable death benefit for your family?  It also has the potential to accumulate cash value that could be accessed for college expenses using policy loans and withdrawals.*</p>
+              <a href="{{url_for('college')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients section-bg">
       <div class="container">
 
         <div class="row">
 
-          <div class="col-lg-4 col-md-4 col-6 d-flex align-items-center justify-content-center">
+          <div class="col-lg-6 col-md-6 col-6 d-flex align-items-center justify-content-center">
             <img src="/static/assets/img/favicon.ico" class="img-fluid" alt="">
           </div>
 
-          <div class="col-lg-4 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="/static/assets/img/clients/logo_transparent.png" class="img-fluid" alt="">
-          </div>
+<!--         <div class="col-lg-4 col-md-4 col-6 d-flex align-items-center justify-content-center">-->
+<!--            <img src="/static/assets/img/clients/logo_transparent.png" class="img-fluid" alt="">-->
+<!--          </div> -->
 
-          <div class="col-lg-4 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="/static/assets/img/clients/logo-national-life.jpg" class="img-fluid" alt="">
+          <div class="col-lg-6 col-md-6 col-6 d-flex align-items-center justify-content-center">
+            <img src="/static/assets/img/clients/image002.jpeg" class="img-fluid" alt="">
           </div>
 
         </div>
@@ -218,7 +219,7 @@
       </div>
     </section><!-- End Clients Section -->
 
-    <!-- ======= Services Section ======= -->
+<!--     ======= Services Section =======-->
     <section id="services" class="services">
       <div class="container">
 
@@ -226,18 +227,18 @@
           <div class="col-md-6">
             <div class="icon-box">
               <i class="bi bi-briefcase"></i>
-              <h4><a href="#">Life Insurance</a></h4>
+              <h4><a href="{{url_for('life_insurance')}}">Life Insurance</a></h4>
               <p>There are many types of life insurance.
                 Term insurance only provides a death benefit for a limited period of time.
                 By contrast permanent insurance can provide a death benefit and the potential
-                to build policy cash value that you can access during your lifetime using policy loans and withdrawals
+                to build policy cash value that you can access during your lifetime using policy loans and withdrawals*
               </p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box">
               <i class="bi bi-card-checklist"></i>
-              <h4><a href="#">Annuities</a></h4>
+              <h4><a href="{{url_for('annuity')}}">Annuities</a></h4>
             <p>
               An annuity allows a customer to deposit money (premiums) with an insurance
               company that can earn interest and grow on a tax-deferred basis with the agreement that the
@@ -250,41 +251,41 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
+<!--    <section id="portfolio" class="portfolio">-->
+<!--      <div class="container">-->
 
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">Youtube</li>
-              <li data-filter=".filter-app">Videos</li>
-<!--              <li data-filter=".filter-card">Card</li>-->
-<!--              <li data-filter=".filter-web">Web</li>-->
-            </ul>
-          </div>
-        </div>
-
-        <div id="p-container" class="row portfolio-container">
-          {% for video in videos[:3] %}
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{ video.img_url }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>{{ video.title }}</h4>
-                <p>{{ video.body }}</p>
-                <div class="portfolio-links">
-                  <a href="https://www.youtube.com/embed/{{video.video_url}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Play"><i class="bx bx-play"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-<!--        <div>-->
-<!--          <button id="show"></button>-->
+<!--        <div class="row">-->
+<!--          <div class="col-lg-12 d-flex justify-content-center">-->
+<!--            <ul id="portfolio-flters">-->
+<!--              <li data-filter="*" class="filter-active">Youtube</li>-->
+<!--              <li data-filter=".filter-app">Videos</li>-->
+<!--&lt;!&ndash;              <li data-filter=".filter-card">Card</li>&ndash;&gt;-->
+<!--&lt;!&ndash;              <li data-filter=".filter-web">Web</li>&ndash;&gt;-->
+<!--            </ul>-->
+<!--          </div>-->
 <!--        </div>-->
-      </div>
-    </section><!-- End Portfolio Section -->
+
+<!--        <div id="p-container" class="row portfolio-container">-->
+<!--          {% for video in videos[5:8] %}-->
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-app">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="{{ video.img_url }}" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+<!--                <h4>{{ video.title }}</h4>-->
+<!--                <p>{{ video.body }}</p>-->
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="https://www.youtube.com/embed/{{video.video_url}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Play"><i class="bx bx-play"></i></a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          {% endfor %}-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <p>These are paid client testimonials</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End Portfolio Section &ndash;&gt;-->
 
   </main><!-- End #main -->
 
@@ -292,6 +293,77 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+
+
+
+<!--  <script>-->
+<!--    let isChatOpen = false;-->
+<!--    let chatHistory = [];-->
+
+<!--    async function sendMessage() {-->
+<!--            const input = document.getElementById('userInput');-->
+<!--            const message = input.value.trim();-->
+<!--            if (!message) return;-->
+
+<!--            addMessageToHistory(message, 'user');-->
+<!--            input.value = '';-->
+
+<!--            try {-->
+<!--                const typingIndicator = addTypingIndicator();-->
+
+<!--                // Send to Flask backend-->
+<!--                const response = await fetch('http://localhost:5000/chat', {-->
+<!--                    method: 'POST',-->
+<!--                    headers: {-->
+<!--                        'Content-Type': 'application/json'-->
+<!--                    },-->
+<!--                    body: JSON.stringify({ message: message })-->
+<!--                });-->
+
+<!--                if (!response.ok) {-->
+<!--                    throw new Error(`HTTP error! status: ${response.status}`);-->
+<!--                }-->
+
+<!--                const data = await response.json();-->
+
+<!--                typingIndicator.remove();-->
+<!--                addMessageToHistory(data.response, 'bot');-->
+
+<!--            } catch (error) {-->
+<!--                console.error('Error:', error);-->
+<!--                addMessageToHistory('Sorry, there was an error processing your request.', 'bot');-->
+<!--            }-->
+<!--        }-->
+<!--    function toggleChat() {-->
+<!--            const container = document.getElementById('chatContainer');-->
+<!--            isChatOpen = !isChatOpen;-->
+<!--            container.style.display = isChatOpen ? 'flex' : 'none';-->
+<!--        }-->
+<!--    function addMessageToHistory(text, sender) {-->
+<!--            const history = document.getElementById('chatHistory');-->
+<!--            const messageDiv = document.createElement('div');-->
+<!--            messageDiv.className = `message ${sender}-message`;-->
+<!--            messageDiv.textContent = text;-->
+<!--            history.appendChild(messageDiv);-->
+<!--            history.scrollTop = history.scrollHeight;-->
+<!--        }-->
+
+<!--        function addTypingIndicator() {-->
+<!--            const history = document.getElementById('chatHistory');-->
+<!--            const typingDiv = document.createElement('div');-->
+<!--            typingDiv.className = 'message bot-message';-->
+<!--            typingDiv.textContent = '...';-->
+<!--            typingDiv.id = 'typingIndicator';-->
+<!--            history.appendChild(typingDiv);-->
+<!--            return typingDiv;-->
+<!--        }-->
+
+<!--        function handleKeyPress(event) {-->
+<!--            if (event.key === 'Enter') {-->
+<!--                sendMessage();-->
+<!--            }-->
+<!--        }-->
+<!--  </script>-->
   <!-- Vendor JS Files -->
   <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>

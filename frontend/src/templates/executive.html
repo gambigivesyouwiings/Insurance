@@ -43,7 +43,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Faithful Insurance</a></h1>
+      <h1 class="logo me-auto"><a href="{{url_for('home')}}">Faithful Insurance</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -79,7 +79,7 @@
           <li class="dropdown"><a href="#" class="active"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
-                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Qualified plans</a></li>
                   <li><a href="{{url_for('executive')}}" class="active">Executive Bonus Plans</a></li>
                 </ul>
               </li>
@@ -158,6 +158,12 @@
         </div>
 
       </div>
+        <p class="fst-italic">
+            <br>
+        Associates of Faithful Insurance do not offer tax or legal advice. For advice concerning your own situation,
+        please consult with your appropriate professional advisor.
+        </p>
+
     </section><!-- End Services Section -->
 
     <!-- ======= Features Section ======= -->
