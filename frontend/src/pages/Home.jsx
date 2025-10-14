@@ -43,7 +43,12 @@ export default function Home() {
         <section id="hero">
           <div id="heroCarousel" data-bs-interval="5000" className="carousel slide carousel-fade" data-bs-ride="carousel">
 
-            <ol className="carousel-indicators" id="hero-carousel-indicators"></ol>
+            <ol className="carousel-indicators" id="hero-carousel-indicators">
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </ol>
 
             <div className="carousel-inner" role="listbox">
 
