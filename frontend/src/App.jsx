@@ -184,6 +184,29 @@ function useInjectHtml(file) {
           .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
           .replace(/\{\%.*?\%\}/gs, '')
         target.innerHTML = sanitized
+
+        // Ensure carousel indicators exist to avoid Bootstrap JS errors when indicators are empty
+        const carousels = target.querySelectorAll('.carousel')
+        carousels.forEach(carousel => {
+          const indicators = carousel.querySelector('.carousel-indicators')
+          const items = carousel.querySelectorAll('.carousel-item')
+          if (indicators && items.length && indicators.children.length < items.length) {
+            indicators.innerHTML = ''
+            items.forEach((_, idx) => {
+              const btn = document.createElement('button')
+              btn.type = 'button'
+              btn.setAttribute('data-bs-target', `#${carousel.id || 'heroCarousel'}`)
+              btn.setAttribute('data-bs-slide-to', idx)
+              if (idx === 0) {
+                btn.className = 'active'
+                btn.setAttribute('aria-current', 'true')
+              }
+              btn.setAttribute('aria-label', `Slide ${idx + 1}`)
+              indicators.appendChild(btn)
+            })
+          }
+        })
+
         // Attach EmailJS handler if contact form exists
         const formB = target.querySelector('form.php-email-form')
         if (formB) {
