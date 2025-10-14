@@ -43,7 +43,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Faithful Insurance</a></h1>
+      <h1 class="logo me-auto"><a href="{{url_for('home')}}">Faithful Insurance</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -79,7 +79,7 @@
           <li class="dropdown"><a href="#"><span>Employers & Plan sponsors</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="{{url_for('key_plans')}}">Key employee Insurance plans</a></li>
-                  <li><a href="{{url_for('income_rider')}}">Guaranteed Lifetime Income Rider</a></li>
+                  <li><a href="{{url_for('income_rider')}}">Qualified plans</a></li>
                   <li><a href="{{url_for('executive')}}">Executive Bonus Plans</a></li>
                 </ul>
               </li>
@@ -165,10 +165,7 @@
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Indexed Universal Life Insurance</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Variable Universal Life Insurance</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Term Insurance</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Term Life Insurance</a>
               </li>
             </ul>
           </div>
@@ -183,11 +180,20 @@
                   <ol>
                     <li>Guaranteed death benefit</li>
                     <li>Guaranteed level premiums</li>
-                    <li>Guaranteed cash value growth</li>
+                    <li>Guaranteed cash value growth if premium payments are made</li>
                       <li>Potential additional cash value by the receipt of any dividends declared by the company.
                           Although not guaranteed, dividend payments are generally declared annually by the company.</li>
-                    <li>Guaranteed access to cash value</li>
+                    <li>Guaranteed access to cash value through policy loans and withdrawals</li>
                   </ol>
+                      <p class="fst-italic"> <sup>*</sup>Guarantees are dependent upon the claims-paying ability of the issuing company.<br><br>
+                      Policy loans and withdrawals reduce the policy’s cash value and death benefit and may result in a
+                          taxable event.  Surrender charges may reduce the policy's cash value in early years. Withdrawals
+                          up to the basis paid into the contract and loans thereafter will not create an immediate taxable
+                          event, but substantial tax ramifications could result upon contract lapse or surrender. Policy
+                          loans will be taxed as ordinary income if the policy is allowed to lapse. It is possible that
+                          coverage will expire when either no premiums are paid following the initial premium, or
+                          subsequent premiums are insufficient to continue coverage.
+                      </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="static/assets/img/features-1.png" alt="" class="img-fluid">
@@ -197,7 +203,7 @@
               <div class="tab-pane" id="tab-2">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Univeral Life Insurance</h3>
+                    <h3>Universal Life Insurance</h3>
                     <p class="fst-italic">May be ideal for the consumer who has a need for life insurance, is somewhat
                         conservative, and wants the guarantees of a fixed, minimum interest rate with the potential for
                         additional interest credits.</p>
@@ -211,6 +217,7 @@
                               which is subject to change, but will never be lower than a guaranteed minimum interest rate.
                           </li>
                       </ol>
+                      <p class="fst-italic"> <sup>*</sup>Guarantees are dependent upon the claims-paying ability of the issuing company.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="static/assets/img/features-2.png" alt="" class="img-fluid">
@@ -237,43 +244,32 @@
                           <li>Downside protection through minimum guarantees
                               to ensure that your cash value will not decline due to decreases in the Index.</li>
                       </ol>
+                      <p class="fst-italic"><sup>*</sup>An Indexed Universal Life (IUL) insurance policy is usually a
+                          fixed universal life (UL) policy whose interest is determined, at least in part, by the
+                          performance of a specified index of the market. Unlike traditional UL policies, the policy
+                          owner may receive zero interest for a single crediting period if the index performs poorly.
+                          However, with most designs, the premiums are protected and guaranteed to credit a minimum
+                          interest rate in the event the policy is surrendered.  The owner of an IUL policy may experience
+                          better interest crediting than a traditional UL policy during periods when the market performs
+                          well. IUL policies do not directly participate in any stock or equity investments.  The amount
+                          of interest credited is limited by a “cap”.  The 0% “floor” provided by an indexed universal
+                          life insurance policy ensures that during crediting periods where the index is negative, that
+                          no less than 0% interest is credited to the index strategy.  However, monthly deductions continue
+                          to be taken from the account value, including a monthly policy fee, monthly expense charge, cost
+                          of insurance charge, and applicable rider charges, regardless of interest crediting. An IUL
+                          insurance policy does not directly participate in any stock or equity investments. Guarantees
+                          are dependent upon the claims-paying ability of the issuing company.
+                      </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="static/assets/img/features-3.png" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="tab-4">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Variable Universal Life Insurance</h3>
-                    <p class="fst-italic">This policy design is for the customer who needs life insurance but would like
-                        to have the ability to choose how their cash value is invested.</p>
-                    <p><b>Variable contracts are sold by prospectus. For more complete information,
-                        please request a prospectus from your registered representative or call 1-201-920-7621.
-                        Please read it and consider carefully a Fund’s objectives, risks, charges and expenses before
-                        you invest or send money.
-                        The prospectus contains this and other information about the investment company.</b></p>
-                      <br>
-                      <p>OFFERS:</p>
-                      <ol>
-                          <li>Flexible death benefit</li>
-                          <li>Flexible premiums</li>
-                          <li>Cash value grows based on the performance of the professionally managed stock, bond and
-                              money market sub-accounts that you choose. You can design a portfolio to match your comfort
-                              level and risk tolerance. Policy cash values fluctuate based on the sub-accounts in which
-                              you are invested and may lose value, including principal.</li>
-                      </ol>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="static/assets/img/features-4.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
               <div class="tab-pane" id="tab-5">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Term Insurance</h3>
+                    <h3>Term Life Insurance</h3>
                     <p class="fst-italic">May make sense for those who have budget limitations, large protection needs or temporary need.</p>
                     <p>Offers:</p>
                       <ol>
@@ -285,6 +281,8 @@
                           <li>Initial premiums tend to be lower but will eventually increase.</li>
                           <li>May be renewable at the end of the term, at a higher premium. T&Cs apply</li>
                       </ol>
+                      <p class="fst-italic"><sup>*</sup>Guarantees are dependent upon the claims-paying ability of the issuing company.
+                      </P>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="static/assets/img/features-5.png" alt="" class="img-fluid">
