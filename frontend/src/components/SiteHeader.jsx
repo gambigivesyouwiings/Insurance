@@ -3,11 +3,12 @@ import { Link, useLocation } from 'react-router-dom'
 
 export default function SiteHeader() {
   const { pathname } = useLocation()
-  const normalized = pathname === '/' ? '/' : pathname.replace(/\/+$/, '').toLowerCase()
+  // preserve case for routes like /IRA and /FAQs; only trim trailing slashes
+  const normalized = pathname === '/' ? '/' : pathname.replace(/\/+$/, '')
 
-  const familiesPaths = ['/life-insurance','/retirement-benefits','/living-benefits','/longterm-care','/ira','/annuities','/dental','/medical','/disability-insurance','/college']
-  const businessPaths = ['/business-transition','/business-continuation']
-  const employersPaths = ['/key-employee','/glir','/executive']
+  const familiesPaths = ['/life_insurance','/retirement-benefits','/living-benefits','/long-term','/IRA','/annuity','/dental-cover','/medical-cover','/disability-cover','/college_funding']
+  const businessPaths = ['/business_transition','/business_continuation']
+  const employersPaths = ['/key_employee_insurance_plans','/qualified_plans','/executive_bonus_plans']
 
   const isHome = normalized === '/'
   const isFamilies = familiesPaths.includes(normalized)
