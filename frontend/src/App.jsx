@@ -91,8 +91,30 @@ function useInjectHtml(file) {
       const normalizedAssets = mainInner
         .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=$2/static/')
       const withoutScripts = normalizedAssets.replace(/<script[\s\S]*?<\/script>/gi, '')
+      // Replace Flask url_for(...) with SPA routes when injecting templates
+      const urlForMap = {
+        home: '/',
+        contact: '/contact_us',
+        life_insurance: '/life_insurance',
+        retirement_benefits: '/retirement-benefits',
+        living_benefits: '/living-benefits',
+        long_term: '/long-term',
+        ira: '/IRA',
+        annuity: '/annuity',
+        dental_cover: '/dental-cover',
+        medical_cover: '/medical-cover',
+        disability_cover: '/disability-cover',
+        college: '/college_funding',
+        business_continuation: '/business_continuation',
+        business_transition: '/business_transition',
+        key_plans: '/key_employee_insurance_plans',
+        income_rider: '/qualified_plans',
+        executive: '/executive_bonus_plans',
+        mblog: '/mblog'
+      }
+
       const sanitized = withoutScripts
-        .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
+        .replace(/\{\{\s*url_for\(\s*['\"]([^'\"]+)['\"]\s*\)\s*\}\}/g, (m, p1) => urlForMap[p1] || '#')
         .replace(/\{\%.*?\%\}/gs, '')
       target.innerHTML = sanitized
 
@@ -180,10 +202,32 @@ function useInjectHtml(file) {
         const normalizedAssets = mainInner
           .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=$2/static/')
         const withoutScripts = normalizedAssets.replace(/<script[\s\S]*?<\/script>/gi, '')
-        const sanitized = withoutScripts
-          .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
-          .replace(/\{\%.*?\%\}/gs, '')
-        target.innerHTML = sanitized
+      // Replace Flask url_for(...) with SPA routes when injecting templates
+      const urlForMap = {
+        home: '/',
+        contact: '/contact_us',
+        life_insurance: '/life_insurance',
+        retirement_benefits: '/retirement-benefits',
+        living_benefits: '/living-benefits',
+        long_term: '/long-term',
+        ira: '/IRA',
+        annuity: '/annuity',
+        dental_cover: '/dental-cover',
+        medical_cover: '/medical-cover',
+        disability_cover: '/disability-cover',
+        college: '/college_funding',
+        business_continuation: '/business_continuation',
+        business_transition: '/business_transition',
+        key_plans: '/key_employee_insurance_plans',
+        income_rider: '/qualified_plans',
+        executive: '/executive_bonus_plans',
+        mblog: '/mblog'
+      }
+
+      const sanitized = withoutScripts
+        .replace(/\{\{\s*url_for\(\s*['\"]([^'\"]+)['\"]\s*\)\s*\}\}/g, (m, p1) => urlForMap[p1] || '#')
+        .replace(/\{\%.*?\%\}/gs, '')
+      target.innerHTML = sanitized
 
         // Ensure carousel indicators exist to avoid Bootstrap JS errors when indicators are empty
         const carousels = target.querySelectorAll('.carousel')
