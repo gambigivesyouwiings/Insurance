@@ -77,6 +77,8 @@ export default function SiteFooter() {
         </div>
       </footer>
 
+      <a href="#" className="back-to-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
+
       <div className="chat-icon" onClick={() => window.toggleChat && window.toggleChat()}><i className="bi bi-whatsapp"></i></div>
       <div className="chat-container" style={{ top: 'var(--top)', left: 'var(--left)' }} id="chatContainer">
         <div className="chat-header" id="chat-header-two">
