@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function SiteFooter() {
+  useEffect(() => {
+    const el = document.querySelector('.back-to-top')
+    if (!el) return
+    const onScroll = () => {
+      if (window.scrollY > 100) el.classList.add('active')
+      else el.classList.remove('active')
+    }
+    window.addEventListener('load', onScroll)
+    window.addEventListener('scroll', onScroll)
+    const onClick = (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+    el.addEventListener('click', onClick)
+    // initial check
+    onScroll()
+    return () => {
+      window.removeEventListener('load', onScroll)
+      window.removeEventListener('scroll', onScroll)
+      el.removeEventListener('click', onClick)
+    }
+  }, [])
+
   return (
     <>
       <footer id="footer">
