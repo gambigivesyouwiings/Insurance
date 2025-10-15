@@ -137,7 +137,7 @@ export default function SiteFooter() {
       </a>
 
       <div className="chat-icon" onClick={() => window.toggleChat && window.toggleChat()}><i className="bi bi-whatsapp"></i></div>
-      <div className="chat-container" style={{ top: 'var(--top)', left: 'var(--left)' }} id="chatContainer">
+      <div className="chat-container" style={{ top: 'var(--top)', left: 'var(--left)', display: 'none' }} id="chatContainer">
         <div className="chat-header" id="chat-header-two">
           <h3>Whatsapp Chat Assistant</h3>
           <i className="bi bi-x" onClick={() => window.toggleChat && window.toggleChat()}></i>
