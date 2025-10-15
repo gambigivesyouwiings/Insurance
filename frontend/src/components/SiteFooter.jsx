@@ -15,6 +15,40 @@ export default function SiteFooter() {
     el.addEventListener('click', onClick)
     // initial check
     onScroll()
+
+    // Dynamically load chat.js if it isn't already loaded and expose handlers
+    if (!window.toggleChat || !window.sendMessage) {
+      const script = document.createElement('script')
+      script.src = '/static/assets/js/chat.js'
+      script.async = true
+      script.onload = () => {
+        // chat.js defines global functions; nothing else needed
+      }
+      document.body.appendChild(script)
+    }
+
+    // Provide a safe fallback toggle in case chat.js fails to load
+    if (!window.toggleChat) {
+      window.toggleChat = function() {
+        const container = document.getElementById('chatContainer')
+        if (!container) return
+        const header = document.getElementById('chat-header-two')
+        container.style.display = container.style.display === 'flex' ? 'none' : 'flex'
+      }
+    }
+
+    if (!window.handleWhatsAppKeyPress) {
+      window.handleWhatsAppKeyPress = function(e) {
+        if (e.key === 'Enter') {
+          const userInput = document.getElementById('userInput')?.value || ''
+          const phoneNumber = '12019207621'
+          const message = encodeURIComponent(userInput)
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
+          window.open(whatsappUrl, '_blank')
+        }
+      }
+    }
+
     return () => {
       window.removeEventListener('load', onScroll)
       window.removeEventListener('scroll', onScroll)
