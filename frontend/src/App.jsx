@@ -34,32 +34,33 @@ function ReloadMainScript() {
 
 const routeMap = [
   { path: '/', element: <Home /> },
-  { path: '/about', template: 'about.html' },
-  { path: '/annuities', template: 'annuities.html' },
-  { path: '/blog', template: 'blog.html' },
-  { path: '/blog-single', template: 'blog-single.html' },
-  { path: '/business-continuation', template: 'business-continuation.html' },
-  { path: '/business-transition', template: 'business-transition.html' },
-  { path: '/college', template: 'college.html' },
-  { path: '/contact', template: 'contact.html' },
-  { path: '/dental', template: 'dental.html' },
-  { path: '/disability-insurance', template: 'disability-insurance.html' },
-  { path: '/executive', template: 'executive.html' },
-  { path: '/GLIR', template: 'GLIR.html' },
-  { path: '/ira', template: 'ira.html' },
-  { path: '/key-employee', template: 'key-employee.html' },
-  { path: '/life-insurance', template: 'life-insurance.html' },
-  { path: '/living-benefits', template: 'living-benefits.html' },
-  { path: '/longterm-care', template: 'longterm-care.html' },
-  { path: '/medical', template: 'medical.html' },
-  { path: '/portfolio', template: 'portfolio.html' },
-  { path: '/portfolio-details', template: 'portfolio-details.html' },
-  { path: '/pricing', template: 'pricing.html' },
+  { path: '/welcome', element: <Navigate to="/" replace /> },
+  { path: '/contact_us', template: 'contact.html' },
+  { path: '/mservices', template: 'services.html' },
+  { path: '/mportfolio', template: 'portfolio.html' },
+  { path: '/about_us', template: 'about.html' },
+  { path: '/life_insurance', template: 'life-insurance.html' },
   { path: '/retirement-benefits', template: 'retirement-benefits.html' },
-  { path: '/services', template: 'services.html' },
+  { path: '/living-benefits', template: 'living-benefits.html' },
+  { path: '/medical-cover', template: 'medical.html' },
+  { path: '/dental-cover', template: 'dental.html' },
+  { path: '/disability-cover', template: 'disability-insurance.html' },
+  { path: '/long-term', template: 'longterm-care.html' },
+  { path: '/IRA', template: 'ira.html' },
+  { path: '/college_funding', template: 'college.html' },
+  { path: '/annuity', template: 'annuities.html' },
+  { path: '/business_continuation', template: 'business-continuation.html' },
+  { path: '/business_transition', template: 'business-transition.html' },
+  { path: '/key_employee_insurance_plans', template: 'key-employee.html' },
+  { path: '/qualified_plans', template: 'qualified.html' },
+  { path: '/executive_bonus_plans', template: 'executive.html' },
+  { path: '/mblog', template: 'blog.html' },
   { path: '/team', template: 'team.html' },
-  { path: '/testimonials', template: 'testimonials.html' },
-  { path: '/faqs', template: 'FAQS.html' },
+  { path: '/FAQs', template: 'FAQS.html' },
+  { path: '/pricing', template: 'pricing.html' },
+  { path: '/testimonial', template: 'testimonials.html' },
+  { path: '/blog_single', template: 'blog-single.html' },
+  { path: '/portfolio_det', template: 'portfolio-details.html' },
 ]
 
 function StaticHtmlPage({ file }) {
@@ -90,10 +91,55 @@ function useInjectHtml(file) {
       const normalizedAssets = mainInner
         .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=$2/static/')
       const withoutScripts = normalizedAssets.replace(/<script[\s\S]*?<\/script>/gi, '')
+      // Replace Flask url_for(...) with SPA routes when injecting templates
+      const urlForMap = {
+        home: '/',
+        contact: '/contact_us',
+        life_insurance: '/life_insurance',
+        retirement_benefits: '/retirement-benefits',
+        living_benefits: '/living-benefits',
+        long_term: '/long-term',
+        ira: '/IRA',
+        annuity: '/annuity',
+        dental_cover: '/dental-cover',
+        medical_cover: '/medical-cover',
+        disability_cover: '/disability-cover',
+        college: '/college_funding',
+        business_continuation: '/business_continuation',
+        business_transition: '/business_transition',
+        key_plans: '/key_employee_insurance_plans',
+        income_rider: '/qualified_plans',
+        executive: '/executive_bonus_plans',
+        mblog: '/mblog'
+      }
+
       const sanitized = withoutScripts
-        .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
+        .replace(/\{\{\s*url_for\(\s*['\"]([^'\"]+)['\"]\s*\)\s*\}\}/g, (m, p1) => urlForMap[p1] || '#')
         .replace(/\{\%.*?\%\}/gs, '')
       target.innerHTML = sanitized
+
+      // Ensure carousel indicators exist to avoid Bootstrap JS errors when indicators are empty
+      const carousels = target.querySelectorAll('.carousel')
+      carousels.forEach(carousel => {
+        const indicators = carousel.querySelector('.carousel-indicators')
+        const items = carousel.querySelectorAll('.carousel-item')
+        if (indicators && items.length && indicators.children.length < items.length) {
+          indicators.innerHTML = ''
+          items.forEach((_, idx) => {
+            const btn = document.createElement('button')
+            btn.type = 'button'
+            btn.setAttribute('data-bs-target', `#${carousel.id || 'heroCarousel'}`)
+            btn.setAttribute('data-bs-slide-to', idx)
+            if (idx === 0) {
+              btn.className = 'active'
+              btn.setAttribute('aria-current', 'true')
+            }
+            btn.setAttribute('aria-label', `Slide ${idx + 1}`)
+            indicators.appendChild(btn)
+          })
+        }
+      })
+
       // Attach EmailJS handler if contact form exists
       const formA = target.querySelector('form.php-email-form')
       if (formA) {
@@ -156,10 +202,55 @@ function useInjectHtml(file) {
         const normalizedAssets = mainInner
           .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=$2/static/')
         const withoutScripts = normalizedAssets.replace(/<script[\s\S]*?<\/script>/gi, '')
-        const sanitized = withoutScripts
-          .replace(/\{\{\s*url_for\(.*?\)\s*\}\}/g, '#')
-          .replace(/\{\%.*?\%\}/gs, '')
-        target.innerHTML = sanitized
+      // Replace Flask url_for(...) with SPA routes when injecting templates
+      const urlForMap = {
+        home: '/',
+        contact: '/contact_us',
+        life_insurance: '/life_insurance',
+        retirement_benefits: '/retirement-benefits',
+        living_benefits: '/living-benefits',
+        long_term: '/long-term',
+        ira: '/IRA',
+        annuity: '/annuity',
+        dental_cover: '/dental-cover',
+        medical_cover: '/medical-cover',
+        disability_cover: '/disability-cover',
+        college: '/college_funding',
+        business_continuation: '/business_continuation',
+        business_transition: '/business_transition',
+        key_plans: '/key_employee_insurance_plans',
+        income_rider: '/qualified_plans',
+        executive: '/executive_bonus_plans',
+        mblog: '/mblog'
+      }
+
+      const sanitized = withoutScripts
+        .replace(/\{\{\s*url_for\(\s*['\"]([^'\"]+)['\"]\s*\)\s*\}\}/g, (m, p1) => urlForMap[p1] || '#')
+        .replace(/\{\%.*?\%\}/gs, '')
+      target.innerHTML = sanitized
+
+        // Ensure carousel indicators exist to avoid Bootstrap JS errors when indicators are empty
+        const carousels = target.querySelectorAll('.carousel')
+        carousels.forEach(carousel => {
+          const indicators = carousel.querySelector('.carousel-indicators')
+          const items = carousel.querySelectorAll('.carousel-item')
+          if (indicators && items.length && indicators.children.length < items.length) {
+            indicators.innerHTML = ''
+            items.forEach((_, idx) => {
+              const btn = document.createElement('button')
+              btn.type = 'button'
+              btn.setAttribute('data-bs-target', `#${carousel.id || 'heroCarousel'}`)
+              btn.setAttribute('data-bs-slide-to', idx)
+              if (idx === 0) {
+                btn.className = 'active'
+                btn.setAttribute('aria-current', 'true')
+              }
+              btn.setAttribute('aria-label', `Slide ${idx + 1}`)
+              indicators.appendChild(btn)
+            })
+          }
+        })
+
         // Attach EmailJS handler if contact form exists
         const formB = target.querySelector('form.php-email-form')
         if (formB) {
