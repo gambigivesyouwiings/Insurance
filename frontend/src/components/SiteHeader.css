@@ -1,0 +1,181 @@
+/* Additional styles for React SiteHeader mobile navigation */
+
+/* Desktop dropdown buttons - make them look like anchor links */
+.navbar .dropdown button {
+  background: none;
+  border: none;
+  color: #556270;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 10px 0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: auto;
+  text-align: left;
+  transition: 0.3s;
+  position: relative;
+}
+
+.navbar .dropdown button:hover {
+  color: #d9232d;
+}
+
+.navbar .dropdown button.active {
+  color: #d9232d;
+}
+
+.navbar .dropdown button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Desktop: make dropdown buttons look exactly like anchor links */
+@media (min-width: 1200px) {
+  .navbar .dropdown > button {
+    background: none;
+    border: none;
+    color: #556270;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    white-space: nowrap;
+    transition: 0.3s;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .navbar .dropdown > button:focus {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #556270;
+  }
+  
+  .navbar .dropdown > button:hover {
+    color: #d9232d;
+  }
+  
+  .navbar .dropdown > button.active {
+    color: #d9232d;
+  }
+  
+  .navbar .dropdown > button i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+}
+
+/* Mobile dropdown button styling - only apply these styles in mobile mode */
+.navbar-mobile .dropdown button {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #556270;
+  width: 100%;
+  display: block;
+  text-align: left;
+  background: none;
+  border: none;
+}
+
+/* Desktop hover behavior for main dropdowns only */
+@media (min-width: 1200px) {
+  .navbar .dropdown:hover > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+  
+  .navbar .dropdown > ul {
+    transition: all 0.3s ease;
+  }
+  
+  /* Desktop: Use click behavior for nested dropdowns (like mobile) */
+  .navbar .dropdown .dropdown ul {
+    position: static;
+    display: none;
+    margin: 10px 0;
+    padding: 10px 0;
+    background: #f8f9fa;
+    border-left: 3px solid #d9232d;
+    box-shadow: none;
+  }
+  
+  .navbar .dropdown .dropdown-active {
+    display: block !important;
+  }
+  
+  /* Nested dropdown links styling for desktop */
+  .navbar .dropdown .dropdown ul a {
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .navbar .dropdown .dropdown ul a:hover {
+    color: #d9232d;
+    background-color: #f1f1f1;
+  }
+  
+  /* Align nested dropdown button with other links in desktop */
+  .navbar .dropdown .dropdown > button {
+    position: relative;
+    padding: 10px 0 10px 20px !important;
+    text-align: left;
+    margin: 0;
+  }
+}
+
+/* Nested dropdown styles for mobile view */
+.navbar-mobile .dropdown .dropdown > .dropdown-active {
+  display: block;
+  position: static;
+  margin: 10px 20px;
+  padding: 5px 0;
+  background: #f8f9fa;
+  border-left: 3px solid #d9232d;
+}
+
+/* Ensure nested dropdown links are properly styled in mobile */
+.navbar-mobile .dropdown .dropdown-active a {
+  padding: 8px 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Nested dropdown hover effects */
+.navbar-mobile .dropdown .dropdown-active a:hover {
+  color: #d9232d;
+  background-color: #f1f1f1;
+}
+
+/* Animation for dropdown opening/closing */
+.navbar-mobile .dropdown ul {
+  transition: all 0.3s ease;
+}
+
+.navbar-mobile .dropdown .dropdown-active {
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
+}

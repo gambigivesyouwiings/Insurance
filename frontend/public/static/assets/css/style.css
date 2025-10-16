@@ -250,7 +250,7 @@ h6 {
   color: #fff;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .mobile-nav-toggle {
     display: block;
   }
@@ -2295,4 +2295,5 @@ text-align: left;
     height: 80vh;
     width: 80%;
   }
+}
 

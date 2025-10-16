@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import WhatsAppWidget from './WhatsAppWidget'
 
 export default function SiteFooter() {
   useEffect(() => {
@@ -15,39 +16,6 @@ export default function SiteFooter() {
     el.addEventListener('click', onClick)
     // initial check
     onScroll()
-
-    // Dynamically load chat.js if it isn't already loaded and expose handlers
-    if (!window.toggleChat || !window.sendMessage) {
-      const script = document.createElement('script')
-      script.src = '/static/assets/js/chat.js'
-      script.async = true
-      script.onload = () => {
-        // chat.js defines global functions; nothing else needed
-      }
-      document.body.appendChild(script)
-    }
-
-    // Provide a safe fallback toggle in case chat.js fails to load
-    if (!window.toggleChat) {
-      window.toggleChat = function() {
-        const container = document.getElementById('chatContainer')
-        if (!container) return
-        const header = document.getElementById('chat-header-two')
-        container.style.display = container.style.display === 'flex' ? 'none' : 'flex'
-      }
-    }
-
-    if (!window.handleWhatsAppKeyPress) {
-      window.handleWhatsAppKeyPress = function(e) {
-        if (e.key === 'Enter') {
-          const userInput = document.getElementById('userInput')?.value || ''
-          const phoneNumber = '12019207621'
-          const message = encodeURIComponent(userInput)
-          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
-          window.open(whatsappUrl, '_blank')
-        }
-      }
-    }
 
     return () => {
       window.removeEventListener('load', onScroll)
@@ -133,21 +101,9 @@ export default function SiteFooter() {
 
       <a href="#" className="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
         <i className="bi bi-arrow-up-short" aria-hidden="true"></i>
-        
       </a>
 
-      <div className="chat-icon" onClick={() => window.toggleChat && window.toggleChat()}><i className="bi bi-whatsapp"></i></div>
-      <div className="chat-container" style={{ top: 'var(--top)', left: 'var(--left)', display: 'none' }} id="chatContainer">
-        <div className="chat-header" id="chat-header-two">
-          <h3>Whatsapp Chat Assistant</h3>
-          <i className="bi bi-x" onClick={() => window.toggleChat && window.toggleChat()}></i>
-        </div>
-        <div className="chat-history" id="chatHistory"></div>
-        <div className="chat-input">
-          <input type="text" id="userInput" placeholder="Type your message..." onKeyPress={(e) => window.handleWhatsAppKeyPress && window.handleWhatsAppKeyPress(e)} />
-        </div>
-      </div>
-      <script src="/static/assets/js/chat.js"></script>
+      <WhatsAppWidget />
     </>
   )
 }

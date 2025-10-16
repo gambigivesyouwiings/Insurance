@@ -63,6 +63,133 @@ const routeMap = [
   { path: '/portfolio_det', template: 'portfolio-details.html' },
 ]
 
+// Consolidated URL mapping for Flask url_for replacement
+const URL_FOR_MAP = {
+  home: '/',
+  contact: '/contact_us',
+  faqs: '/FAQs',
+  life_insurance: '/life_insurance',
+  retirement_benefits: '/retirement-benefits',
+  living_benefits: '/living-benefits',
+  long_term: '/long-term',
+  ira: '/IRA',
+  annuity: '/annuity',
+  dental_cover: '/dental-cover',
+  medical_cover: '/medical-cover',
+  disability_cover: '/disability-cover',
+  college: '/college_funding',
+  business_continuation: '/business_continuation',
+  business_transition: '/business_transition',
+  key_plans: '/key_employee_insurance_plans',
+  income_rider: '/qualified_plans',
+  executive: '/executive_bonus_plans',
+  mblog: '/mblog',
+  about: '/about_us',
+  team: '/team',
+  testimonials: '/testimonial',
+  services: '/mservices',
+  portfolio: '/mportfolio',
+  pricing: '/pricing',
+  blog: '/mblog',
+  blog_single: '/blog_single',
+  portfolio_details: '/portfolio_det'
+}
+
+// Helper function to process HTML template content
+function processTemplateHtml(src) {
+  const bodyMatch = src.match(/<body[^>]*>([\s\S]*?)<\/body>/i)
+  const bodyOnly = bodyMatch ? bodyMatch[1] : src
+  const withoutHeader = bodyOnly.replace(/<header[^>]*id=\"header\"[\s\S]*?<\/header>/i, '')
+  const withoutFooter = withoutHeader.replace(/<footer[^>]*id=\"footer\"[\s\S]*?<\/footer>/i, '')
+  const mainMatch = withoutFooter.match(/<main[^>]*id=\"main\"[^>]*>([\s\S]*?)<\/main>/i)
+  const mainInner = mainMatch ? mainMatch[1] : withoutFooter
+  const normalizedAssets = mainInner
+    .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=$2/static/')
+  const withoutScripts = normalizedAssets.replace(/<script[\s\S]*?<\/script>/gi, '')
+  
+  // Replace Flask url_for(...) with SPA routes
+  const sanitized = withoutScripts
+    .replace(/\{\{\s*url_for\(\s*['\"]([^'\"]+)['\"]\s*\)\s*\}\}/g, (m, p1) => URL_FOR_MAP[p1] || '#')
+    .replace(/\{\%.*?\%\}/gs, '')
+  
+  return sanitized
+}
+
+// Helper function to setup carousel indicators
+function setupCarouselIndicators(target) {
+  const carousels = target.querySelectorAll('.carousel')
+  carousels.forEach(carousel => {
+    const indicators = carousel.querySelector('.carousel-indicators')
+    const items = carousel.querySelectorAll('.carousel-item')
+    if (indicators && items.length && indicators.children.length < items.length) {
+      indicators.innerHTML = ''
+      items.forEach((_, idx) => {
+        const btn = document.createElement('button')
+        btn.type = 'button'
+        btn.setAttribute('data-bs-target', `#${carousel.id || 'heroCarousel'}`)
+        btn.setAttribute('data-bs-slide-to', idx)
+        if (idx === 0) {
+          btn.className = 'active'
+          btn.setAttribute('aria-current', 'true')
+        }
+        btn.setAttribute('aria-label', `Slide ${idx + 1}`)
+        indicators.appendChild(btn)
+      })
+    }
+  })
+}
+
+// Helper function to setup EmailJS form handlers
+function setupEmailjsHandler(target) {
+  const form = target.querySelector('form.php-email-form')
+  if (!form) return
+
+  const loadingEl = form.querySelector('.loading')
+  const errorEl = form.querySelector('.error-message')
+  const sentEl = form.querySelector('.sent-message')
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_faithful'
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'QLU1WdJ4iCNt22T7k'
+  const templateIds = (import.meta.env.VITE_EMAILJS_TEMPLATE_IDS || 'template_fka6k4q,template_m4kn7a5')
+    .split(',').map(s => s.trim()).filter(Boolean)
+
+  const submitHandler = async (e) => {
+    e.preventDefault()
+    if (loadingEl) loadingEl.style.display = 'block'
+    if (errorEl) errorEl.style.display = 'none'
+    if (sentEl) sentEl.style.display = 'none'
+
+    const fd = new FormData(form)
+    const name = (fd.get('name') || '').toString()
+    const email = (fd.get('email') || '').toString()
+    const phone = (fd.get('number') || '').toString()
+    const message = (fd.get('message') || '').toString()
+    const policy = (fd.get('policy') || '').toString()
+
+    const params = { name, from_name: name, email, from_email: email, reply_to: email, phone, policy, message }
+
+    try {
+      await Promise.all(templateIds.map(tid => emailjs.send(serviceId, tid, params, publicKey)))
+      if (sentEl) sentEl.style.display = 'block'
+      form.reset()
+    } catch (err) {
+      if (errorEl) errorEl.textContent = 'Failed to send. Please try again.'
+      if (errorEl) errorEl.style.display = 'block'
+      console.error('EmailJS error', err)
+    } finally {
+      if (loadingEl) loadingEl.style.display = 'none'
+    }
+  }
+
+  form.addEventListener('submit', submitHandler)
+}
+
+// Helper function to finalize template injection
+function finalizeTemplateInjection(target) {
+  setupCarouselIndicators(target)
+  setupEmailjsHandler(target)
+  window.dispatchEvent(new Event('load'))
+}
+
 function StaticHtmlPage({ file }) {
   useScrollTop()
   useEffect(() => { window.dispatchEvent(new Event('load')) }, [file])
@@ -78,227 +205,39 @@ function useInjectHtml(file) {
   useEffect(() => {
     const target = document.querySelector('[data-static-html]')
     if (!target) return
+    
     target.innerHTML = ''
+    
+    // Try to load template from local raw imports first
     const localRaw = getRawTemplate(file)
     if (localRaw) {
-      const src = localRaw
-      const bodyMatch = src.match(/<body[^>]*>([\s\S]*?)<\/body>/i)
-      const bodyOnly = bodyMatch ? bodyMatch[1] : src
-      const withoutHeader = bodyOnly.replace(/<header[^>]*id=\"header\"[\s\S]*?<\/header>/i, '')
-      const withoutFooter = withoutHeader.replace(/<footer[^>]*id=\"footer\"[\s\S]*?<\/footer>/i, '')
-      const mainMatch = withoutFooter.match(/<main[^>]*id=\"main\"[^>]*>([\s\S]*?)<\/main>/i)
-      const mainInner = mainMatch ? mainMatch[1] : withoutFooter
-      const normalizedAssets = mainInner
-        .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=$2/static/')
-      const withoutScripts = normalizedAssets.replace(/<script[\s\S]*?<\/script>/gi, '')
-      // Replace Flask url_for(...) with SPA routes when injecting templates
-      const urlForMap = {
-        home: '/',
-        contact: '/contact_us',
-        life_insurance: '/life_insurance',
-        retirement_benefits: '/retirement-benefits',
-        living_benefits: '/living-benefits',
-        long_term: '/long-term',
-        ira: '/IRA',
-        annuity: '/annuity',
-        dental_cover: '/dental-cover',
-        medical_cover: '/medical-cover',
-        disability_cover: '/disability-cover',
-        college: '/college_funding',
-        business_continuation: '/business_continuation',
-        business_transition: '/business_transition',
-        key_plans: '/key_employee_insurance_plans',
-        income_rider: '/qualified_plans',
-        executive: '/executive_bonus_plans',
-        mblog: '/mblog'
-      }
-
-      const sanitized = withoutScripts
-        .replace(/\{\{\s*url_for\(\s*['\"]([^'\"]+)['\"]\s*\)\s*\}\}/g, (m, p1) => urlForMap[p1] || '#')
-        .replace(/\{\%.*?\%\}/gs, '')
-      target.innerHTML = sanitized
-
-      // Ensure carousel indicators exist to avoid Bootstrap JS errors when indicators are empty
-      const carousels = target.querySelectorAll('.carousel')
-      carousels.forEach(carousel => {
-        const indicators = carousel.querySelector('.carousel-indicators')
-        const items = carousel.querySelectorAll('.carousel-item')
-        if (indicators && items.length && indicators.children.length < items.length) {
-          indicators.innerHTML = ''
-          items.forEach((_, idx) => {
-            const btn = document.createElement('button')
-            btn.type = 'button'
-            btn.setAttribute('data-bs-target', `#${carousel.id || 'heroCarousel'}`)
-            btn.setAttribute('data-bs-slide-to', idx)
-            if (idx === 0) {
-              btn.className = 'active'
-              btn.setAttribute('aria-current', 'true')
-            }
-            btn.setAttribute('aria-label', `Slide ${idx + 1}`)
-            indicators.appendChild(btn)
-          })
-        }
-      })
-
-      // Attach EmailJS handler if contact form exists
-      const formA = target.querySelector('form.php-email-form')
-      if (formA) {
-        const loadingEl = formA.querySelector('.loading')
-        const errorEl = formA.querySelector('.error-message')
-        const sentEl = formA.querySelector('.sent-message')
-        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_faithful'
-        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'QLU1WdJ4iCNt22T7k'
-        const templateIds = (import.meta.env.VITE_EMAILJS_TEMPLATE_IDS || 'template_fka6k4q,template_m4kn7a5')
-          .split(',').map(s => s.trim()).filter(Boolean)
-
-        const submitHandler = async (e) => {
-          e.preventDefault()
-          if (loadingEl) loadingEl.style.display = 'block'
-          if (errorEl) errorEl.style.display = 'none'
-          if (sentEl) sentEl.style.display = 'none'
-
-          const fd = new FormData(formA)
-          const name = (fd.get('name') || '').toString()
-          const email = (fd.get('email') || '').toString()
-          const phone = (fd.get('number') || '').toString()
-          const message = (fd.get('message') || '').toString()
-          const policy = (fd.get('policy') || '').toString()
-
-          const params = { name, from_name: name, email, from_email: email, reply_to: email, phone, policy, message }
-
-          try {
-            await Promise.all(templateIds.map(tid => emailjs.send(serviceId, tid, params, publicKey)))
-            if (sentEl) sentEl.style.display = 'block'
-            formA.reset()
-          } catch (err) {
-            if (errorEl) errorEl.textContent = 'Failed to send. Please try again.'
-            if (errorEl) errorEl.style.display = 'block'
-            console.error('EmailJS error', err)
-          } finally {
-            if (loadingEl) loadingEl.style.display = 'none'
-          }
-        }
-
-        formA.addEventListener('submit', submitHandler)
-      }
-
-      window.dispatchEvent(new Event('load'))
+      const processedHtml = processTemplateHtml(localRaw)
+      target.innerHTML = processedHtml
+      finalizeTemplateInjection(target)
       return
     }
 
-    fetch(`/staticized/${file}`).then(async res => {
-      if (!res.ok) throw new Error('Missing staticized page: ' + file)
-      const html = await res.text()
-      target.innerHTML = html
-      window.dispatchEvent(new Event('load'))
-    }).catch(() => {
-      fetch(`/templates/${file}`).then(r => r.text()).then(src => {
-        const bodyMatch = src.match(/<body[^>]*>([\s\S]*?)<\/body>/i)
-        const bodyOnly = bodyMatch ? bodyMatch[1] : src
-        const withoutHeader = bodyOnly.replace(/<header[^>]*id=\"header\"[\s\S]*?<\/header>/i, '')
-        const withoutFooter = withoutHeader.replace(/<footer[^>]*id=\"footer\"[\s\S]*?<\/footer>/i, '')
-        const mainMatch = withoutFooter.match(/<main[^>]*id=\"main\"[^>]*>([\s\S]*?)<\/main>/i)
-        const mainInner = mainMatch ? mainMatch[1] : withoutFooter
-        const normalizedAssets = mainInner
-          .replace(/(href|src)=(\"|\')(?!https?:\/\/)(?:\.\/)?static\//g, '$1=$2/static/')
-        const withoutScripts = normalizedAssets.replace(/<script[\s\S]*?<\/script>/gi, '')
-      // Replace Flask url_for(...) with SPA routes when injecting templates
-      const urlForMap = {
-        home: '/',
-        contact: '/contact_us',
-        life_insurance: '/life_insurance',
-        retirement_benefits: '/retirement-benefits',
-        living_benefits: '/living-benefits',
-        long_term: '/long-term',
-        ira: '/IRA',
-        annuity: '/annuity',
-        dental_cover: '/dental-cover',
-        medical_cover: '/medical-cover',
-        disability_cover: '/disability-cover',
-        college: '/college_funding',
-        business_continuation: '/business_continuation',
-        business_transition: '/business_transition',
-        key_plans: '/key_employee_insurance_plans',
-        income_rider: '/qualified_plans',
-        executive: '/executive_bonus_plans',
-        mblog: '/mblog'
-      }
-
-      const sanitized = withoutScripts
-        .replace(/\{\{\s*url_for\(\s*['\"]([^'\"]+)['\"]\s*\)\s*\}\}/g, (m, p1) => urlForMap[p1] || '#')
-        .replace(/\{\%.*?\%\}/gs, '')
-      target.innerHTML = sanitized
-
-        // Ensure carousel indicators exist to avoid Bootstrap JS errors when indicators are empty
-        const carousels = target.querySelectorAll('.carousel')
-        carousels.forEach(carousel => {
-          const indicators = carousel.querySelector('.carousel-indicators')
-          const items = carousel.querySelectorAll('.carousel-item')
-          if (indicators && items.length && indicators.children.length < items.length) {
-            indicators.innerHTML = ''
-            items.forEach((_, idx) => {
-              const btn = document.createElement('button')
-              btn.type = 'button'
-              btn.setAttribute('data-bs-target', `#${carousel.id || 'heroCarousel'}`)
-              btn.setAttribute('data-bs-slide-to', idx)
-              if (idx === 0) {
-                btn.className = 'active'
-                btn.setAttribute('aria-current', 'true')
-              }
-              btn.setAttribute('aria-label', `Slide ${idx + 1}`)
-              indicators.appendChild(btn)
-            })
-          }
-        })
-
-        // Attach EmailJS handler if contact form exists
-        const formB = target.querySelector('form.php-email-form')
-        if (formB) {
-          const loadingEl = formB.querySelector('.loading')
-          const errorEl = formB.querySelector('.error-message')
-          const sentEl = formB.querySelector('.sent-message')
-          const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_faithful'
-          const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'QLU1WdJ4iCNt22T7k'
-          const templateIds = (import.meta.env.VITE_EMAILJS_TEMPLATE_IDS || 'template_fka6k4q,template_m4kn7a5')
-            .split(',').map(s => s.trim()).filter(Boolean)
-
-          const submitHandler = async (e) => {
-            e.preventDefault()
-            if (loadingEl) loadingEl.style.display = 'block'
-            if (errorEl) errorEl.style.display = 'none'
-            if (sentEl) sentEl.style.display = 'none'
-
-            const fd = new FormData(formB)
-            const name = (fd.get('name') || '').toString()
-            const email = (fd.get('email') || '').toString()
-            const phone = (fd.get('number') || '').toString()
-            const message = (fd.get('message') || '').toString()
-            const policy = (fd.get('policy') || '').toString()
-
-            const params = { name, from_name: name, email, from_email: email, reply_to: email, phone, policy, message }
-
-            try {
-              await Promise.all(templateIds.map(tid => emailjs.send(serviceId, tid, params, publicKey)))
-              if (sentEl) sentEl.style.display = 'block'
-              formB.reset()
-            } catch (err) {
-              if (errorEl) errorEl.textContent = 'Failed to send. Please try again.'
-              if (errorEl) errorEl.style.display = 'block'
-              console.error('EmailJS error', err)
-            } finally {
-              if (loadingEl) loadingEl.style.display = 'none'
-            }
-          }
-
-          formB.addEventListener('submit', submitHandler)
-        }
-
+    // Fallback: try to fetch from staticized endpoint, then templates endpoint
+    fetch(`/staticized/${file}`)
+      .then(async res => {
+        if (!res.ok) throw new Error('Missing staticized page: ' + file)
+        const html = await res.text()
+        target.innerHTML = html
         window.dispatchEvent(new Event('load'))
-      }).catch(err => {
-        console.error('Failed to load template', file, err)
-        target.innerHTML = '<div class="alert alert-warning">Content failed to load.</div>'
       })
-    })
+      .catch(() => {
+        fetch(`/templates/${file}`)
+          .then(r => r.text())
+          .then(src => {
+            const processedHtml = processTemplateHtml(src)
+            target.innerHTML = processedHtml
+            finalizeTemplateInjection(target)
+          })
+          .catch(err => {
+            console.error('Failed to load template', file, err)
+            target.innerHTML = '<div class="alert alert-warning">Content failed to load.</div>'
+          })
+      })
   }, [file])
 }
 
