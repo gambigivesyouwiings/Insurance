@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react'
+import config from '../config'
 
 export default function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,7 +18,7 @@ export default function WhatsAppWidget() {
   const headerRef = useRef(null)
 
   // Phone number for WhatsApp
-  const phoneNumber = '12019207621'
+  const phoneNumber = config.WHATSAPP_PHONE
 
   // Handle click outside to close chat
   const handleClickOutside = useCallback((e) => {
